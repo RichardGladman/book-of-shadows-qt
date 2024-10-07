@@ -23,8 +23,116 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuRunestones">
+    <property name="title">
+     <string>Major</string>
+    </property>
+    <addaction name="actionRunestones"/>
+    <addaction name="actionTarot_Cards"/>
+    <addaction name="actionCrystals"/>
+   </widget>
+   <widget class="QMenu" name="menuMinor">
+    <property name="title">
+     <string>Minor</string>
+    </property>
+    <addaction name="actionColours"/>
+    <addaction name="actionGods"/>
+    <addaction name="actionHerbs"/>
+    <addaction name="actionPlanets"/>
+    <addaction name="actionPolarity"/>
+    <addaction name="actionTrees"/>
+    <addaction name="actionZodiac"/>
+   </widget>
+   <widget class="QMenu" name="menuSpell_Book">
+    <property name="title">
+     <string>Spell Book</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuNotes">
+    <property name="title">
+     <string>Readings</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuNotes_2">
+    <property name="title">
+     <string>Notes</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuRunestones"/>
+   <addaction name="menuMinor"/>
+   <addaction name="menuSpell_Book"/>
+   <addaction name="menuNotes"/>
+   <addaction name="menuNotes_2"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionRunestones">
+   <property name="text">
+    <string>Runestones</string>
+   </property>
+  </action>
+  <action name="actionTarot_Cards">
+   <property name="text">
+    <string>Tarot Cards</string>
+   </property>
+  </action>
+  <action name="actionCrystals">
+   <property name="text">
+    <string>Crystals</string>
+   </property>
+  </action>
+  <action name="actionColours">
+   <property name="text">
+    <string>Colours</string>
+   </property>
+  </action>
+  <action name="actionGods">
+   <property name="text">
+    <string>Gods</string>
+   </property>
+  </action>
+  <action name="actionHerbs">
+   <property name="text">
+    <string>Herbs</string>
+   </property>
+  </action>
+  <action name="actionPlanets">
+   <property name="text">
+    <string>Planets</string>
+   </property>
+  </action>
+  <action name="actionPolarity">
+   <property name="text">
+    <string>Polarity</string>
+   </property>
+  </action>
+  <action name="actionTrees">
+   <property name="text">
+    <string>Trees</string>
+   </property>
+  </action>
+  <action name="actionZodiac">
+   <property name="text">
+    <string>Zodiac</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
