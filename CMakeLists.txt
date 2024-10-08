@@ -23,6 +23,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(BookOfShadows
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        polarity/polarityframe.h polarity/polarityframe.cpp polarity/polarityframe.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET BookOfShadows APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
