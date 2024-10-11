@@ -20,6 +20,8 @@ public:
 private slots:
     void on_actionPolarity_triggered();
 
+    void on_actionSettinga_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

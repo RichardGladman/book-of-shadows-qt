@@ -68,6 +68,7 @@
     <property name="title">
      <string>Help</string>
     </property>
+    <addaction name="actionSettinga"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRunestones"/>
@@ -131,6 +132,11 @@
   <action name="actionZodiac">
    <property name="text">
     <string>Zodiac</string>
+   </property>
+  </action>
+  <action name="actionSettinga">
+   <property name="text">
+    <string>Settings</string>
    </property>
   </action>
  </widget>
