@@ -24,5 +24,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    void createDataStore(const QString &base);
 };
 #endif // MAINWINDOW_H
