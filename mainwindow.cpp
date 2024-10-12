@@ -9,6 +9,12 @@
 #include <QIODevice>
 #include <QSettings>
 #include <QMessageBox>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+
+extern int version_major;
+extern int version_minor;
+extern int version_patch;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -30,6 +36,17 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     createDataStore(baseDir);
+
+    QSqlDatabase dbConnection = QSqlDatabase::addDatabase("QSQLITE");
+    dbConnection.setDatabaseName(baseDir + "/data/bos.db");
+
+    if (!dbConnection.open()) {
+        qDebug() << "Database connection error";
+    } else {
+        qDebug() << "Database connection success";
+    }
+
+    createDatabaseTables(baseDir);
 
 }
 
@@ -73,5 +90,16 @@ void MainWindow::createDataStore(const QString &base)
     if (!file.exists()) {
         file.open(QIODevice::WriteOnly);
         file.close();
+    }
+}
+
+void MainWindow::createDatabaseTables(const QString &base) {
+    const QString dataDir {base + "/data"};
+
+    if (version_major == 0 && version_minor == 1) {
+        QString sql = "CREATE TABLE IF NOT EXISTS polarities (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT, image VARCHAR(255));";
+        QSqlQuery query;
+        query.prepare(sql);
+        query.exec();
     }
 }

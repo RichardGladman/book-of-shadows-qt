@@ -26,5 +26,6 @@ private:
     Ui::MainWindow *ui;
 
     void createDataStore(const QString &base);
+    void createDatabaseTables(const QString &base);
 };
 #endif // MAINWINDOW_H
