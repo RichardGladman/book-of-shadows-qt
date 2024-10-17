@@ -15,6 +15,9 @@ public:
     explicit PolarityFrame(QWidget *parent = nullptr);
     ~PolarityFrame();
 
+private slots:
+    void on_addButton_clicked();
+
 private:
     Ui::PolarityFrame *ui;
 };

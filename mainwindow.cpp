@@ -16,6 +16,8 @@ extern int version_major;
 extern int version_minor;
 extern int version_patch;
 
+QString baseDir;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -26,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
     QSettings settings("TheFifthContinent", "BookOfShadows");
 
     settings.beginGroup("Paths");
-    QString baseDir = settings.value("datadir").toString();
+    baseDir = settings.value("datadir").toString();
     settings.endGroup();
 
     if (baseDir.isEmpty()) {

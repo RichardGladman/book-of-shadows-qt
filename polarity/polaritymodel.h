@@ -23,6 +23,8 @@ public:
 
     bool operator==(const PolarityModel &rhs) const;
 
+    bool save();
+
 private:
     int m_id {0};
     QString m_name {};
