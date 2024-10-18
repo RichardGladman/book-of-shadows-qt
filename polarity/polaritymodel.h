@@ -2,10 +2,13 @@
 #define POLARITYMODEL_H
 
 #include <QString>
+#include <QSqlQuery>
 
 class PolarityModel
 {
 public:
+    static QSqlQuery list();
+
     PolarityModel(QString name, QString meaning);
     PolarityModel(QString name, QString meaning, QString image);
     PolarityModel(int id, QString name, QString meaning, QString image);

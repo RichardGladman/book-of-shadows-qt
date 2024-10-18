@@ -20,6 +20,8 @@ private slots:
 
 private:
     Ui::PolarityFrame *ui;
+
+    void loadData();
 };
 
 #endif // POLARITYFRAME_H

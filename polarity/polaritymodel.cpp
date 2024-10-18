@@ -1,6 +1,15 @@
 #include "polaritymodel.h"
 
-#include <QSqlQuery>
+QSqlQuery PolarityModel::list()
+{
+    QSqlQuery query;
+
+    query.prepare("SELECT id, name FROM polarities ORDER BY name");
+    query.exec();
+
+    return query;
+}
+
 
 PolarityModel::PolarityModel(QString name, QString meaning) : PolarityModel {0, name, meaning, ""} {
 
