@@ -28,6 +28,20 @@ void PolarityFrame::on_addButton_clicked()
     form.setWindowTitle("Add New Polarity");
 
     form.exec();
+    loadData();
+}
+
+void PolarityFrame::on_editButton_clicked()
+{
+    QModelIndexList selectedRows = ui->polarityTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    PolarityForm *form = new PolarityForm(this, ui->polarityTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+    form->exec();
+
+    loadData();
 }
 
 void PolarityFrame::loadData()
@@ -41,3 +55,4 @@ void PolarityFrame::loadData()
 
     ui->polarityTable->setModel(tableModel);
 }
+

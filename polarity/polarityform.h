@@ -12,7 +12,7 @@ class PolarityForm : public QDialog
     Q_OBJECT
 
 public:
-    explicit PolarityForm(QWidget *parent = nullptr);
+    explicit PolarityForm(QWidget *parent = nullptr, int id = 0);
     ~PolarityForm();
 
 private slots:
@@ -24,6 +24,8 @@ private slots:
 
 private:
     Ui::PolarityForm *ui;
+
+    int m_id {0};
 };
 
 #endif // POLARITYFORM_H

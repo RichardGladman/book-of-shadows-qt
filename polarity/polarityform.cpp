@@ -9,11 +9,20 @@
 
 extern QString baseDir;
 
-PolarityForm::PolarityForm(QWidget *parent)
+PolarityForm::PolarityForm(QWidget *parent, int id)
     : QDialog(parent)
     , ui(new Ui::PolarityForm)
 {
     ui->setupUi(this);
+
+    if (id != 0) {
+        PolarityModel model = PolarityModel::load(id);
+        ui->nameLineEdit->setText(model.name());
+        ui->descriptionTextEdit->setPlainText(model.meaning());
+        ui->imageLineEdit->setText(model.image());
+
+        m_id = id;
+    }
 }
 
 PolarityForm::~PolarityForm()
@@ -48,7 +57,7 @@ void PolarityForm::on_saveButton_clicked()
         file.copy(finalImage);
     }
 
-    PolarityModel model {name, meaning, finalImage};
+    PolarityModel model {m_id, name, meaning, finalImage};
 
     if (name.isEmpty()) {
         QMessageBox::critical(this, "Input Error", "Name must not be empty.");
@@ -56,11 +65,13 @@ void PolarityForm::on_saveButton_clicked()
     }
 
     if (model.save()) {
-        QMessageBox::information(this, "Success", "Polarity has been saved");
-
-        ui->nameLineEdit->clear();
-        ui->descriptionTextEdit->clear();
-        ui->imageLineEdit->clear();
+        if (m_id == 0) {
+            ui->nameLineEdit->clear();
+            ui->descriptionTextEdit->clear();
+            ui->imageLineEdit->clear();
+        } else {
+            QMessageBox::information(this, "Success", "Polarity saved");
+        }
     } else {
         QMessageBox::critical(this, "Error", "Polarity not saved");
     }
