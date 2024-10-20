@@ -95,9 +95,8 @@ void MainWindow::createDataStore(const QString &base)
     }
 }
 
-void MainWindow::createDatabaseTables(const QString &base) {
-    const QString dataDir {base + "/data"};
-
+void MainWindow::createDatabaseTables(const QString &base)
+{
     if (version_major == 0 && version_minor == 1) {
         QString sql = "CREATE TABLE IF NOT EXISTS polarities (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT, image VARCHAR(255));";
         QSqlQuery query;

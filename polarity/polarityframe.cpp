@@ -3,6 +3,7 @@
 
 #include "polarityform.h"
 #include "polaritymodel.h"
+#include "polarityviewdialog.h"
 
 #include <QSqlQuery>
 #include <QSqlQueryModel>
@@ -42,6 +43,17 @@ void PolarityFrame::on_editButton_clicked()
     form->exec();
 
     loadData();
+}
+
+void PolarityFrame::on_viewButton_clicked()
+{
+    QModelIndexList selectedRows = ui->polarityTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    PolarityViewDialog *dialog = new PolarityViewDialog(this, ui->polarityTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+    dialog->exec();
 }
 
 void PolarityFrame::loadData()
