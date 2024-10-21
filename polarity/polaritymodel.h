@@ -28,6 +28,7 @@ public:
     bool operator==(const PolarityModel &rhs) const;
 
     bool save();
+    void remove();
 
 private:
     int m_id {0};

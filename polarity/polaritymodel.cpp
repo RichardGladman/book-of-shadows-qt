@@ -1,5 +1,7 @@
 #include "polaritymodel.h"
 
+#include <QFile>
+
 QSqlQuery PolarityModel::list()
 {
     QSqlQuery query;
@@ -25,7 +27,6 @@ PolarityModel PolarityModel::load(int id)
 
     return PolarityModel {0, "", "", ""};
 }
-
 
 PolarityModel::PolarityModel(QString name, QString meaning) : PolarityModel {0, name, meaning, ""} {
 
@@ -66,6 +67,24 @@ bool PolarityModel::save()
 
     return query.exec();
 }
+
+void PolarityModel::remove()
+{
+    if (!m_image.isEmpty()) {
+        QFile file(m_image);
+        file.remove();
+    }
+
+    QString sql = "DELETE FROM polarities WHERE id=?";
+
+    QSqlQuery query;
+    query.prepare(sql);
+
+    query.addBindValue(m_id);
+
+    query.exec();
+}
+
 
 int PolarityModel::id() const {
     return m_id;

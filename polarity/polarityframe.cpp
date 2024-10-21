@@ -5,6 +5,7 @@
 #include "polaritymodel.h"
 #include "polarityviewdialog.h"
 
+#include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QVector>
@@ -56,6 +57,22 @@ void PolarityFrame::on_viewButton_clicked()
     dialog->exec();
 }
 
+void PolarityFrame::on_deleteButton_clicked()
+{
+    QModelIndexList selectedRows = ui->polarityTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    PolarityModel model = PolarityModel::load(ui->polarityTable->model()->index(selectedRows.at(0).row(),0).data().toInt());
+
+    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    if (confirmed == QMessageBox::Yes) {
+        model.remove();
+        loadData();
+    }
+}
+
 void PolarityFrame::loadData()
 {
     QSqlQuery query = PolarityModel::list();
@@ -67,4 +84,5 @@ void PolarityFrame::loadData()
 
     ui->polarityTable->setModel(tableModel);
 }
+
 
