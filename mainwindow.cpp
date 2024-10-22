@@ -3,6 +3,7 @@
 
 #include "polarity/polarityframe.h"
 #include "settings/settingsframe.h"
+#include "colours/coloursframe.h"
 
 #include <QDir>
 #include <QFile>
@@ -70,6 +71,12 @@ void MainWindow::on_actionSettinga_triggered()
     setCentralWidget(settingsFrame);
 }
 
+void MainWindow::on_actionColours_triggered()
+{
+    ColoursFrame *coloursFrame = new ColoursFrame(this);
+    setCentralWidget(coloursFrame);
+}
+
 void MainWindow::createDataStore(const QString &base)
 {
     QDir dir(base + "/data");
@@ -104,3 +111,4 @@ void MainWindow::createDatabaseTables(const QString &base)
         query.exec();
     }
 }
+

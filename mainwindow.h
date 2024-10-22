@@ -22,6 +22,8 @@ private slots:
 
     void on_actionSettinga_triggered();
 
+    void on_actionColours_triggered();
+
 private:
     Ui::MainWindow *ui;
 

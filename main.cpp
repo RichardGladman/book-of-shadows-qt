@@ -3,7 +3,7 @@
 #include <QApplication>
 
 int version_major = 0;
-int version_minor = 1;
+int version_minor = 2;
 int version_patch = 0;
 
 int main(int argc, char *argv[])
