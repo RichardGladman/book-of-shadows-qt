@@ -15,6 +15,9 @@ public:
     explicit ColoursFrame(QWidget *parent = nullptr);
     ~ColoursFrame();
 
+private slots:
+    void on_addButton_clicked();
+
 private:
     Ui::ColoursFrame *ui;
 };

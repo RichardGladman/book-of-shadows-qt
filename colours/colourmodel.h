@@ -20,6 +20,8 @@ public:
     void name(QString name);
     void meaning(QString meaning);
 
+    bool save();
+
 private:
     int m_id;
     QString m_name;

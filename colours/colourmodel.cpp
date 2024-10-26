@@ -1,10 +1,35 @@
 #include "colourmodel.h"
 
+#include <QSqlQuery>
+
 ColourModel::ColourModel(int id, QString name, QString meaning) : m_id {id}, m_name {name}, m_meaning {meaning} {}
 ColourModel::ColourModel(QString name, QString meaning) : ColourModel {0, name, meaning} {}
 ColourModel::ColourModel(QString name) : ColourModel { 0, name, ""} {}
 
 ColourModel::ColourModel(const ColourModel &source) : ColourModel {source.m_id, source.m_name, source.m_meaning} {}
+
+bool ColourModel::save()
+{
+    QString sql;
+
+    if (m_id == 0) {
+        sql = "INSERT INTO colours(name, meaning) VALUES(?, ?)";
+    } else {
+        sql = "UPDATE colours SET name=?, meaning=? WHERE id=?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+
+    query.addBindValue(m_name);
+    query.addBindValue(m_meaning);
+
+    if (m_id != 0) {
+        query.addBindValue(m_id);
+    }
+
+    return query.exec();
+}
 
 int ColourModel::id() const
 {
