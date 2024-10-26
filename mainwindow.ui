@@ -27,6 +27,8 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionSettinga"/>
+    <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuRunestones">
@@ -68,7 +70,6 @@
     <property name="title">
      <string>Help</string>
     </property>
-    <addaction name="actionSettinga"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRunestones"/>
