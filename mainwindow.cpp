@@ -3,7 +3,7 @@
 
 #include "polarity/polarityframe.h"
 #include "settings/settingsframe.h"
-#include "colours/coloursframe.h"
+#include "colours/colourframe.h"
 
 #include <QDir>
 #include <QFile>
@@ -73,7 +73,7 @@ void MainWindow::on_actionSettinga_triggered()
 
 void MainWindow::on_actionColours_triggered()
 {
-    ColoursFrame *coloursFrame = new ColoursFrame(this);
+    ColourFrame *coloursFrame = new ColourFrame(this);
     setCentralWidget(coloursFrame);
 }
 

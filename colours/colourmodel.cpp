@@ -1,6 +1,14 @@
 #include "colourmodel.h"
 
-#include <QSqlQuery>
+QSqlQuery ColourModel::list()
+{
+    QSqlQuery query;
+
+    query.prepare("SELECT id, name FROM colours ORDER BY name");
+    query.exec();
+
+    return query;
+}
 
 ColourModel::ColourModel(int id, QString name, QString meaning) : m_id {id}, m_name {name}, m_meaning {meaning} {}
 ColourModel::ColourModel(QString name, QString meaning) : ColourModel {0, name, meaning} {}

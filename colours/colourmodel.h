@@ -1,11 +1,14 @@
 #ifndef COLOURMODEL_H
 #define COLOURMODEL_H
 
+#include <QSqlQuery>
 #include <QString>
 
 class ColourModel
 {
 public:
+    static QSqlQuery list();
+
     ColourModel(int id, QString name, QString meaning);
     ColourModel(QString name, QString meaning);
     ColourModel(QString name);
