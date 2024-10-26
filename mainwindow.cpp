@@ -49,7 +49,7 @@ MainWindow::MainWindow(QWidget *parent)
         qDebug() << "Database connection success";
     }
 
-    createDatabaseTables(baseDir);
+    createDatabaseTables();
 
 }
 
@@ -102,13 +102,31 @@ void MainWindow::createDataStore(const QString &base)
     }
 }
 
-void MainWindow::createDatabaseTables(const QString &base)
+void MainWindow::createDatabaseTables()
 {
     if (version_major == 0 && version_minor == 1) {
-        QString sql = "CREATE TABLE IF NOT EXISTS polarities (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT, image VARCHAR(255));";
-        QSqlQuery query;
-        query.prepare(sql);
-        query.exec();
+        createPolarity();
     }
+
+    if (version_major == 0 && version_minor == 2) {
+        createPolarity();
+        createColours();
+    }
+}
+
+void MainWindow::createPolarity()
+{
+    QString sql = "CREATE TABLE IF NOT EXISTS polarities (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT, image VARCHAR(255));";
+    QSqlQuery query;
+    query.prepare(sql);
+    query.exec();
+}
+
+void MainWindow::createColours()
+{
+    QString sql = "CREATE TABLE IF NOT EXISTS colours (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT);";
+    QSqlQuery query;
+    query.prepare(sql);
+    query.exec();
 }
 

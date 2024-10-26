@@ -28,6 +28,9 @@ private:
     Ui::MainWindow *ui;
 
     void createDataStore(const QString &base);
-    void createDatabaseTables(const QString &base);
+    void createDatabaseTables();
+
+    void createPolarity();
+    void createColours();
 };
 #endif // MAINWINDOW_H
