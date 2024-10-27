@@ -56,6 +56,14 @@ bool ColourModel::save()
     return query.exec();
 }
 
+void ColourModel::remove()
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM colours WHERE id=?");
+    query.addBindValue(m_id);
+    query.exec();
+}
+
 int ColourModel::id() const
 {
     return m_id;

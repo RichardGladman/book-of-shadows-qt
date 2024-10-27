@@ -4,6 +4,7 @@
 #include "colourform.h"
 #include "colourmodel.h"
 
+#include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 
@@ -58,6 +59,23 @@ void ColourFrame::on_viewButton_clicked()
     loadData();
 }
 
+void ColourFrame::on_deleteButton_clicked()
+{
+    QModelIndexList selectedRows = ui->colourTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    ColourModel model = ColourModel::load(ui->colourTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+
+
+    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    if (confirmed == QMessageBox::Yes) {
+        model.remove();
+        loadData();
+    }
+ }
+
 void ColourFrame::loadData()
 {
     QSqlQuery query = ColourModel::list();
@@ -69,3 +87,4 @@ void ColourFrame::loadData()
 
     ui->colourTable->setModel(tableModel);
 }
+

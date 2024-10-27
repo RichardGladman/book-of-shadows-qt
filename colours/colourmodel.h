@@ -25,6 +25,7 @@ public:
     void meaning(QString meaning);
 
     bool save();
+    void remove();
 
 private:
     int m_id;
