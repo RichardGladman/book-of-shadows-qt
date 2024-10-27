@@ -20,6 +20,8 @@ private slots:
 
     void on_editButton_clicked();
 
+    void on_viewButton_clicked();
+
 private:
     Ui::ColourFrame *ui;
 

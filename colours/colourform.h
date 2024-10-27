@@ -12,7 +12,7 @@ class ColourForm : public QDialog
     Q_OBJECT
 
 public:
-    explicit ColourForm(QWidget *parent = nullptr, int id = 0);
+    explicit ColourForm(QWidget *parent = nullptr, int id = 0, QString mode = "edit");
     ~ColourForm();
 
 private slots:

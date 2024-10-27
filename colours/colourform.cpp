@@ -5,7 +5,7 @@
 
 #include <QMessageBox>
 
-ColourForm::ColourForm(QWidget *parent, int id)
+ColourForm::ColourForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
     , ui(new Ui::ColourForm)
 {
@@ -17,6 +17,13 @@ ColourForm::ColourForm(QWidget *parent, int id)
         ui->meaningTextEdit->setPlainText(model.meaning());
 
         m_id = id;
+    }
+
+    if (mode == "view") {
+        ui->nameLineEdit->setEnabled(false);
+        ui->meaningTextEdit->setEnabled(false);
+        ui->saveButton->setVisible(false);
+        ui->saveButton->setEnabled(false);
     }
 }
 
