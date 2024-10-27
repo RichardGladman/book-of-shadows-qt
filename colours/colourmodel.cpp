@@ -10,6 +10,23 @@ QSqlQuery ColourModel::list()
     return query;
 }
 
+ColourModel ColourModel::load(int id)
+{
+    ColourModel model {0, "", ""};
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM colours WHERE id=?");
+    query.addBindValue(id);
+
+    if (query.exec() && query.next()) {
+        model.id(query.value(0).toInt());
+        model.name(query.value(1).toString());
+        model.meaning(query.value(2).toString());
+    }
+
+    return model;
+}
+
 ColourModel::ColourModel(int id, QString name, QString meaning) : m_id {id}, m_name {name}, m_meaning {meaning} {}
 ColourModel::ColourModel(QString name, QString meaning) : ColourModel {0, name, meaning} {}
 ColourModel::ColourModel(QString name) : ColourModel { 0, name, ""} {}

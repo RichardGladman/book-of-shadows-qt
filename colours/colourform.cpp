@@ -5,11 +5,19 @@
 
 #include <QMessageBox>
 
-ColourForm::ColourForm(QWidget *parent)
+ColourForm::ColourForm(QWidget *parent, int id)
     : QDialog(parent)
     , ui(new Ui::ColourForm)
 {
     ui->setupUi(this);
+
+    if (id != 0) {
+        ColourModel model = ColourModel::load(id);
+        ui->nameLineEdit->setText(model.name());
+        ui->meaningTextEdit->setPlainText(model.meaning());
+
+        m_id = id;
+    }
 }
 
 ColourForm::~ColourForm()

@@ -30,6 +30,19 @@ void ColourFrame::on_addButton_clicked()
     loadData();
 }
 
+void ColourFrame::on_editButton_clicked()
+{
+    QModelIndexList selectedRows = ui->colourTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    ColourForm *form = new ColourForm(this, ui->colourTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+    form->exec();
+
+    loadData();
+}
+
 void ColourFrame::loadData()
 {
     QSqlQuery query = ColourModel::list();
@@ -41,4 +54,5 @@ void ColourFrame::loadData()
 
     ui->colourTable->setModel(tableModel);
 }
+
 

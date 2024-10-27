@@ -8,6 +8,7 @@ class ColourModel
 {
 public:
     static QSqlQuery list();
+    static ColourModel load(int id);
 
     ColourModel(int id, QString name, QString meaning);
     ColourModel(QString name, QString meaning);
