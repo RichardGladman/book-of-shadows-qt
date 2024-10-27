@@ -31,6 +31,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         colours/colourframe.h colours/colourframe.cpp colours/colourframe.ui
         colours/colourmodel.h colours/colourmodel.cpp
         colours/colourform.h colours/colourform.cpp colours/colourform.ui
+        gods/godframe.h gods/godframe.cpp gods/godframe.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET BookOfShadows APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

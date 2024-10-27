@@ -4,7 +4,7 @@
 #include "polarity/polarityframe.h"
 #include "settings/settingsframe.h"
 #include "colours/colourframe.h"
-
+#include "gods/godframe.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -77,6 +77,12 @@ void MainWindow::on_actionColours_triggered()
     setCentralWidget(coloursFrame);
 }
 
+void MainWindow::on_actionGods_triggered()
+{
+    GodFrame *godFrame = new GodFrame(this);
+    setCentralWidget(godFrame);
+}
+
 void MainWindow::createDataStore(const QString &base)
 {
     QDir dir(base + "/data");
@@ -129,4 +135,3 @@ void MainWindow::createColours()
     query.prepare(sql);
     query.exec();
 }
-

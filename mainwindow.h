@@ -24,6 +24,8 @@ private slots:
 
     void on_actionColours_triggered();
 
+    void on_actionGods_triggered();
+
 private:
     Ui::MainWindow *ui;
 
