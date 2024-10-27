@@ -118,6 +118,12 @@ void MainWindow::createDatabaseTables()
         createPolarity();
         createColours();
     }
+
+    if (version_major == 0 && version_minor == 3) {
+        createPolarity();
+        createColours();
+        createGods();
+    }
 }
 
 void MainWindow::createPolarity()
@@ -131,6 +137,14 @@ void MainWindow::createPolarity()
 void MainWindow::createColours()
 {
     QString sql = "CREATE TABLE IF NOT EXISTS colours (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT);";
+    QSqlQuery query;
+    query.prepare(sql);
+    query.exec();
+}
+
+void MainWindow::createGods()
+{
+    QString sql = "CREATE TABLE IF NOT EXISTS gods (id INTEGER PRIMARY KEY, name VARCHAR(255), polarity_id INTEGER, description TEXT);";
     QSqlQuery query;
     query.prepare(sql);
     query.exec();
