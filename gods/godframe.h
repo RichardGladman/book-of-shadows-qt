@@ -15,6 +15,9 @@ public:
     explicit GodFrame(QWidget *parent = nullptr);
     ~GodFrame();
 
+private slots:
+    void on_addButton_clicked();
+
 private:
     Ui::GodFrame *ui;
 };
