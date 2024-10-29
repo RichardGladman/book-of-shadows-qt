@@ -1,5 +1,7 @@
 #include "godmodel.h"
 
+#include <QSqlQuery>
+
 GodModel::GodModel(int id, QString name, QString description, int polarityId) : m_id {id}, m_name {name}, m_description {description}, m_polarity_id {polarityId} {}
 GodModel::GodModel(QString name, QString description, int polarityId) : GodModel {0, name, description, polarityId} {}
 
@@ -13,6 +15,30 @@ int GodModel::id() const
 QString GodModel::name() const
 {
     return m_name;
+}
+
+bool GodModel::save()
+{
+    QString sql;
+
+    if (m_id == 0) {
+        sql = "INSERT INTO gods(name, description, polarity_id) VALUES(?, ?, ?)";
+    } else {
+        sql = "UPDATE gods SET name=?, description=?, polarity_id=? WHERE id=?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+
+    query.addBindValue(m_name);
+    query.addBindValue(m_description);
+    query.addBindValue(m_polarity_id);
+
+    if (m_id != 0) {
+        query.addBindValue(m_id);
+    }
+
+    return query.exec();
 }
 
 QString GodModel::description() const

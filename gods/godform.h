@@ -18,8 +18,12 @@ public:
 private slots:
     void on_closeButton_clicked();
 
+    void on_saveButton_clicked();
+
 private:
     Ui::GodForm *ui;
+
+    int m_id {};
 };
 
 #endif // GODFORM_H

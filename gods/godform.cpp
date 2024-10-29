@@ -1,8 +1,10 @@
 #include "godform.h"
 #include "ui_godform.h"
 
+#include "godmodel.h"
 #include "../polarity/polaritymodel.h"
 
+#include <QMessageBox>
 #include <QSqlQuery>
 
 GodForm::GodForm(QWidget *parent)
@@ -26,5 +28,42 @@ GodForm::~GodForm()
 void GodForm::on_closeButton_clicked()
 {
     reject();
+}
+
+
+void GodForm::on_saveButton_clicked()
+{
+    QString name = ui->nameLineEdit->text();
+    QString description = ui->descriptionTextEdit->toPlainText();
+    int polarityId = ui->polarityCombo->currentData().toInt();
+
+    QString message;
+
+    if (name.isEmpty()) {
+        message += "Name must not be empty\n";
+    }
+
+    if (polarityId == 0) {
+        message += "You must select a polarity";
+    }
+
+    if (!message.isEmpty()) {
+        QMessageBox::critical(this, "Input Error", message);
+        return;
+    }
+
+    GodModel model {m_id, name, description, polarityId};
+
+    if (model.save()) {
+        if (m_id == 0) {
+            ui->nameLineEdit->clear();
+            ui->descriptionTextEdit->clear();
+            ui->polarityCombo->clear();
+        } else {
+            QMessageBox::information(this, "Success", "God saved");
+        }
+    } else {
+        QMessageBox::critical(this, "Error", "God not saved");
+    }
 }
 

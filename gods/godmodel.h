@@ -21,6 +21,8 @@ public:
     void description(QString description);
     void polarityId(int polarityId);
 
+    bool save();
+
 private:
     int m_id;
     QString m_name;
