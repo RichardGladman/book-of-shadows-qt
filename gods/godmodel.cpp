@@ -1,6 +1,14 @@
 #include "godmodel.h"
 
-#include <QSqlQuery>
+QSqlQuery GodModel::list()
+{
+    QSqlQuery query;
+
+    query.prepare("SELECT id, name FROM gods ORDER BY name");
+    query.exec();
+
+    return query;
+}
 
 GodModel::GodModel(int id, QString name, QString description, int polarityId) : m_id {id}, m_name {name}, m_description {description}, m_polarity_id {polarityId} {}
 GodModel::GodModel(QString name, QString description, int polarityId) : GodModel {0, name, description, polarityId} {}

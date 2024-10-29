@@ -1,11 +1,14 @@
 #ifndef GODMODEL_H
 #define GODMODEL_H
 
+#include <QSqlQuery>
 #include <QString>
 
 class GodModel
 {
 public:
+    static QSqlQuery list();
+
     GodModel(int id, QString name, QString description, int polarityId);
     GodModel(QString name, QString description, int polarityId);
 

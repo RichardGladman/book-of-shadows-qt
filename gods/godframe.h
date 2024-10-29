@@ -20,6 +20,8 @@ private slots:
 
 private:
     Ui::GodFrame *ui;
+
+    void loadData();
 };
 
 #endif // GODFRAME_H
