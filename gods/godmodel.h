@@ -26,6 +26,7 @@ public:
     void polarityId(int polarityId);
 
     bool save();
+    void remove();
 
 private:
     int m_id;

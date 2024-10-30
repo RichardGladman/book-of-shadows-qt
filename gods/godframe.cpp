@@ -4,6 +4,7 @@
 #include "godform.h"
 #include "godmodel.h"
 
+#include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 
@@ -71,3 +72,21 @@ void GodFrame::loadData()
     ui->godTable->setModel(tableModel);
 
 }
+
+void GodFrame::on_deleteButton_clicked()
+{
+    QModelIndexList selectedRows = ui->godTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    GodModel model = GodModel::load(ui->godTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+
+
+    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    if (confirmed == QMessageBox::Yes) {
+        model.remove();
+        loadData();
+    }
+}
+

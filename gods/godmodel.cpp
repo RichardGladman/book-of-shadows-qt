@@ -67,6 +67,14 @@ bool GodModel::save()
     return query.exec();
 }
 
+void GodModel::remove()
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM gods WHERE id=?");
+    query.addBindValue(m_id);
+    query.exec();
+}
+
 QString GodModel::description() const
 {
     return m_description;

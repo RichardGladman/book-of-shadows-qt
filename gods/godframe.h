@@ -22,6 +22,8 @@ private slots:
 
     void on_viewButton_clicked();
 
+    void on_deleteButton_clicked();
+
 private:
     Ui::GodFrame *ui;
 
