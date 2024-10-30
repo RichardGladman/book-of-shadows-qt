@@ -12,7 +12,7 @@ class GodForm : public QDialog
     Q_OBJECT
 
 public:
-    explicit GodForm(QWidget *parent = nullptr, int id = 0);
+    explicit GodForm(QWidget *parent = nullptr, int id = 0, QString mode = "edit");
     ~GodForm();
 
 private slots:
