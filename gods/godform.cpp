@@ -7,7 +7,7 @@
 #include <QMessageBox>
 #include <QSqlQuery>
 
-GodForm::GodForm(QWidget *parent)
+GodForm::GodForm(QWidget *parent, int id)
     : QDialog(parent)
     , ui(new Ui::GodForm)
 {
@@ -17,6 +17,15 @@ GodForm::GodForm(QWidget *parent)
 
     while (query.next()) {
         ui->polarityCombo->addItem(query.value(1).toString(), query.value(0).toInt());
+    }
+
+    if (id != 0) {
+        GodModel model = GodModel::load(id);
+        ui->nameLineEdit->setText(model.name());
+        ui->descriptionTextEdit->setPlainText(model.description());
+        ui->polarityCombo->setCurrentIndex(ui->polarityCombo->findData(model.polarityId()));
+
+        m_id = id;
     }
 }
 

@@ -30,6 +30,21 @@ void GodFrame::on_addButton_clicked()
     loadData();
 }
 
+void GodFrame::on_editButton_clicked()
+{
+    QModelIndexList selectedRows = ui->godTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    GodForm *form = new GodForm(this, ui->godTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+    form->setWindowTitle("Edit God");
+    form->exec();
+
+    loadData();
+
+}
+
 void GodFrame::loadData()
 {
     QSqlQuery query = GodModel::list();
@@ -42,3 +57,4 @@ void GodFrame::loadData()
     ui->godTable->setModel(tableModel);
 
 }
+

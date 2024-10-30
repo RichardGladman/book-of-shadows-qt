@@ -18,6 +18,8 @@ public:
 private slots:
     void on_addButton_clicked();
 
+    void on_editButton_clicked();
+
 private:
     Ui::GodFrame *ui;
 

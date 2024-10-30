@@ -8,6 +8,7 @@ class GodModel
 {
 public:
     static QSqlQuery list();
+    static GodModel load(int id);
 
     GodModel(int id, QString name, QString description, int polarityId);
     GodModel(QString name, QString description, int polarityId);

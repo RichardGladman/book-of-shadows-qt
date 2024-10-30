@@ -10,6 +10,24 @@ QSqlQuery GodModel::list()
     return query;
 }
 
+GodModel GodModel::load(int id)
+{
+    GodModel model {0, "", "", 0};
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM gods WHERE id=?");
+    query.addBindValue(id);
+
+    if (query.exec() && query.next()) {
+        model.m_id = query.value(0).toInt();
+        model.m_name = query.value(1).toString();
+        model.m_description = query.value(3).toString();
+        model.m_polarity_id = query.value(2).toInt();
+    }
+
+    return model;
+}
+
 GodModel::GodModel(int id, QString name, QString description, int polarityId) : m_id {id}, m_name {name}, m_description {description}, m_polarity_id {polarityId} {}
 GodModel::GodModel(QString name, QString description, int polarityId) : GodModel {0, name, description, polarityId} {}
 
