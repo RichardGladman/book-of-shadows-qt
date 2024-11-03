@@ -5,6 +5,7 @@
 #include "settings/settingsframe.h"
 #include "colours/colourframe.h"
 #include "gods/godframe.h"
+#include "herbs/herbframe.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -83,6 +84,12 @@ void MainWindow::on_actionGods_triggered()
     setCentralWidget(godFrame);
 }
 
+void MainWindow::on_actionHerbs_triggered()
+{
+    HerbFrame *herbFrame = new HerbFrame(this);
+    setCentralWidget(herbFrame);
+}
+
 void MainWindow::createDataStore(const QString &base)
 {
     QDir dir(base + "/data");
@@ -149,3 +156,4 @@ void MainWindow::createGods()
     query.prepare(sql);
     query.exec();
 }
+

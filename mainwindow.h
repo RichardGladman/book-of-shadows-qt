@@ -26,6 +26,8 @@ private slots:
 
     void on_actionGods_triggered();
 
+    void on_actionHerbs_triggered();
+
 private:
     Ui::MainWindow *ui;
 
