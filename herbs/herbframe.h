@@ -15,6 +15,9 @@ public:
     explicit HerbFrame(QWidget *parent = nullptr);
     ~HerbFrame();
 
+private slots:
+    void on_addButton_clicked();
+
 private:
     Ui::HerbFrame *ui;
 };
