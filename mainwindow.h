@@ -37,5 +37,6 @@ private:
     void createPolarity();
     void createColours();
     void createGods();
+    void createHerbs();
 };
 #endif // MAINWINDOW_H
