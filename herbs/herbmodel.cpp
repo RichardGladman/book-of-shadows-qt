@@ -1,5 +1,15 @@
 #include "herbmodel.h"
 
+QSqlQuery HerbModel::list()
+{
+    QSqlQuery query;
+
+    query.prepare("SELECT id, name FROM herbs ORDER BY name");
+    query.exec();
+
+    return query;
+}
+
 HerbModel::HerbModel(int id, QString name, QString description) : m_id {id}, m_name {name}, m_description {description} {}
 HerbModel::HerbModel(QString name, QString description) : HerbModel {0, name, description} {}
 

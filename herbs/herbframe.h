@@ -20,6 +20,8 @@ private slots:
 
 private:
     Ui::HerbFrame *ui;
+
+    void loadData();
 };
 
 #endif // HERBFRAME_H
