@@ -10,6 +10,23 @@ QSqlQuery HerbModel::list()
     return query;
 }
 
+HerbModel HerbModel::load(int id)
+{
+    HerbModel model {0, "", ""};
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM herbs WHERE id = ?");
+    query.addBindValue(id);
+
+    if (query.exec() && query.next()) {
+        model.id(query.value(0).toInt());
+        model.name(query.value(1).toString());
+        model.description(query.value(2).toString());
+    }
+
+    return model;
+}
+
 HerbModel::HerbModel(int id, QString name, QString description) : m_id {id}, m_name {name}, m_description {description} {}
 HerbModel::HerbModel(QString name, QString description) : HerbModel {0, name, description} {}
 

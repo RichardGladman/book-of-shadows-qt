@@ -5,11 +5,19 @@
 
 #include <QMessageBox>
 
-HerbForm::HerbForm(QWidget *parent)
+HerbForm::HerbForm(QWidget *parent, int id)
     : QDialog(parent)
     , ui(new Ui::HerbForm)
 {
     ui->setupUi(this);
+
+    if (id != 0) {
+        HerbModel model = HerbModel::load(id);
+        ui->nameLineEdit->setText(model.name());
+        ui->descriptionTextEdit->setText(model.description());
+
+        m_id = id;
+    }
 }
 
 HerbForm::~HerbForm()

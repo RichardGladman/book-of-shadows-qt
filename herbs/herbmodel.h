@@ -8,6 +8,7 @@ class HerbModel
 {
 public:
     static QSqlQuery list();
+    static HerbModel load(int id);
 
     HerbModel(int id, QString name, QString description);
     HerbModel(QString name, QString description);
