@@ -12,7 +12,7 @@ class HerbForm : public QDialog
     Q_OBJECT
 
 public:
-    explicit HerbForm(QWidget *parent = nullptr, int id = 0);
+    explicit HerbForm(QWidget *parent = nullptr, int id = 0, QString mode = "edit");
     ~HerbForm();
 
 private slots:

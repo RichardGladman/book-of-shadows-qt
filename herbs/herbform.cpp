@@ -5,7 +5,7 @@
 
 #include <QMessageBox>
 
-HerbForm::HerbForm(QWidget *parent, int id)
+HerbForm::HerbForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
     , ui(new Ui::HerbForm)
 {
@@ -17,6 +17,13 @@ HerbForm::HerbForm(QWidget *parent, int id)
         ui->descriptionTextEdit->setText(model.description());
 
         m_id = id;
+    }
+
+    if (mode == "view") {
+        ui->nameLineEdit->setEnabled(false);
+        ui->descriptionTextEdit->setEnabled(false);
+        ui->saveButton->setEnabled(false);
+        ui->saveButton->setVisible(false);
     }
 }
 

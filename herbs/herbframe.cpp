@@ -43,6 +43,18 @@ void HerbFrame::on_editButton_clicked()
     loadData();
 }
 
+void HerbFrame::on_viewButton_clicked()
+{
+    QModelIndexList selectedRows = ui->HerbTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    HerbForm *form = new HerbForm(this, ui->HerbTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
+    form->setWindowTitle("View Herb");
+    form->exec();
+}
+
 void HerbFrame::loadData()
 {
     QSqlQuery query = HerbModel::list();
@@ -54,3 +66,4 @@ void HerbFrame::loadData()
 
     ui->HerbTable->setModel(tableModel);
 }
+
