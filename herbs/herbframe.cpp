@@ -4,6 +4,7 @@
 #include "herbform.h"
 #include "herbmodel.h"
 
+#include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 
@@ -55,6 +56,24 @@ void HerbFrame::on_viewButton_clicked()
     form->exec();
 }
 
+void HerbFrame::on_deleteButton_clicked()
+{
+    QModelIndexList selectedRows = ui->HerbTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    HerbModel model = HerbModel::load(ui->HerbTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+
+
+    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    if (confirmed == QMessageBox::Yes) {
+        model.remove();
+        loadData();
+    }
+
+}
+
 void HerbFrame::loadData()
 {
     QSqlQuery query = HerbModel::list();
@@ -66,4 +85,3 @@ void HerbFrame::loadData()
 
     ui->HerbTable->setModel(tableModel);
 }
-

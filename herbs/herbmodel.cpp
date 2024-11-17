@@ -50,6 +50,14 @@ bool HerbModel::save()
     return query.exec();
 }
 
+void HerbModel::remove()
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM herbs WHERE id=?");
+    query.addBindValue(m_id);
+    query.exec();
+}
+
 int HerbModel::id() const
 {
     return m_id;

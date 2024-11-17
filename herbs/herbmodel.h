@@ -22,6 +22,7 @@ public:
     void description(QString description);
 
     bool save();
+    void remove();
 
 private:
     int m_id;
