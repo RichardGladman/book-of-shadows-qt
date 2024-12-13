@@ -6,6 +6,7 @@
 #include "colours/colourframe.h"
 #include "gods/godframe.h"
 #include "herbs/herbframe.h"
+#include "planets/planetsframe.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -90,6 +91,12 @@ void MainWindow::on_actionHerbs_triggered()
     setCentralWidget(herbFrame);
 }
 
+void MainWindow::on_actionPlanets_triggered()
+{
+    PlanetsFrame *planetsFrame = new PlanetsFrame(this);
+    setCentralWidget(planetsFrame);
+}
+
 void MainWindow::createDataStore(const QString &base)
 {
     QDir dir(base + "/data");
@@ -171,4 +178,5 @@ void MainWindow::createHerbs()
     query.prepare(sql);
     query.exec();
 }
+
 

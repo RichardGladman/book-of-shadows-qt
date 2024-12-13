@@ -37,6 +37,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         herbs/herbframe.h herbs/herbframe.cpp herbs/herbframe.ui
         herbs/herbform.h herbs/herbform.cpp herbs/herbform.ui
         herbs/herbmodel.h herbs/herbmodel.cpp
+        planets/planetsframe.h planets/planetsframe.cpp planets/planetsframe.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET BookOfShadows APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

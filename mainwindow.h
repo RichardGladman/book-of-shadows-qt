@@ -28,6 +28,8 @@ private slots:
 
     void on_actionHerbs_triggered();
 
+    void on_actionPlanets_triggered();
+
 private:
     Ui::MainWindow *ui;
 
