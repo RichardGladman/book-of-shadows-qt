@@ -41,7 +41,7 @@
    </widget>
    <widget class="QMenu" name="menuMinor">
     <property name="title">
-     <string>Minor</string>
+     <string>Corresponders</string>
     </property>
     <addaction name="actionColours"/>
     <addaction name="actionGods"/>

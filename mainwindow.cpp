@@ -145,6 +145,14 @@ void MainWindow::createDatabaseTables()
         createGods();
         createHerbs();
     }
+
+    if (version_major == 0 && version_minor == 5) {
+        createPolarity();
+        createColours();
+        createGods();
+        createHerbs();
+        createPlanets();
+    }
 }
 
 void MainWindow::createPolarity()
@@ -174,6 +182,14 @@ void MainWindow::createGods()
 void MainWindow::createHerbs()
 {
     QString sql = "CREATE TABLE IF NOT EXISTS herbs (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
+    QSqlQuery query;
+    query.prepare(sql);
+    query.exec();
+}
+
+void MainWindow::createPlanets()
+{
+    QString sql = "CREATE TABLE IF NOT EXISTS planets (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
     QSqlQuery query;
     query.prepare(sql);
     query.exec();
