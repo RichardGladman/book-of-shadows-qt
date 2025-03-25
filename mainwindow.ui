@@ -43,6 +43,7 @@
     <property name="title">
      <string>Corresponders</string>
     </property>
+    <addaction name="actionAnimals"/>
     <addaction name="actionColours"/>
     <addaction name="actionGods"/>
     <addaction name="actionHerbs"/>
@@ -138,6 +139,11 @@
   <action name="actionSettinga">
    <property name="text">
     <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionAnimals">
+   <property name="text">
+    <string>Animals</string>
    </property>
   </action>
  </widget>
