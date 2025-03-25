@@ -124,35 +124,12 @@ void MainWindow::createDataStore(const QString &base)
 
 void MainWindow::createDatabaseTables()
 {
-    if (version_major == 0 && version_minor == 1) {
-        createPolarity();
-    }
-
-    if (version_major == 0 && version_minor == 2) {
-        createPolarity();
-        createColours();
-    }
-
-    if (version_major == 0 && version_minor == 3) {
-        createPolarity();
-        createColours();
-        createGods();
-    }
-
-    if (version_major == 0 && version_minor == 4) {
-        createPolarity();
-        createColours();
-        createGods();
-        createHerbs();
-    }
-
-    if (version_major == 0 && version_minor == 5) {
-        createPolarity();
-        createColours();
-        createGods();
-        createHerbs();
-        createPlanets();
-    }
+    createPolarity();
+    createColours();
+    createGods();
+    createHerbs();
+    createPlanets();
+    createAnimals();
 }
 
 void MainWindow::createPolarity()
@@ -195,4 +172,10 @@ void MainWindow::createPlanets()
     query.exec();
 }
 
-
+void MainWindow::createAnimals()
+{
+    QString sql = "CREATE TABLE IF NOT EXISTS animals (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
+    QSqlQuery query;
+    query.prepare(sql);
+    query.exec();
+}
