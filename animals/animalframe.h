@@ -26,6 +26,8 @@ private slots:
 
 private:
     Ui::AnimalFrame *ui;
+
+    void loadData();
 };
 
 #endif // ANIMALFRAME_H
