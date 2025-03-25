@@ -3,6 +3,7 @@
 
 #include "polarity/polarityframe.h"
 #include "settings/settingsframe.h"
+#include "animals/animalframe.h"
 #include "colours/colourframe.h"
 #include "gods/godframe.h"
 #include "herbs/herbframe.h"
@@ -97,6 +98,12 @@ void MainWindow::on_actionPlanets_triggered()
     setCentralWidget(planetsFrame);
 }
 
+void MainWindow::on_actionAnimals_triggered()
+{
+    AnimalFrame *animalFrame = new AnimalFrame(this);
+    setCentralWidget(animalFrame);
+}
+
 void MainWindow::createDataStore(const QString &base)
 {
     QDir dir(base + "/data");
@@ -179,3 +186,5 @@ void MainWindow::createAnimals()
     query.prepare(sql);
     query.exec();
 }
+
+
