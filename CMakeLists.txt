@@ -44,6 +44,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         animals/animalmodel.h animals/animalmodel.cpp
         animals/animalform.h animals/animalform.cpp animals/animalform.ui
         trees/treesframe.h trees/treesframe.cpp trees/treesframe.ui
+        trees/treemodel.h trees/treemodel.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
