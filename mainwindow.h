@@ -44,5 +44,6 @@ private:
     void createHerbs();
     void createPlanets();
     void createAnimals();
+    void createTrees();
 };
 #endif // MAINWINDOW_H
