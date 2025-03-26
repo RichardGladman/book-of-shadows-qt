@@ -30,7 +30,7 @@ TreeModel TreeModel::load(int id)
 TreeModel::TreeModel(int id, QString name, QString description) :
     m_id {id}, m_name {name}, m_description {description} {}
 TreeModel::TreeModel(QString name, QString description) : TreeModel(0, name, description) {}
-TreeModel::TreeModel(QString name) : TreeModel(0, name, "");
+TreeModel::TreeModel(QString name) : TreeModel(0, name, "") {};
 
 bool TreeModel::save()
 {
