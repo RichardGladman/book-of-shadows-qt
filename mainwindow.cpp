@@ -8,6 +8,7 @@
 #include "gods/godframe.h"
 #include "herbs/herbframe.h"
 #include "planets/planetsframe.h"
+#include "trees/treesframe.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -104,6 +105,12 @@ void MainWindow::on_actionAnimals_triggered()
     setCentralWidget(animalFrame);
 }
 
+void MainWindow::on_actionTrees_triggered()
+{
+    TreesFrame *treeFrame = new TreesFrame(this);
+    setCentralWidget(treeFrame);
+}
+
 void MainWindow::createDataStore(const QString &base)
 {
     QDir dir(base + "/data");
@@ -195,5 +202,4 @@ void MainWindow::createTrees()
     query.prepare(sql);
     query.exec();
 }
-
 

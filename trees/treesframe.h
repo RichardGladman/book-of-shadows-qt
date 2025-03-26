@@ -26,6 +26,8 @@ private slots:
 
 private:
     Ui::TreesFrame *ui;
+
+    void loadData();
 };
 
 #endif // TREESFRAME_H

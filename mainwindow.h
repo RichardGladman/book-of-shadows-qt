@@ -32,6 +32,8 @@ private slots:
 
     void on_actionAnimals_triggered();
 
+    void on_actionTrees_triggered();
+
 private:
     Ui::MainWindow *ui;
 
