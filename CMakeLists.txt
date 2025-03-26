@@ -45,7 +45,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         animals/animalform.h animals/animalform.cpp animals/animalform.ui
         trees/treesframe.h trees/treesframe.cpp trees/treesframe.ui
         trees/treemodel.h trees/treemodel.cpp
-
+        trees/treeform.h trees/treeform.cpp trees/treeform.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET BookOfShadows APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
