@@ -145,6 +145,7 @@ void MainWindow::createDatabaseTables()
     createPlanets();
     createAnimals();
     createTrees();
+    createZodiac();
 }
 
 void MainWindow::createPolarity()
@@ -198,6 +199,14 @@ void MainWindow::createAnimals()
 void MainWindow::createTrees()
 {
     QString sql = "CREATE TABLE IF NOT EXISTS trees (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
+    QSqlQuery query;
+    query.prepare(sql);
+    query.exec();
+}
+
+void MainWindow::createZodiac()
+{
+    QString sql = "CREATE TABLE IF NOT EXISTS zodiac (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
     QSqlQuery query;
     query.prepare(sql);
     query.exec();
