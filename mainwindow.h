@@ -34,6 +34,8 @@ private slots:
 
     void on_actionTrees_triggered();
 
+    void on_actionZodiac_triggered();
+
 private:
     Ui::MainWindow *ui;
 

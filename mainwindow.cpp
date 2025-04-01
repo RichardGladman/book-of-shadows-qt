@@ -9,6 +9,7 @@
 #include "herbs/herbframe.h"
 #include "planets/planetsframe.h"
 #include "trees/treesframe.h"
+#include "zodiac/zodiacframe.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -111,6 +112,12 @@ void MainWindow::on_actionTrees_triggered()
     setCentralWidget(treeFrame);
 }
 
+void MainWindow::on_actionZodiac_triggered()
+{
+    ZodiacFrame *frame = new ZodiacFrame(this);
+    setCentralWidget(frame);
+}
+
 void MainWindow::createDataStore(const QString &base)
 {
     QDir dir(base + "/data");
@@ -211,4 +218,5 @@ void MainWindow::createZodiac()
     query.prepare(sql);
     query.exec();
 }
+
 
