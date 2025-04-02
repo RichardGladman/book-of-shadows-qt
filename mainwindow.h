@@ -36,6 +36,10 @@ private slots:
 
     void on_actionZodiac_triggered();
 
+    void on_actionAbout_Qt_triggered();
+
+    void on_actionAbout_triggered();
+
 private:
     Ui::MainWindow *ui;
 

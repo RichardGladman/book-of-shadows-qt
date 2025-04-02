@@ -10,6 +10,7 @@
 #include "planets/planetsframe.h"
 #include "trees/treesframe.h"
 #include "zodiac/zodiacframe.h"
+#include "about/aboutdialog.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -118,6 +119,17 @@ void MainWindow::on_actionZodiac_triggered()
     setCentralWidget(frame);
 }
 
+void MainWindow::on_actionAbout_triggered()
+{
+    AboutDialog *dialog = new AboutDialog(this);
+    dialog->exec();
+}
+
+void MainWindow::on_actionAbout_Qt_triggered()
+{
+    QApplication::aboutQt();
+}
+
 void MainWindow::createDataStore(const QString &base)
 {
     QDir dir(base + "/data");
@@ -218,5 +230,4 @@ void MainWindow::createZodiac()
     query.prepare(sql);
     query.exec();
 }
-
 
