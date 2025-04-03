@@ -57,7 +57,7 @@ bool ZodiacModel::save()
 void ZodiacModel::remove()
 {
     QSqlQuery query;
-    query.prepare("DELETE FROM zodiac WHERE id=>");
+    query.prepare("DELETE FROM zodiac WHERE id=?");
     query.addBindValue(m_id);
     query.exec();
 }
