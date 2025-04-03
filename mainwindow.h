@@ -54,5 +54,6 @@ private:
     void createAnimals();
     void createTrees();
     void createZodiac();
+    void createNotes();
 };
 #endif // MAINWINDOW_H
