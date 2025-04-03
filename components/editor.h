@@ -15,6 +15,14 @@ public:
     explicit Editor(QWidget *parent = nullptr);
     ~Editor();
 
+private slots:
+
+    void on_copyButton_clicked();
+    void on_cutButton_clicked();
+    void on_pasteButton_clicked();
+    void on_undoButton_clicked();
+    void on_redoButton_clicked();
+
 private:
     Ui::Editor *ui;
 };
