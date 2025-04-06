@@ -49,9 +49,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         zodiac/zodiacmodel.h zodiac/zodiacmodel.cpp
         zodiac/zodiacform.h zodiac/zodiacform.cpp zodiac/zodiacform.ui
         zodiac/zodiacframe.h zodiac/zodiacframe.cpp zodiac/zodiacframe.ui
-        resources.qrc
         about/aboutdialog.h about/aboutdialog.cpp about/aboutdialog.ui
-        components/editor.h components/editor.cpp components/editor.ui
         notes/notemodel.h notes/notemodel.cpp
     )
 # Define target properties for Android with Qt 6 as:
