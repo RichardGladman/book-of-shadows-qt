@@ -51,6 +51,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         zodiac/zodiacframe.h zodiac/zodiacframe.cpp zodiac/zodiacframe.ui
         about/aboutdialog.h about/aboutdialog.cpp about/aboutdialog.ui
         notes/notemodel.h notes/notemodel.cpp
+        dbinitializer.h dbinitializer.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET BookOfShadows APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

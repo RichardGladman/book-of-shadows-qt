@@ -19,6 +19,8 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 
+#include "dbinitializer.h"
+
 extern int version_major;
 extern int version_minor;
 extern int version_patch;
@@ -44,7 +46,9 @@ MainWindow::MainWindow(QWidget *parent)
         return;
     }
 
-    createDataStore(baseDir);
+    DBInitializer *init = new DBInitializer();
+
+    init->createDataStore(baseDir);
 
     QSqlDatabase dbConnection = QSqlDatabase::addDatabase("QSQLITE");
     dbConnection.setDatabaseName(baseDir + "/data/bos.db");
@@ -55,7 +59,9 @@ MainWindow::MainWindow(QWidget *parent)
         qDebug() << "Database connection success";
     }
 
-    createDatabaseTables();
+    init->createDatabaseTables();
+
+    delete init;
 
 }
 
@@ -128,115 +134,5 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_actionAbout_Qt_triggered()
 {
     QApplication::aboutQt();
-}
-
-void MainWindow::createDataStore(const QString &base)
-{
-    QDir dir(base + "/data");
-    if (!dir.exists()) {
-        if (!dir.mkpath(".")) {
-            QMessageBox::critical(this, "Error", "Failed to create data directory");
-            return;
-        }
-    }
-
-    dir = QDir(base + "/images");
-    if (!dir.exists()) {
-        if (!dir.mkpath(".")) {
-            QMessageBox::critical(this, "Error", "Failed to create images directory");
-            return;
-        }
-    }
-
-    QFile file(base + "/data/bos.db");
-    if (!file.exists()) {
-        file.open(QIODevice::WriteOnly);
-        file.close();
-    }
-}
-
-void MainWindow::createDatabaseTables()
-{
-    createPolarity();
-    createColours();
-    createGods();
-    createHerbs();
-    createPlanets();
-    createAnimals();
-    createTrees();
-    createZodiac();
-    createNotes();
-}
-
-void MainWindow::createPolarity()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS polarities (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT, image VARCHAR(255));";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
-}
-
-void MainWindow::createColours()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS colours (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT);";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
-}
-
-void MainWindow::createGods()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS gods (id INTEGER PRIMARY KEY, name VARCHAR(255), polarity_id INTEGER, description TEXT);";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
-}
-
-void MainWindow::createHerbs()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS herbs (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
-}
-
-void MainWindow::createPlanets()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS planets (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
-}
-
-void MainWindow::createAnimals()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS animals (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
-}
-
-void MainWindow::createTrees()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS trees (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
-}
-
-void MainWindow::createZodiac()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS zodiac (id INTEGER PRIMARY KEY, name VARCHAR(255), description TEXT);";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
-}
-
-void MainWindow::createNotes()
-{
-    QString sql = "CREATE TABLE IF NOT EXISTS notes (id INTEGER PRIMARY KEY, title VARCHAR(255), text TEXT);";
-    QSqlQuery query;
-    query.prepare(sql);
-    query.exec();
 }
 

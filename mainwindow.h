@@ -42,18 +42,5 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
-    void createDataStore(const QString &base);
-    void createDatabaseTables();
-
-    void createPolarity();
-    void createColours();
-    void createGods();
-    void createHerbs();
-    void createPlanets();
-    void createAnimals();
-    void createTrees();
-    void createZodiac();
-    void createNotes();
 };
 #endif // MAINWINDOW_H
