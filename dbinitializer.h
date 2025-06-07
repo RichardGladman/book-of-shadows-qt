@@ -22,6 +22,7 @@ private:
     void createTrees();
     void createZodiac();
     void createNotes();
+    void createRunestones();
 };
 
 #endif // DBINITIALIZER_H

@@ -3,6 +3,7 @@
 #include <QDir>
 #include <QtDebug>
 #include <QSqlQuery>
+#include <vector>
 
 DBInitializer::DBInitializer() {}
 
@@ -42,6 +43,7 @@ void DBInitializer::createDatabaseTables()
     createTrees();
     createZodiac();
     createNotes();
+    createRunestones();
 }
 
 void DBInitializer::createPolarity()
@@ -114,4 +116,25 @@ void DBInitializer::createNotes()
     QSqlQuery query;
     query.prepare(sql);
     query.exec();
+}
+
+void DBInitializer::createRunestones()
+{
+    std::vector<QString> statements {};
+
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestones (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT);");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_animal (runestone_id INTEGER, animal_id INTEGER, PRIMARY KEY(runestone_id, animal_id));");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_colour (runestone_id INTEGER, colour_id INTEGER, PRIMARY KEY(runestone_id, colour_id));");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_god (runestone_id INTEGER, god_id INTEGER, PRIMARY KEY(runestone_id, god_id));");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_herb (runestone_id INTEGER, herb_id INTEGER, PRIMARY KEY(runestone_id, herb_id));");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_planet (runestone_id INTEGER, planet_id INTEGER, PRIMARY KEY(runestone_id, planet_id));");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_polarity (runestone_id INTEGER, polarity_id INTEGER, PRIMARY KEY(runestone_id, polarity_id));");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_tree (runestone_id INTEGER, tree_id INTEGER, PRIMARY KEY(runestone_id, tree_id));");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_zodiac (runestone_id INTEGER, zodiac_id INTEGER, PRIMARY KEY(runestone_id, zodiac_id));");
+
+    for (QString &sql: statements) {
+        QSqlQuery query;
+        query.prepare(sql);
+        query.exec();
+    }
 }
