@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>18</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -33,7 +33,7 @@
    </widget>
    <widget class="QMenu" name="menuRunestones">
     <property name="title">
-     <string>Major</string>
+     <string>Arcana</string>
     </property>
     <addaction name="actionRunestones"/>
     <addaction name="actionTarot_Cards"/>
