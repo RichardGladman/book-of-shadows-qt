@@ -11,6 +11,7 @@
 #include "trees/treesframe.h"
 #include "zodiac/zodiacframe.h"
 #include "about/aboutdialog.h"
+#include "runestones/runestoneframe.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -134,5 +135,12 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_actionAbout_Qt_triggered()
 {
     QApplication::aboutQt();
+}
+
+
+void MainWindow::on_actionRunestones_triggered()
+{
+    RunestoneFrame *frame = new RunestoneFrame(this);
+    setCentralWidget(frame);
 }
 

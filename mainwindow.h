@@ -40,6 +40,8 @@ private slots:
 
     void on_actionAbout_triggered();
 
+    void on_actionRunestones_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
