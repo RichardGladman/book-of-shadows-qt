@@ -46,7 +46,7 @@
       </sizepolicy>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="animalsTab">
       <attribute name="title">
@@ -54,7 +54,7 @@
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QListView" name="animalList"/>
+        <widget class="QListWidget" name="animalList"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -131,7 +131,7 @@
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QListView" name="colourList"/>
+        <widget class="QListWidget" name="colourList"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -208,7 +208,7 @@
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QListView" name="godList"/>
+        <widget class="QListWidget" name="godList"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -285,7 +285,7 @@
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <widget class="QListView" name="herrbList"/>
+        <widget class="QListWidget" name="herbList"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -362,7 +362,7 @@
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
-        <widget class="QListView" name="treeList"/>
+        <widget class="QListWidget" name="treeList"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_6">

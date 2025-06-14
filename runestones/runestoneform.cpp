@@ -33,3 +33,20 @@ RunestoneForm::~RunestoneForm()
 {
     delete ui;
 }
+
+QListWidget* RunestoneForm::getListView(std::string view)
+{
+    if (view == "Animal") {
+        return ui->animalList;
+    } else if (view == "Colour") {
+        return ui->colourList;
+    } else if (view == "God") {
+        return ui->godList;
+    } else if (view == "Herb") {
+       return ui->herbList;
+    } else if (view == "Tree") {
+        return ui->treeList;
+    }
+
+    return nullptr;
+}

@@ -2,6 +2,7 @@
 #define RUNESTONEFORM_H
 
 #include <QDialog>
+#include <QListWidget>
 
 namespace Ui {
 class RunestoneForm;
@@ -14,6 +15,8 @@ class RunestoneForm : public QDialog
 public:
     explicit RunestoneForm(QWidget *parent = nullptr);
     ~RunestoneForm();
+
+    QListWidget* getListView(std::string view);
 
 private:
     Ui::RunestoneForm *ui;

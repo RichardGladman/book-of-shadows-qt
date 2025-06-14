@@ -54,6 +54,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         dbinitializer.h dbinitializer.cpp
         runestones/runestoneframe.h runestones/runestoneframe.cpp runestones/runestoneframe.ui
         runestones/runestoneform.h runestones/runestoneform.cpp runestones/runestoneform.ui
+        runestones/corresponderchooser.h runestones/corresponderchooser.cpp runestones/corresponderchooser.ui
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET BookOfShadows APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
