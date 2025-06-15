@@ -27,6 +27,23 @@ TreeModel TreeModel::load(int id)
     return model;
 }
 
+TreeModel TreeModel::load(QString name)
+{
+    TreeModel model(0, "", "");
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM trees WHERE name=?");
+    query.addBindValue(name);
+
+    if (query.exec() && query.next()) {
+        model.id(query.value(0).toInt());
+        model.name(query.value(1).toString());
+        model.description(query.value(2).toString());
+    }
+
+    return model;
+}
+
 TreeModel::TreeModel(int id, QString name, QString description) :
     m_id {id}, m_name {name}, m_description {description} {}
 TreeModel::TreeModel(QString name, QString description) : TreeModel(0, name, description) {}

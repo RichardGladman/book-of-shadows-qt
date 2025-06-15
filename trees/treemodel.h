@@ -9,6 +9,7 @@ class TreeModel
 public:
     static QSqlQuery list();
     static TreeModel load(int id);
+    static TreeModel load(QString name);
 
     TreeModel(int id, QString name, QString description);
     TreeModel(QString name, QString description);
