@@ -127,3 +127,9 @@ void RunestoneForm::on_removeAnimalButton_clicked()
     delete item;
 }
 
+
+void RunestoneForm::on_closeButton_clicked()
+{
+    reject();
+}
+

@@ -39,6 +39,8 @@ private slots:
 
     void on_removeAnimalButton_clicked();
 
+    void on_closeButton_clicked();
+
 private:
     Ui::RunestoneForm *ui;
 };
