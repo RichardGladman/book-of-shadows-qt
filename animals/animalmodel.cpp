@@ -28,6 +28,23 @@ AnimalModel AnimalModel::load(int id)
     return model;
 }
 
+AnimalModel AnimalModel::load(QString name)
+{
+    AnimalModel model {0, "", ""};
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM animals WHERE name=?");
+    query.addBindValue(name);
+
+    if (query.exec() && query.next()) {
+        model.id(query.value(0).toInt());
+        model.name(query.value(1).toString());
+        model.description(query.value(2).toString());
+    }
+
+    return model;
+}
+
 AnimalModel::AnimalModel(int id, QString name, QString description) : m_id {id}, m_name {name}, m_description {description} {}
 AnimalModel::AnimalModel(QString name, QString description) : AnimalModel {0, name, description} {}
 AnimalModel::AnimalModel(QString name) : AnimalModel { 0, name, ""} {}

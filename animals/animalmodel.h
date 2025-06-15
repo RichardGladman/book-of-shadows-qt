@@ -9,6 +9,7 @@ class AnimalModel
 public:
     static QSqlQuery list();
     static AnimalModel load(int id);
+    static AnimalModel load(QString name);
 
     AnimalModel(int id, QString name, QString description);
     AnimalModel(QString name, QString description);
