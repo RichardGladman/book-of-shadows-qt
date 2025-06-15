@@ -9,6 +9,7 @@ class PlanetModel
 public:
     static QSqlQuery list();
     static PlanetModel load(int id);
+    static PlanetModel load(QString name);
 
     PlanetModel(int id, QString name, QString description);
     PlanetModel(QString name, QString description);

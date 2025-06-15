@@ -26,6 +26,23 @@ PlanetModel PlanetModel::load(int id)
     return model;
 }
 
+PlanetModel PlanetModel::load(QString name)
+{
+    PlanetModel model {0, "", ""};
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM planets WHERE name=?");
+    query.addBindValue(name);
+
+    if (query.exec() && query.next()) {
+        model.id(query.value(0).toInt());
+        model.name(query.value(1).toString());
+        model.description(query.value(2).toString());
+    }
+
+    return model;
+}
+
 PlanetModel::PlanetModel(int id, QString name, QString description) : m_id {id}, m_name {name}, m_description {description} {}
 PlanetModel::PlanetModel(QString name, QString description) : PlanetModel { 0, name, description } {}
 PlanetModel::PlanetModel(QString name) : PlanetModel { 0, name, ""} {}
