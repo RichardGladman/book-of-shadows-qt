@@ -92,3 +92,38 @@ void RunestoneForm::on_addTreeButton_clicked()
     chooser->exec();
 }
 
+
+void RunestoneForm::on_removeTreeButton_clicked()
+{
+    QListWidgetItem *item = ui->treeList->takeItem(ui->treeList->currentRow());
+    delete item;
+}
+
+
+void RunestoneForm::on_removeHerbButton_clicked()
+{
+    QListWidgetItem *item = ui->herbList->takeItem(ui->herbList->currentRow());
+    delete item;
+}
+
+
+void RunestoneForm::on_removeGodButton_clicked()
+{
+    QListWidgetItem *item = ui->godList->takeItem(ui->godList->currentRow());
+    delete item;
+}
+
+
+void RunestoneForm::on_removeColourButton_clicked()
+{
+    QListWidgetItem *item = ui->colourList->takeItem(ui->colourList->currentRow());
+    delete item;
+}
+
+
+void RunestoneForm::on_removeAnimalButton_clicked()
+{
+    QListWidgetItem *item = ui->animalList->takeItem(ui->animalList->currentRow());
+    delete item;
+}
+

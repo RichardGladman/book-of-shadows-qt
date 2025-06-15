@@ -238,7 +238,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="removeGOdButton">
+          <widget class="QPushButton" name="removeGodButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>

@@ -29,6 +29,16 @@ private slots:
 
     void on_addTreeButton_clicked();
 
+    void on_removeTreeButton_clicked();
+
+    void on_removeHerbButton_clicked();
+
+    void on_removeGodButton_clicked();
+
+    void on_removeColourButton_clicked();
+
+    void on_removeAnimalButton_clicked();
+
 private:
     Ui::RunestoneForm *ui;
 };
