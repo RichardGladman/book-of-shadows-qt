@@ -9,6 +9,7 @@ class PolarityModel
 public:
     static QSqlQuery list();
     static PolarityModel load(int id);
+    static PolarityModel load(QString name);
 
     PolarityModel(QString name, QString meaning);
     PolarityModel(QString name, QString meaning, QString image);

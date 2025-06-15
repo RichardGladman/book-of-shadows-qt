@@ -28,6 +28,22 @@ PolarityModel PolarityModel::load(int id)
     return PolarityModel {0, "", "", ""};
 }
 
+PolarityModel PolarityModel::load(QString name)
+{
+    QSqlQuery query;
+    query.prepare("SELECT * FROM polarities WHERE name=?");
+    query.addBindValue(name);
+
+    if (query.exec()) {
+        if (query.next()) {
+            PolarityModel polarity {query.value(0).toInt(), query.value(1).toString(), query.value(2).toString(), query.value(3).toString()};
+            return polarity;
+        }
+    }
+
+    return PolarityModel {0, "", "", ""};
+}
+
 PolarityModel::PolarityModel(QString name, QString meaning) : PolarityModel {0, name, meaning, ""} {
 
 }
