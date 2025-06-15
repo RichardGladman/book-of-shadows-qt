@@ -32,8 +32,13 @@ CorresponderChooser::CorresponderChooser(RunestoneForm *parent, std::string corr
         query = TreeModel::list();
     }
 
+    QListWidget *widget - parent->getListView(corresponder);
+
     while (query.next()) {
-        ui->corresponderCombo->addItem(query.value(1).toString(), query.value(0).toInt());
+        QListWidgetItem *item = new QListWidgetItem(query.value(1).toString());
+        if (widget->row(item) == -1) {
+            ui->corresponderCombo->addItem(query.value(1).toString(), query.value(0).toInt());
+        }
     }
 
     m_parent = parent;
@@ -54,7 +59,7 @@ void CorresponderChooser::on_closeButton_clicked()
 void CorresponderChooser::on_addButton_clicked()
 {
     QListWidget *listWidget = m_parent->getListView(m_corresponder);
-    QListWidgetItem item = QListWidgetItem {ui->corresponderCombo->currentData().toString(), listWidget};
-
- }
+    new QListWidgetItem {ui->corresponderCombo->currentData().toString(), listWidget};
+    ui->corresponderCombo->removeItem(ui->corresponderCombo->currentIndex());
+}
 
