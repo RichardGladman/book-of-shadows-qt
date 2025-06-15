@@ -21,6 +21,8 @@ public:
 private slots:
     void on_addAnimalButton_clicked();
 
+    void on_addColourButton_clicked();
+
 private:
     Ui::RunestoneForm *ui;
 };

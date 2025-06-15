@@ -60,3 +60,11 @@ void RunestoneForm::on_addAnimalButton_clicked()
     chooser->exec();
 }
 
+
+void RunestoneForm::on_addColourButton_clicked()
+{
+    CorresponderChooser *chooser = new CorresponderChooser(this, "Colour");
+    chooser->setWindowTitle("Choose Colour");
+    chooser->exec();
+}
+
