@@ -27,6 +27,8 @@ private slots:
 
     void on_Herb_clicked();
 
+    void on_addTreeButton_clicked();
+
 private:
     Ui::RunestoneForm *ui;
 };

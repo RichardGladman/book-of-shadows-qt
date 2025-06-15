@@ -84,3 +84,11 @@ void RunestoneForm::on_Herb_clicked()
     chooser->exec();
 }
 
+
+void RunestoneForm::on_addTreeButton_clicked()
+{
+    CorresponderChooser *chooser = new CorresponderChooser(this, "Tree");
+    chooser->setWindowTitle("Choose Trees");
+    chooser->exec();
+}
+
