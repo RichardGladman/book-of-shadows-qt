@@ -9,6 +9,7 @@ class ZodiacModel
 public:
     static QSqlQuery list();
     static ZodiacModel load(int id);
+    static ZodiacModel load(QString name);
 
     ZodiacModel(int id, QString name, QString description);
     ZodiacModel(QString name, QString description);
