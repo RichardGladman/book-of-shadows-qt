@@ -23,6 +23,10 @@ private slots:
 
     void on_addColourButton_clicked();
 
+    void on_addGodButton_clicked();
+
+    void on_Herb_clicked();
+
 private:
     Ui::RunestoneForm *ui;
 };

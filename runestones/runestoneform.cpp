@@ -64,7 +64,23 @@ void RunestoneForm::on_addAnimalButton_clicked()
 void RunestoneForm::on_addColourButton_clicked()
 {
     CorresponderChooser *chooser = new CorresponderChooser(this, "Colour");
-    chooser->setWindowTitle("Choose Colour");
+    chooser->setWindowTitle("Choose Colours");
+    chooser->exec();
+}
+
+
+void RunestoneForm::on_addGodButton_clicked()
+{
+    CorresponderChooser *chooser = new CorresponderChooser(this, "God");
+    chooser->setWindowTitle("Choose Gods");
+    chooser->exec();
+}
+
+
+void RunestoneForm::on_Herb_clicked()
+{
+    CorresponderChooser *chooser = new CorresponderChooser(this, "Herb");
+    chooser->setWindowTitle("Choose Herbs");
     chooser->exec();
 }
 
