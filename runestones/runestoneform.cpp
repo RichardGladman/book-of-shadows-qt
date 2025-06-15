@@ -7,6 +7,8 @@
 #include "../planets/planetmodel.h"
 #include "../zodiac/zodiacmodel.h"
 
+#include "corresponderchooser.h"
+
 RunestoneForm::RunestoneForm(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::RunestoneForm)
@@ -50,3 +52,11 @@ QListWidget* RunestoneForm::getListView(std::string view)
 
     return nullptr;
 }
+
+void RunestoneForm::on_addAnimalButton_clicked()
+{
+    CorresponderChooser *chooser = new CorresponderChooser(this, "Animal");
+    chooser->setWindowTitle("Choose Animals");
+    chooser->exec();
+}
+

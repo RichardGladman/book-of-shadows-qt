@@ -18,6 +18,9 @@ public:
 
     QListWidget* getListView(std::string view);
 
+private slots:
+    void on_addAnimalButton_clicked();
+
 private:
     Ui::RunestoneForm *ui;
 };
