@@ -14,6 +14,7 @@ public:
     PolarityModel(QString name, QString meaning);
     PolarityModel(QString name, QString meaning, QString image);
     PolarityModel(int id, QString name, QString meaning, QString image);
+    PolarityModel();
     PolarityModel(const PolarityModel &source);
 
     int id() const;

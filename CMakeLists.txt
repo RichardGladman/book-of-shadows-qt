@@ -55,6 +55,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         runestones/runestoneframe.h runestones/runestoneframe.cpp runestones/runestoneframe.ui
         runestones/runestoneform.h runestones/runestoneform.cpp runestones/runestoneform.ui
         runestones/corresponderchooser.h runestones/corresponderchooser.cpp runestones/corresponderchooser.ui
+        runestones/runestonemodel.h runestones/runestonemodel.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

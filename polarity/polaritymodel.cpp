@@ -56,6 +56,8 @@ PolarityModel::PolarityModel(int id, QString name, QString meaning, QString imag
 
 }
 
+PolarityModel::PolarityModel() : PolarityModel { 0, "", "", ""} {}
+
 PolarityModel::PolarityModel(const PolarityModel &source) : PolarityModel {source.m_id, source.m_name, source.m_meaning, source.m_image} {
 
 }

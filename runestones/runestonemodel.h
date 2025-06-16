@@ -1,0 +1,64 @@
+#ifndef RUNESTONEMODEL_H
+#define RUNESTONEMODEL_H
+
+#include <QString>
+
+#include "../planets/planetmodel.h"
+#include "../polarity/polaritymodel.h"
+#include "../zodiac/zodiacmodel.h"
+
+#include "../animals/animalmodel.h"
+#include "../colours/colourmodel.h"
+#include "../gods/godmodel.h"
+#include "../herbs/herbmodel.h"
+#include "../trees/treemodel.h"
+
+class RunestoneModel
+{
+public:
+    static QSqlQuery list();
+    static RunestoneModel load(int id);
+
+    RunestoneModel(int id, QString name, QString description);
+
+    int id() const;
+    QString name() const;
+    QString description() const;
+    PlanetModel planet() const;
+    PolarityModel polarity() const;
+    QList<AnimalModel> animals() const;
+    QList<ColourModel> colours() const;
+    QList<GodModel> gods() const;
+    QList<HerbModel> herbs() const;
+    QList<TreeModel> trees() const;
+
+    void id(int id);
+    void name(QString name);
+    void description(QString description);
+    void planet(int planet_id);
+    void polarity(int polarity_id);
+    void zodiac(int zodiac_id);
+
+    void animals(QList<QString> animals);
+    void colours(QList<QString> colours);
+    void gods(QList<QString> gods);
+    void herbs(QList<QString> herbs);
+    void trees(QList<QString> trees);
+
+private:
+    int m_id;
+    QString m_name;
+    QString m_description;
+
+    PlanetModel m_planet;
+    PolarityModel m_polarity;
+    ZodiacModel m_zodiac;
+
+    QList<AnimalModel> m_animals;
+    QList<ColourModel> m_colours;
+    QList<GodModel> m_gods;
+    QList<HerbModel> m_herbs;
+    QList<TreeModel> m_trees;
+};
+
+#endif // RUNESTONEMODEL_H

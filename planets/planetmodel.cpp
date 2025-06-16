@@ -46,6 +46,7 @@ PlanetModel PlanetModel::load(QString name)
 PlanetModel::PlanetModel(int id, QString name, QString description) : m_id {id}, m_name {name}, m_description {description} {}
 PlanetModel::PlanetModel(QString name, QString description) : PlanetModel { 0, name, description } {}
 PlanetModel::PlanetModel(QString name) : PlanetModel { 0, name, ""} {}
+PlanetModel::PlanetModel() : PlanetModel { 0, "", "" } {}
 
 bool PlanetModel::save()
 {

@@ -47,6 +47,7 @@ ZodiacModel ZodiacModel::load(QString name)
 ZodiacModel::ZodiacModel(int id, QString name, QString description) : m_id {id}, m_name {name}, m_description {description} {}
 ZodiacModel::ZodiacModel(QString name, QString description) : ZodiacModel {0, name, description} {}
 ZodiacModel::ZodiacModel(QString name) : ZodiacModel {0, name, ""} {}
+ZodiacModel::ZodiacModel() : ZodiacModel {0, "", ""} {}
 
 bool ZodiacModel::save()
 {

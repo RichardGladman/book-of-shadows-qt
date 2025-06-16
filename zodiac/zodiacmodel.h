@@ -14,6 +14,7 @@ public:
     ZodiacModel(int id, QString name, QString description);
     ZodiacModel(QString name, QString description);
     ZodiacModel(QString name);
+    ZodiacModel();
 
     int id() const;
     QString name() const;

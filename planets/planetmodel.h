@@ -14,6 +14,7 @@ public:
     PlanetModel(int id, QString name, QString description);
     PlanetModel(QString name, QString description);
     PlanetModel(QString name);
+    PlanetModel();
 
     int id() const;
     QString name() const;
