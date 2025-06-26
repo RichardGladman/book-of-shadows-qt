@@ -30,7 +30,45 @@ RunestoneModel RunestoneModel::load(int id)
     return model;
 }
 
-RunestoneModel::RunestoneModel(int id, QString name, QString description) {}
+RunestoneModel::RunestoneModel(int id, QString name, QString description, int planet_id, int polarity_id, int zodiac_id) :
+    m_id {id}, m_name {name}, m_description {description}
+{
+    m_planet = PlanetModel::load(planet_id);
+    m_polarity = PolarityModel::load(polarity_id);
+    m_zodiac = ZodiacModel::load(zodiac_id);
+
+    m_animals = QList<AnimalModel> {};
+    m_colours = QList<ColourModel> {};
+    m_gods = QList<GodModel> {};
+    m_herbs = QList<HerbModel> {};
+    m_trees = QList<TreeModel> {};
+}
+
+bool RunestoneModel::save()
+{
+    QString sql;
+
+    if (m_id == 0) {
+        sql = "INSERT INTO runestones(name, description, planet_id, polarity_id, zodiac_id) VALUES(?,?,?,?,?)";
+    } else {
+        sql = "UPDATE runestones SET name=?, description=?, planet_id=?, polarity_id=?, zodiac_id=? WHERE id=?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+
+    query.addBindValue(m_name);
+    query.addBindValue(m_description);
+    query.addBindValue(m_planet.id());
+    query.addBindValue(m_polarity.id());
+    query.addBindValue(m_zodiac.id());
+
+    if (m_id != 0) {
+        query.addBindValue(m_id);
+    }
+
+    return query.exec();
+}
 
 int RunestoneModel::id() const
 {

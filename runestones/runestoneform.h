@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QListWidget>
 
+#include "runestonemodel.h"
+
 namespace Ui {
 class RunestoneForm;
 }
@@ -41,8 +43,14 @@ private slots:
 
     void on_closeButton_clicked();
 
+    void on_saveButton_clicked();
+
 private:
     Ui::RunestoneForm *ui;
+
+    int m_id {};
+
+    void saveCorresponders(RunestoneModel model);
 };
 
 #endif // RUNESTONEFORM_H

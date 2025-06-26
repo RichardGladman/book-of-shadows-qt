@@ -19,7 +19,14 @@ public:
     static QSqlQuery list();
     static RunestoneModel load(int id);
 
-    RunestoneModel(int id, QString name, QString description);
+    RunestoneModel(int id, QString name, QString description, int planet_id=0, int polarity_id=0, int zodiac_id=0);
+
+    bool save();
+    void saveAnimals(QList<QString> animals);
+    void saveColours(QList<QString> colours);
+    void saveGods(QList<QString> gods);
+    void saveHerbs(QList<QString> herbs);
+    void saveTrees(QList<QString> trees);
 
     int id() const;
     QString name() const;
