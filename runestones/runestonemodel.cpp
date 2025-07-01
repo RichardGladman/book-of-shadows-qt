@@ -49,9 +49,9 @@ bool RunestoneModel::save()
     QString sql;
 
     if (m_id == 0) {
-        sql = "INSERT INTO runestones(name, description, planet_id, polarity_id, zodiac_id) VALUES(?,?,?,?,?)";
+        sql = "INSERT INTO runestones(name, meaning, planet_id, polarity_id, zodiac_id) VALUES(?,?,?,?,?)";
     } else {
-        sql = "UPDATE runestones SET name=?, description=?, planet_id=?, polarity_id=?, zodiac_id=? WHERE id=?";
+        sql = "UPDATE runestones SET name=?, meaning=?, planet_id=?, polarity_id=?, zodiac_id=? WHERE id=?";
     }
 
     QSqlQuery query;
@@ -67,7 +67,92 @@ bool RunestoneModel::save()
         query.addBindValue(m_id);
     }
 
-    return query.exec();
+    bool success = query.exec();
+    if (m_id == 0 && success) {
+        m_id = query.lastInsertId().toInt();
+    }
+
+    return success;
+}
+
+void RunestoneModel::saveAnimals(QList<QString> animals)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM runestone_animal WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("INSERT INTO runestone_animal(runestone_id, animal_id) VALUES(?,?)");
+    for (QString &name: animals) {
+        AnimalModel animal = AnimalModel::load(name);
+        query.addBindValue(m_id);
+        query.addBindValue(animal.id());
+        query.exec();
+    }
+}
+
+void RunestoneModel::saveColours(QList<QString> colours)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM runestone_colour WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("INSERT INTO runestone_colour(runestone_id, colour_id) VALUES(?,?)");
+    for (QString &name: colours) {
+        ColourModel colour = ColourModel::load(name);
+        query.addBindValue(m_id);
+        query.addBindValue(colour.id());
+        query.exec();
+    }
+}
+
+void RunestoneModel::saveGods(QList<QString> gods)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM runestone_god WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("INSERT INTO runestone_god(runestone_id, god_id) VALUES(?,?)");
+    for (QString &name: gods) {
+        GodModel god = GodModel::load(name);
+        query.addBindValue(m_id);
+        query.addBindValue(god.id());
+        query.exec();
+    }
+}
+
+void RunestoneModel::saveHerbs(QList<QString> herbs)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM runestone_herb WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("INSERT INTO runestone_herb(runestone_id, herb_id) VALUES(?,?)");
+    for (QString &name: herbs) {
+        HerbModel herb = HerbModel::load(name);
+        query.addBindValue(m_id);
+        query.addBindValue(herb.id());
+        query.exec();
+    }
+}
+
+void RunestoneModel::saveTrees(QList<QString> trees)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM runestone_tree WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("INSERT INTO runestone_tree(runestone_id, tree_id) VALUES(?,?)");
+    for (QString &name: trees) {
+        TreeModel tree = TreeModel::load(name);
+        query.addBindValue(m_id);
+        query.addBindValue(tree.id());
+        query.exec();
+    }
 }
 
 int RunestoneModel::id() const
