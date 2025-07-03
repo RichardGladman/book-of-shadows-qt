@@ -25,6 +25,9 @@ RunestoneModel RunestoneModel::load(int id)
         model.planet(query.value(2).toInt());
         model.polarity(query.value(4).toInt());
         model.zodiac(query.value(5).toInt());
+
+        QString arcana = "runestone";
+        model.animals(AnimalModel::load(arcana, model.id()));
     }
 
     return model;
@@ -242,6 +245,11 @@ void RunestoneModel::animals(QList<QString> animals)
     for (const QString &name: animals) {
         this->m_animals.append(AnimalModel::load(name));
     }
+}
+
+void RunestoneModel::animals(QList<AnimalModel> animals)
+{
+    this->m_animals = animals;
 }
 
 void RunestoneModel::colours(QList<QString> colours)

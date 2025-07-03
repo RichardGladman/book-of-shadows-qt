@@ -45,6 +45,29 @@ AnimalModel AnimalModel::load(QString name)
     return model;
 }
 
+QList<AnimalModel> AnimalModel::load(QString &arcana, int id)
+{
+    QList<AnimalModel> animals;
+    QString sql;
+
+    if (arcana == "runestone") {
+        sql = "SELECT t2.* FROM runestone_animal t1 INNER JOIN animals t2 ON t1.animal_id = t2.id WHERE t1.runestone_id = ?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+    query.addBindValue(id);
+
+    if (query.exec()) {
+        while (query.next()) {
+            AnimalModel model = AnimalModel(query.value(0).toInt(), query.value(1).toString(), query.value(2).toString());
+            animals.append(model);
+        }
+    }
+
+    return animals;
+}
+
 AnimalModel::AnimalModel(int id, QString name, QString description) : m_id {id}, m_name {name}, m_description {description} {}
 AnimalModel::AnimalModel(QString name, QString description) : AnimalModel {0, name, description} {}
 AnimalModel::AnimalModel(QString name) : AnimalModel { 0, name, ""} {}

@@ -10,6 +10,7 @@ public:
     static QSqlQuery list();
     static AnimalModel load(int id);
     static AnimalModel load(QString name);
+    static QList<AnimalModel> load(QString &arcana, int id);
 
     AnimalModel(int id, QString name, QString description);
     AnimalModel(QString name, QString description);

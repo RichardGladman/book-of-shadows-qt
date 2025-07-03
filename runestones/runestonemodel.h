@@ -47,6 +47,7 @@ public:
     void zodiac(int zodiac_id);
 
     void animals(QList<QString> animals);
+    void animals(QList<AnimalModel> animals);
     void colours(QList<QString> colours);
     void gods(QList<QString> gods);
     void herbs(QList<QString> herbs);
