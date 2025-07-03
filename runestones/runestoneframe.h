@@ -24,6 +24,8 @@ private slots:
 
 private:
     Ui::RunestoneFrame *ui;
+
+    void loadData();
 };
 
 #endif // RUNESTONEFRAME_H

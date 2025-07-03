@@ -1,6 +1,8 @@
 #include "runestoneframe.h"
 #include "ui_runestoneframe.h"
 
+#include <QSqlQueryModel>
+
 #include "runestoneform.h"
 
 RunestoneFrame::RunestoneFrame(QWidget *parent)
@@ -8,6 +10,8 @@ RunestoneFrame::RunestoneFrame(QWidget *parent)
     , ui(new Ui::RunestoneFrame)
 {
     ui->setupUi(this);
+
+    loadData();
 }
 
 RunestoneFrame::~RunestoneFrame()
@@ -33,6 +37,7 @@ void RunestoneFrame::on_addButton_clicked()
     form->setWindowTitle("Add New Runestone");
 
     form->exec();
+    loadData();
 }
 
 
@@ -47,3 +52,14 @@ void RunestoneFrame::on_deleteButton_clicked()
 
 }
 
+void RunestoneFrame::loadData()
+{
+    QSqlQuery query = RunestoneModel::list();
+    QSqlQueryModel *tableModel = new QSqlQueryModel(this);
+    tableModel->setQuery(std::move(query));
+
+    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
+    tableModel->setHeaderData(1, Qt::Horizontal, "Rune");
+
+    ui->runestoneTable->setModel(tableModel);
+}
