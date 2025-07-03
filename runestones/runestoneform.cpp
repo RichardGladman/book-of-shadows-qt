@@ -11,7 +11,7 @@
 
 #include "corresponderchooser.h"
 
-RunestoneForm::RunestoneForm(QWidget *parent)
+RunestoneForm::RunestoneForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
     , ui(new Ui::RunestoneForm)
 {

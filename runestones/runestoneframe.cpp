@@ -43,7 +43,16 @@ void RunestoneFrame::on_addButton_clicked()
 
 void RunestoneFrame::on_editButton_clicked()
 {
+    QModelIndexList selectedRows = ui->runestoneTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
 
+    RunestoneForm *form = new RunestoneForm(this, ui->runestoneTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+    form->setWindowTitle("Edit Runestone");
+    form->exec();
+
+    loadData();
 }
 
 

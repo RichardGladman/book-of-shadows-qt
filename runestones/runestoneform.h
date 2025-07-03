@@ -15,7 +15,7 @@ class RunestoneForm : public QDialog
     Q_OBJECT
 
 public:
-    explicit RunestoneForm(QWidget *parent = nullptr);
+    explicit RunestoneForm(QWidget *parent = nullptr, int id = 0, QString mode = "edit");
     ~RunestoneForm();
 
     QListWidget* getListView(std::string view);
