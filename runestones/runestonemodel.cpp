@@ -29,6 +29,7 @@ RunestoneModel RunestoneModel::load(int id)
         QString arcana = "runestone";
         model.animals(AnimalModel::load(arcana, model.id()));
         model.colours(ColourModel::load(arcana, model.id()));
+        model.gods(GodModel::load(arcana, model.id()));
     }
 
     return model;
@@ -241,45 +242,50 @@ void RunestoneModel::zodiac(int zodiac_id)
     this->m_zodiac = ZodiacModel::load(zodiac_id);
 }
 
-void RunestoneModel::animals(QList<QString> &animals)
+void RunestoneModel::animals(QList<QString> animals)
 {
     for (const QString &name: animals) {
         this->m_animals.append(AnimalModel::load(name));
     }
 }
 
-void RunestoneModel::animals(QList<AnimalModel> &animals)
+void RunestoneModel::animals(QList<AnimalModel> animals)
 {
     this->m_animals = animals;
 }
 
-void RunestoneModel::colours(QList<QString> &colours)
+void RunestoneModel::colours(QList<QString> colours)
 {
     for (const QString &name: colours) {
         this->m_colours.append(ColourModel::load(name));
     }
 }
 
-void RunestoneModel::colours(QList<ColourModel> &colours)
+void RunestoneModel::colours(QList<ColourModel> colours)
 {
     this->m_colours = colours;
 }
 
-void RunestoneModel::gods(QList<QString> &gods)
+void RunestoneModel::gods(QList<QString> gods)
 {
     for (const QString &name: gods) {
         this->m_gods.append(GodModel::load(name));
     }
 }
 
-void RunestoneModel::herbs(QList<QString> &herbs)
+void RunestoneModel::gods(QList<GodModel> gods)
+{
+    this->m_gods = gods;
+}
+
+void RunestoneModel::herbs(QList<QString> herbs)
 {
     for (const QString &name: herbs) {
         this->m_herbs.append(HerbModel::load(name));
     }
 }
 
-void RunestoneModel::trees(QList<QString> &trees)
+void RunestoneModel::trees(QList<QString> trees)
 {
     for (const QString &name: trees) {
         this->m_trees.append(TreeModel::load(name));

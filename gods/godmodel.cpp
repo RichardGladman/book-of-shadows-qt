@@ -46,6 +46,29 @@ GodModel GodModel::load(QString name)
     return model;
 }
 
+QList<GodModel> GodModel::load(QString &arcana, int id)
+{
+    QList<GodModel> gods;
+    QString sql;
+
+    if (arcana == "runestone") {
+        sql = "SELECT t2.* FROM runestone_god t1 INNER JOIN gods t2 ON t1.god_id = t2.id WHERE t1.runestone_id = ?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+    query.addBindValue(id);
+
+    if (query.exec()) {
+        while (query.next()) {
+            GodModel model = GodModel(query.value(0).toInt(), query.value(1).toString(), query.value(2).toString(), query.value(3).toInt());
+            gods.append(model);
+        }
+    }
+
+    return gods;
+}
+
 GodModel::GodModel(int id, QString name, QString description, int polarityId) : m_id {id}, m_name {name}, m_description {description}, m_polarity_id {polarityId} {}
 GodModel::GodModel(QString name, QString description, int polarityId) : GodModel {0, name, description, polarityId} {}
 

@@ -10,6 +10,7 @@ public:
     static QSqlQuery list();
     static GodModel load(int id);
     static GodModel load(QString name);
+    static QList<GodModel> load(QString &arcana, int id);
 
     GodModel(int id, QString name, QString description, int polarityId);
     GodModel(QString name, QString description, int polarityId);
