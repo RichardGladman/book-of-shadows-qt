@@ -10,6 +10,7 @@ public:
     static QSqlQuery list();
     static ColourModel load(int id);
     static ColourModel load(QString name);
+    static QList<ColourModel> load(QString &arcana, int id);
 
     ColourModel(int id, QString name, QString meaning);
     ColourModel(QString name, QString meaning);

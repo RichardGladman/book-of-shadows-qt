@@ -46,12 +46,13 @@ public:
     void polarity(int polarity_id);
     void zodiac(int zodiac_id);
 
-    void animals(QList<QString> animals);
-    void animals(QList<AnimalModel> animals);
-    void colours(QList<QString> colours);
-    void gods(QList<QString> gods);
-    void herbs(QList<QString> herbs);
-    void trees(QList<QString> trees);
+    void animals(QList<QString> &animals);
+    void animals(QList<AnimalModel> &animals);
+    void colours(QList<QString> &colours);
+    void colours(QList<ColourModel> &colours);
+    void gods(QList<QString> &gods);
+    void herbs(QList<QString> &herbs);
+    void trees(QList<QString> &trees);
 
 private:
     int m_id;
