@@ -22,7 +22,8 @@ RunestoneFrame::~RunestoneFrame()
 
 void RunestoneFrame::on_searchButton_clicked()
 {
-
+    QString term = ui->searchlineEdit->text();
+    loadData(term);
 }
 
 
@@ -81,9 +82,9 @@ void RunestoneFrame::on_deleteButton_clicked()
     }
 }
 
-void RunestoneFrame::loadData()
+void RunestoneFrame::loadData(const QString &term)
 {
-    QSqlQuery query = RunestoneModel::list();
+    QSqlQuery query = RunestoneModel::list(term);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 

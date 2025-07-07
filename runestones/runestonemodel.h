@@ -16,7 +16,7 @@
 class RunestoneModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(const QString &term = "");
     static RunestoneModel load(int id);
 
     RunestoneModel(int id, QString name, QString description, int planet_id=0, int polarity_id=0, int zodiac_id=0);

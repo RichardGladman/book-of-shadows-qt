@@ -1,10 +1,24 @@
 #include "runestonemodel.h"
 
-QSqlQuery RunestoneModel::list()
+QSqlQuery RunestoneModel::list(const QString &term)
 {
     QSqlQuery query;
 
-    query.prepare("SELECT id, name FROM runestones ORDER BY name");
+    QString sql = "SELECT id, name FROM runestones ";
+
+    if (term != "") {
+        sql += "WHERE name LIKE ? OR meaning LIKE ? ";
+    }
+
+    sql += "ORDER BY name";
+
+    query.prepare(sql);
+
+    if (term != "") {
+        query.addBindValue("%" + term + "%");
+        query.addBindValue("%" + term + "%");
+    }
+
     query.exec();
 
     return query;
