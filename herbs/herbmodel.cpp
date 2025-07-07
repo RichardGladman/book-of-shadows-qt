@@ -44,6 +44,29 @@ HerbModel HerbModel::load(QString name)
     return model;
 }
 
+QList<HerbModel> HerbModel::load(QString &arcana, int id)
+{
+    QList<HerbModel> herbs;
+    QString sql;
+
+    if (arcana == "runestone") {
+        sql = "SELECT t2.* FROM runestone_herb t1 INNER JOIN herbs t2 ON t1.herb_id = t2.id WHERE t1.runestone_id = ?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+    query.addBindValue(id);
+
+    if (query.exec()) {
+        while (query.next()) {
+            HerbModel model = HerbModel(query.value(0).toInt(), query.value(1).toString(), query.value(2).toString());
+            herbs.append(model);
+        }
+    }
+
+    return herbs;
+}
+
 HerbModel::HerbModel(int id, QString name, QString description) : m_id {id}, m_name {name}, m_description {description} {}
 HerbModel::HerbModel(QString name, QString description) : HerbModel {0, name, description} {}
 

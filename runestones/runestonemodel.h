@@ -53,6 +53,7 @@ public:
     void gods(QList<QString> gods);
     void gods(QList<GodModel> gods);
     void herbs(QList<QString> herbs);
+    void herbs(QList<HerbModel> herbs);
     void trees(QList<QString> trees);
 
 private:

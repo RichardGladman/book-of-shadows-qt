@@ -10,6 +10,7 @@ public:
     static QSqlQuery list();
     static HerbModel load(int id);
     static HerbModel load(QString name);
+    static QList<HerbModel> load(QString &arcana, int id);
 
     HerbModel(int id, QString name, QString description);
     HerbModel(QString name, QString description);
