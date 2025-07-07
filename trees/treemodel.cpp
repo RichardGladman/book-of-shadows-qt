@@ -44,6 +44,29 @@ TreeModel TreeModel::load(QString name)
     return model;
 }
 
+QList<TreeModel> TreeModel::load(QString &arcana, int id)
+{
+    QList<TreeModel> trees;
+    QString sql;
+
+    if (arcana == "runestone") {
+        sql = "SELECT t2.* FROM runestone_tree t1 INNER JOIN trees t2 ON t1.tree_id = t2.id WHERE t1.runestone_id = ?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+    query.addBindValue(id);
+
+    if (query.exec()) {
+        while (query.next()) {
+            TreeModel model = TreeModel(query.value(0).toInt(), query.value(1).toString(), query.value(2).toString());
+            trees.append(model);
+        }
+    }
+
+    return trees;
+}
+
 TreeModel::TreeModel(int id, QString name, QString description) :
     m_id {id}, m_name {name}, m_description {description} {}
 TreeModel::TreeModel(QString name, QString description) : TreeModel(0, name, description) {}

@@ -31,6 +31,7 @@ RunestoneModel RunestoneModel::load(int id)
         model.colours(ColourModel::load(arcana, model.id()));
         model.gods(GodModel::load(arcana, model.id()));
         model.herbs(HerbModel::load(arcana, model.id()));
+        model.trees(TreeModel::load(arcana, model.id()));
     }
 
     return model;
@@ -296,4 +297,9 @@ void RunestoneModel::trees(QList<QString> trees)
     for (const QString &name: trees) {
         this->m_trees.append(TreeModel::load(name));
     }
+}
+
+void RunestoneModel::trees(QList<TreeModel> trees)
+{
+    this->m_trees = trees;
 }

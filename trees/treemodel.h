@@ -10,6 +10,7 @@ public:
     static QSqlQuery list();
     static TreeModel load(int id);
     static TreeModel load(QString name);
+    static QList<TreeModel> load(QString &arcana, int id);
 
     TreeModel(int id, QString name, QString description);
     TreeModel(QString name, QString description);

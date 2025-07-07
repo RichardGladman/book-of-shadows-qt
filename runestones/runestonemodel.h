@@ -55,6 +55,7 @@ public:
     void herbs(QList<QString> herbs);
     void herbs(QList<HerbModel> herbs);
     void trees(QList<QString> trees);
+    void trees(QList<TreeModel> trees);
 
 private:
     int m_id;
