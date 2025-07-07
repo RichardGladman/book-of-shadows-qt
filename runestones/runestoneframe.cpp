@@ -28,7 +28,14 @@ void RunestoneFrame::on_searchButton_clicked()
 
 void RunestoneFrame::on_viewButton_clicked()
 {
+    QModelIndexList selectedRows = ui->runestoneTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
 
+    RunestoneForm *form = new RunestoneForm(this, ui->runestoneTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
+    form->setWindowTitle("View Runestone");
+    form->exec();
 }
 
 

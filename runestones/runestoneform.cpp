@@ -69,6 +69,11 @@ RunestoneForm::RunestoneForm(QWidget *parent, int id, QString mode)
             ui->treeList->addItem(tree.name());
         }
     }
+
+    if (mode == "view") {
+        ui->saveButton->setDisabled(true);
+        ui->saveButton->setVisible(false);
+    }
 }
 
 RunestoneForm::~RunestoneForm()
