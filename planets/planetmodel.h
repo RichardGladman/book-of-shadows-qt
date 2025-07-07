@@ -28,7 +28,7 @@ public:
     void remove();
 
 private:
-    int m_id {};
+    int m_id;
     QString m_name;
     QString m_description;
 };

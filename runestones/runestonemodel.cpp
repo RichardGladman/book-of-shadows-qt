@@ -22,7 +22,7 @@ RunestoneModel RunestoneModel::load(int id)
         model.id(query.value(0).toInt());
         model.name(query.value(1).toString());
         model.description(query.value(2).toString());
-        model.planet(query.value(2).toInt());
+        model.planet(query.value(3).toInt());
         model.polarity(query.value(4).toInt());
         model.zodiac(query.value(5).toInt());
 
@@ -169,7 +169,7 @@ int RunestoneModel::id() const
 
 QString RunestoneModel::name() const
 {
-    return this->name();
+    return this->m_name;
 }
 
 QString RunestoneModel::description() const
@@ -179,12 +179,17 @@ QString RunestoneModel::description() const
 
 PlanetModel RunestoneModel::planet() const
 {
-    return this->planet();
+    return this->m_planet;
 }
 
 PolarityModel RunestoneModel::polarity() const
 {
     return this->m_polarity;
+}
+
+ZodiacModel RunestoneModel::zodiac() const
+{
+    return this->m_zodiac;
 }
 
 QList<AnimalModel> RunestoneModel::animals() const

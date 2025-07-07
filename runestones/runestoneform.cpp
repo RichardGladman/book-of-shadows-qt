@@ -17,6 +17,8 @@ RunestoneForm::RunestoneForm(QWidget *parent, int id, QString mode)
 {
     ui->setupUi(this);
 
+    m_id = id;
+
     QSqlQuery query = PolarityModel::list();
     while (query.next()) {
         ui->polarityCombo->addItem(query.value(1).toString(), query.value(0).toInt());
@@ -30,6 +32,42 @@ RunestoneForm::RunestoneForm(QWidget *parent, int id, QString mode)
     query = ZodiacModel::list();
     while (query.next()) {
         ui->zodiacCombo->addItem(query.value(1).toString(), query.value(0).toInt());
+    }
+
+    if (id != 0) {
+        RunestoneModel model = RunestoneModel::load(id);
+
+        ui->nameTextField->setText(model.name());
+        ui->descriptionTextEdit->setPlainText(model.description());
+
+        int index = ui->polarityCombo->findData(model.polarity().id());
+        ui->polarityCombo->setCurrentIndex(index);
+
+        index = ui->planetCombo->findData(model.planet().id());
+        ui->planetCombo->setCurrentIndex(index);
+
+        index = ui->zodiacCombo->findData(model.zodiac().id());
+        ui->zodiacCombo->setCurrentIndex(index);
+
+        for (AnimalModel &animal: model.animals()) {
+            ui->animalList->addItem(animal.name());
+        }
+
+        for (ColourModel &colour: model.colours()) {
+            ui->colourList->addItem(colour.name());
+        }
+
+        for (GodModel &god: model.gods()) {
+            ui->godList->addItem(god.name());
+        }
+
+        for (HerbModel &herb: model.herbs()) {
+            ui->herbList->addItem(herb.name());
+        }
+
+        for (TreeModel &tree: model.trees()) {
+            ui->treeList->addItem(tree.name());
+        }
     }
 }
 

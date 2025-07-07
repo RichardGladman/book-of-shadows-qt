@@ -33,6 +33,7 @@ public:
     QString description() const;
     PlanetModel planet() const;
     PolarityModel polarity() const;
+    ZodiacModel zodiac() const;
     QList<AnimalModel> animals() const;
     QList<ColourModel> colours() const;
     QList<GodModel> gods() const;
