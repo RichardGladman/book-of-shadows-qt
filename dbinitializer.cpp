@@ -125,11 +125,16 @@ void DBInitializer::createRunestones()
     statements.push_back(
         "CREATE TABLE IF NOT EXISTS runestones (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT, "
         "planet_id INTEGER, polarity_id INTEGER, zodiac_id INTEGER);");
-    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_animal (runestone_id INTEGER, animal_id INTEGER, PRIMARY KEY(runestone_id, animal_id));");
-    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_colour (runestone_id INTEGER, colour_id INTEGER, PRIMARY KEY(runestone_id, colour_id));");
-    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_god (runestone_id INTEGER, god_id INTEGER, PRIMARY KEY(runestone_id, god_id));");
-    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_herb (runestone_id INTEGER, herb_id INTEGER, PRIMARY KEY(runestone_id, herb_id));");
-    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_tree (runestone_id INTEGER, tree_id INTEGER, PRIMARY KEY(runestone_id, tree_id));");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_animal (runestone_id INTEGER, animal_id INTEGER, PRIMARY KEY(runestone_id, animal_id),"
+                         " FOREIGN KEY (runestone_id) REFERENCES runestones(id))");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_colour (runestone_id INTEGER, colour_id INTEGER, PRIMARY KEY(runestone_id, colour_id),"
+                         " FOREIGN KEY (runestone_id) REFERENCES runestones(id))");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_god (runestone_id INTEGER, god_id INTEGER, PRIMARY KEY(runestone_id, god_id),"
+                         " FOREIGN KEY (runestone_id) REFERENCES runestones(id))");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_herb (runestone_id INTEGER, herb_id INTEGER, PRIMARY KEY(runestone_id, herb_id),"
+                         " FOREIGN KEY (runestone_id) REFERENCES runestones(id))");
+    statements.push_back("CREATE TABLE IF NOT EXISTS runestone_tree (runestone_id INTEGER, tree_id INTEGER, PRIMARY KEY(runestone_id, tree_id),"
+                         " FOREIGN KEY (runestone_id) REFERENCES runestones(id))");
 
     for (QString &sql: statements) {
         QSqlQuery query;

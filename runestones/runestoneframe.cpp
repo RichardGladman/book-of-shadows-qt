@@ -1,6 +1,7 @@
 #include "runestoneframe.h"
 #include "ui_runestoneframe.h"
 
+#include <QMessageBox>
 #include <QSqlQueryModel>
 
 #include "runestoneform.h"
@@ -58,7 +59,19 @@ void RunestoneFrame::on_editButton_clicked()
 
 void RunestoneFrame::on_deleteButton_clicked()
 {
+    QModelIndexList selectedRows = ui->runestoneTable->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
 
+    RunestoneModel model = RunestoneModel::load(ui->runestoneTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+
+
+    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    if (confirmed == QMessageBox::Yes) {
+        model.remove();
+        loadData();
+    }
 }
 
 void RunestoneFrame::loadData()

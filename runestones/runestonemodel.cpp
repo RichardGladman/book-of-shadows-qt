@@ -162,6 +162,35 @@ void RunestoneModel::saveTrees(QList<QString> trees)
     }
 }
 
+void RunestoneModel::remove()
+{
+    QSqlQuery query;
+
+    query.prepare("DELETE FROM runestone_animal WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("DELETE FROM runestone_colour WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("DELETE FROM runestone_god WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("DELETE FROM runestone_herb WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("DELETE FROM runestone_tree WHERE runestone_id=?");
+    query.addBindValue(m_id);
+    query.exec();
+
+    query.prepare("DELETE FROM runestones WHERE id=?");
+    query.addBindValue(m_id);
+    query.exec();
+}
+
 int RunestoneModel::id() const
 {
     return this->m_id;

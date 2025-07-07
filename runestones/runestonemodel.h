@@ -27,6 +27,7 @@ public:
     void saveGods(QList<QString> gods);
     void saveHerbs(QList<QString> herbs);
     void saveTrees(QList<QString> trees);
+    void remove();
 
     int id() const;
     QString name() const;
