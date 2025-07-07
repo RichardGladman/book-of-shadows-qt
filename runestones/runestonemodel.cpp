@@ -44,12 +44,11 @@ RunestoneModel::RunestoneModel(int id, QString name, QString description, int pl
     m_polarity = PolarityModel::load(polarity_id);
     m_zodiac = ZodiacModel::load(zodiac_id);
 
-    QString arcana = "runestone";
-    m_animals = AnimalModel::load(arcana, m_id);
-    m_colours = ColourModel::load(arcana, m_id);
-    m_gods = GodModel::load(arcana, m_id);
-    m_herbs = HerbModel::load(arcana, m_id);
-    m_trees = TreeModel::load(arcana, m_id);
+    m_animals = QList<AnimalModel> {};
+    m_colours = QList<ColourModel> {};
+    m_gods = QList<GodModel> {};
+    m_herbs = QList<HerbModel> {};
+    m_trees = QList<TreeModel> {};
 }
 
 bool RunestoneModel::save()
