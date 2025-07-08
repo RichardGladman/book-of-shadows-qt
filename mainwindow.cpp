@@ -11,6 +11,7 @@
 #include "trees/treesframe.h"
 #include "zodiac/zodiacframe.h"
 #include "about/aboutdialog.h"
+#include "notes/notesframe.h"
 #include "runestones/runestoneframe.h"
 #include "tarot/tarotframe.h"
 #include "crystals/crystalframe.h"
@@ -156,6 +157,13 @@ void MainWindow::on_actionCrystals_triggered()
 void MainWindow::on_actionTarot_Cards_triggered()
 {
     TarotFrame *frame = new TarotFrame(this);
+    setCentralWidget(frame);
+}
+
+
+void MainWindow::on_actionNotes_triggered()
+{
+    NotesFrame *frame = new NotesFrame(this);
     setCentralWidget(frame);
 }
 

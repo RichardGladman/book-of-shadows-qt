@@ -60,6 +60,7 @@
     <property name="title">
      <string>Notes</string>
     </property>
+    <addaction name="actionNotes"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -148,6 +149,11 @@
   <action name="actionAbout_Qt">
    <property name="text">
     <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionNotes">
+   <property name="text">
+    <string>Notes</string>
    </property>
   </action>
  </widget>

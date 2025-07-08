@@ -64,6 +64,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         crystals/crystalcorresponderchooser.h crystals/crystalcorresponderchooser.cpp crystals/crystalcorresponderchooser.ui
         crystals/crystalform.h crystals/crystalform.cpp crystals/crystalform.ui
         crystals/crystalframe.h crystals/crystalframe.cpp crystals/crystalframe.ui
+        notes/noteform.h notes/noteform.cpp notes/noteform.ui
+        notes/notesframe.h notes/notesframe.cpp notes/notesframe.ui
 
 
     )

@@ -16,6 +16,10 @@ QSqlQuery NoteModel::list(QString searchFor) {
 
     QSqlQuery query;
     query.prepare(sql);
+    if (searchFor != nullptr) {
+        query.addBindValue("%" + searchFor + "%");
+        query.addBindValue("%" + searchFor + "%");
+    }
     query.exec();
 
     return query;

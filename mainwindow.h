@@ -46,6 +46,8 @@ private slots:
 
     void on_actionCrystals_triggered();
 
+    void on_actionNotes_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
