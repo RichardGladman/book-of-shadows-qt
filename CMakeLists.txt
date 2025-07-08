@@ -60,6 +60,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         tarot/tarotcorresponderchooser.h tarot/tarotcorresponderchooser.cpp tarot/tarotcorresponderchooser.ui
         tarot/tarotform.h tarot/tarotform.cpp tarot/tarotform.ui
         tarot/tarotframe.h tarot/tarotframe.cpp tarot/tarotframe.ui
+        crystals/crystalmodel.h crystals/crystalmodel.cpp
 
 
     )
