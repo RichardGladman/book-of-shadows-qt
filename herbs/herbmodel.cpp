@@ -51,6 +51,8 @@ QList<HerbModel> HerbModel::load(QString &arcana, int id)
 
     if (arcana == "runestone") {
         sql = "SELECT t2.* FROM runestone_herb t1 INNER JOIN herbs t2 ON t1.herb_id = t2.id WHERE t1.runestone_id = ?";
+    } else if (arcana == "tarot") {
+        sql = "SELECT t2.* FROM tarot_herb t1 INNER JOIN herbs t2 ON t1.herb_id = t2.id WHERE t1.tarot_id = ?";
     }
 
     QSqlQuery query;
