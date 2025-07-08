@@ -57,6 +57,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         runestones/runestonecorresponderchooser.h runestones/runestonecorresponderchooser.cpp runestones/runestonecorresponderchooser.ui
         runestones/runestonemodel.h runestones/runestonemodel.cpp
         tarot/tarotmodel.h tarot/tarotmodel.cpp
+        tarot/tarotcorresponderchooser.h tarot/tarotcorresponderchooser.cpp tarot/tarotcorresponderchooser.ui
+        tarot/tarotform.h tarot/tarotform.cpp tarot/tarotform.ui
 
 
     )
