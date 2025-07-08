@@ -44,6 +44,7 @@ void DBInitializer::createDatabaseTables()
     createZodiac();
     createNotes();
     createRunestones();
+    createTarot();
 }
 
 void DBInitializer::createPolarity()
@@ -135,6 +136,31 @@ void DBInitializer::createRunestones()
                          " FOREIGN KEY (runestone_id) REFERENCES runestones(id))");
     statements.push_back("CREATE TABLE IF NOT EXISTS runestone_tree (runestone_id INTEGER, tree_id INTEGER, PRIMARY KEY(runestone_id, tree_id),"
                          " FOREIGN KEY (runestone_id) REFERENCES runestones(id))");
+
+    for (QString &sql: statements) {
+        QSqlQuery query;
+        query.prepare(sql);
+        query.exec();
+    }
+}
+
+void DBInitializer::createTarot()
+{
+    std::vector<QString> statements {};
+
+    statements.push_back(
+        "CREATE TABLE IF NOT EXISTS tarot (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT, "
+        "planet_id INTEGER, polarity_id INTEGER, zodiac_id INTEGER);");
+    statements.push_back("CREATE TABLE IF NOT EXISTS tarot_animal (tarot_id INTEGER, animal_id INTEGER, PRIMARY KEY(tarot_id, animal_id),"
+                         " FOREIGN KEY (tarot_id) REFERENCES tarot(id))");
+    statements.push_back("CREATE TABLE IF NOT EXISTS tarot_colour (tarot_id INTEGER, colour_id INTEGER, PRIMARY KEY(tarot_id, colour_id),"
+                         " FOREIGN KEY (tarot_id) REFERENCES tarot(id))");
+    statements.push_back("CREATE TABLE IF NOT EXISTS tarot_god (tarot_id INTEGER, god_id INTEGER, PRIMARY KEY(tarot_id, god_id),"
+                         " FOREIGN KEY (tarot_id) REFERENCES tarot(id))");
+    statements.push_back("CREATE TABLE IF NOT EXISTS tarot_herb (tarot_id INTEGER, herb_id INTEGER, PRIMARY KEY(tarot_id, herb_id),"
+                         " FOREIGN KEY (tarot_id) REFERENCES tarot(id))");
+    statements.push_back("CREATE TABLE IF NOT EXISTS tarot_tree (tarot_id INTEGER, tree_id INTEGER, PRIMARY KEY(tarot_id, tree_id),"
+                         " FOREIGN KEY (tarot_id) REFERENCES tarot(id))");
 
     for (QString &sql: statements) {
         QSqlQuery query;

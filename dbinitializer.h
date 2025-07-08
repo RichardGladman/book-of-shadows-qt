@@ -23,6 +23,7 @@ private:
     void createZodiac();
     void createNotes();
     void createRunestones();
+    void createTarot();
 };
 
 #endif // DBINITIALIZER_H
