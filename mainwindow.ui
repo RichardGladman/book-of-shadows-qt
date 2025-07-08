@@ -56,16 +56,6 @@
     <addaction name="actionTrees"/>
     <addaction name="actionZodiac"/>
    </widget>
-   <widget class="QMenu" name="menuSpell_Book">
-    <property name="title">
-     <string>Spell Book</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuNotes">
-    <property name="title">
-     <string>Readings</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuNotes_2">
     <property name="title">
      <string>Notes</string>
@@ -81,8 +71,6 @@
    <addaction name="menuFile"/>
    <addaction name="menuRunestones"/>
    <addaction name="menuMinor"/>
-   <addaction name="menuSpell_Book"/>
-   <addaction name="menuNotes"/>
    <addaction name="menuNotes_2"/>
    <addaction name="menuHelp"/>
   </widget>

@@ -12,6 +12,7 @@
 #include "zodiac/zodiacframe.h"
 #include "about/aboutdialog.h"
 #include "runestones/runestoneframe.h"
+#include "tarot/tarotframe.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -141,6 +142,13 @@ void MainWindow::on_actionAbout_Qt_triggered()
 void MainWindow::on_actionRunestones_triggered()
 {
     RunestoneFrame *frame = new RunestoneFrame(this);
+    setCentralWidget(frame);
+}
+
+
+void MainWindow::on_actionTarot_Cards_triggered()
+{
+    TarotFrame *frame = new TarotFrame(this);
     setCentralWidget(frame);
 }
 

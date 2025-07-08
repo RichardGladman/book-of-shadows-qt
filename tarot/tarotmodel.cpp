@@ -200,7 +200,7 @@ void TarotModel::remove()
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("DELETE FROM tarots WHERE id=?");
+    query.prepare("DELETE FROM tarot WHERE id=?");
     query.addBindValue(m_id);
     query.exec();
 }

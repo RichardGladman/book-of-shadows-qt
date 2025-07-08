@@ -42,6 +42,8 @@ private slots:
 
     void on_actionRunestones_triggered();
 
+    void on_actionTarot_Cards_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
