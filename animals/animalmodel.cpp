@@ -52,6 +52,8 @@ QList<AnimalModel> AnimalModel::load(QString &arcana, int id)
 
     if (arcana == "runestone") {
         sql = "SELECT t2.* FROM runestone_animal t1 INNER JOIN animals t2 ON t1.animal_id = t2.id WHERE t1.runestone_id = ?";
+    } else if (arcana == "tarot") {
+        sql = "SELECT t2.* FROM tarot_animal t1 INNER JOIN animals t2 ON t1.animal_id = t2.id WHERE t1.tarot_id = ?";
     }
 
     QSqlQuery query;
