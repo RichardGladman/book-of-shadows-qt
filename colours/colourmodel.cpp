@@ -51,6 +51,8 @@ QList<ColourModel> ColourModel::load(QString &arcana, int id)
 
     if (arcana == "runestone") {
         sql = "SELECT t2.* FROM runestone_colour t1 INNER JOIN colours t2 ON t1.colour_id = t2.id WHERE t1.runestone_id = ?";
+    } else if (arcana == "tarot") {
+        sql = "SELECT t2.* FROM tarot_colour t1 INNER JOIN colours t2 ON t1.colour_id = t2.id WHERE t1.tarot_id = ?";
     }
 
     QSqlQuery query;
