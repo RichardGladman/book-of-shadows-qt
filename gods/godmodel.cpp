@@ -53,6 +53,8 @@ QList<GodModel> GodModel::load(QString &arcana, int id)
 
     if (arcana == "runestone") {
         sql = "SELECT t2.* FROM runestone_god t1 INNER JOIN gods t2 ON t1.god_id = t2.id WHERE t1.runestone_id = ?";
+    } else if (arcana == "tarot") {
+        sql = "SELECT t2.* FROM tarot_god t1 INNER JOIN gods t2 ON t1.god_id = t2.id WHERE t1.tarot_id = ?";
     }
 
     QSqlQuery query;
