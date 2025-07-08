@@ -24,6 +24,7 @@ private:
     void createNotes();
     void createRunestones();
     void createTarot();
+    void createCrystals();
 };
 
 #endif // DBINITIALIZER_H

@@ -44,6 +44,8 @@ private slots:
 
     void on_actionTarot_Cards_triggered();
 
+    void on_actionCrystals_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

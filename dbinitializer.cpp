@@ -45,6 +45,7 @@ void DBInitializer::createDatabaseTables()
     createNotes();
     createRunestones();
     createTarot();
+    createCrystals();
 }
 
 void DBInitializer::createPolarity()
@@ -161,6 +162,31 @@ void DBInitializer::createTarot()
                          " FOREIGN KEY (tarot_id) REFERENCES tarot(id))");
     statements.push_back("CREATE TABLE IF NOT EXISTS tarot_tree (tarot_id INTEGER, tree_id INTEGER, PRIMARY KEY(tarot_id, tree_id),"
                          " FOREIGN KEY (tarot_id) REFERENCES tarot(id))");
+
+    for (QString &sql: statements) {
+        QSqlQuery query;
+        query.prepare(sql);
+        query.exec();
+    }
+}
+
+void DBInitializer::createCrystals()
+{
+    std::vector<QString> statements {};
+
+        statements.push_back(
+            "CREATE TABLE IF NOT EXISTS crystals (id INTEGER PRIMARY KEY, name VARCHAR(255), meaning TEXT, "
+            "planet_id INTEGER, polarity_id INTEGER, zodiac_id INTEGER);");
+        statements.push_back("CREATE TABLE IF NOT EXISTS crystal_animal (crystal_id INTEGER, animal_id INTEGER, PRIMARY KEY(crystal_id, animal_id),"
+                             " FOREIGN KEY (crystal_id) REFERENCES crystal(id))");
+        statements.push_back("CREATE TABLE IF NOT EXISTS crystal_colour (crystal_id INTEGER, colour_id INTEGER, PRIMARY KEY(crystal_id, colour_id),"
+                             " FOREIGN KEY (crystal_id) REFERENCES crystal(id))");
+        statements.push_back("CREATE TABLE IF NOT EXISTS crystal_god (crystal_id INTEGER, god_id INTEGER, PRIMARY KEY(crystal_id, god_id),"
+                             " FOREIGN KEY (crystal_id) REFERENCES crystal(id))");
+        statements.push_back("CREATE TABLE IF NOT EXISTS crystal_herb (crystal_id INTEGER, herb_id INTEGER, PRIMARY KEY(crystal_id, herb_id),"
+                             " FOREIGN KEY (crystal_id) REFERENCES crystal(id))");
+        statements.push_back("CREATE TABLE IF NOT EXISTS crystal_tree (crystal_id INTEGER, tree_id INTEGER, PRIMARY KEY(crystal_id, tree_id),"
+                             " FOREIGN KEY (crystal_id) REFERENCES crystal(id))");
 
     for (QString &sql: statements) {
         QSqlQuery query;

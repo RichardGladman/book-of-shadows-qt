@@ -4,7 +4,7 @@ QSqlQuery CrystalModel::list(const QString &term)
 {
     QSqlQuery query;
 
-    QString sql = "SELECT id, name FROM Crystals ";
+    QString sql = "SELECT id, name FROM crystals ";
 
     if (term != "") {
         sql += "WHERE name LIKE ? OR meaning LIKE ? ";
@@ -29,7 +29,7 @@ CrystalModel CrystalModel::load(int id)
     CrystalModel model(0, "", "");
 
     QSqlQuery query;
-    query.prepare("SELECT * FROM Crystals WHERE id=?");
+    query.prepare("SELECT * FROM crystals WHERE id=?");
     query.addBindValue(id);
 
     if (query.exec() && query.next()) {
@@ -40,7 +40,7 @@ CrystalModel CrystalModel::load(int id)
         model.polarity(query.value(4).toInt());
         model.zodiac(query.value(5).toInt());
 
-        QString arcana = "Crystal";
+        QString arcana = "crystal";
         model.animals(AnimalModel::load(arcana, model.id()));
         model.colours(ColourModel::load(arcana, model.id()));
         model.gods(GodModel::load(arcana, model.id()));
@@ -70,9 +70,9 @@ bool CrystalModel::save()
     QString sql;
 
     if (m_id == 0) {
-        sql = "INSERT INTO Crystals(name, meaning, planet_id, polarity_id, zodiac_id) VALUES(?,?,?,?,?)";
+        sql = "INSERT INTO crystals(name, meaning, planet_id, polarity_id, zodiac_id) VALUES(?,?,?,?,?)";
     } else {
-        sql = "UPDATE Crystals SET name=?, meaning=?, planet_id=?, polarity_id=?, zodiac_id=? WHERE id=?";
+        sql = "UPDATE crystals SET name=?, meaning=?, planet_id=?, polarity_id=?, zodiac_id=? WHERE id=?";
     }
 
     QSqlQuery query;
@@ -99,11 +99,11 @@ bool CrystalModel::save()
 void CrystalModel::saveAnimals(QList<QString> animals)
 {
     QSqlQuery query;
-    query.prepare("DELETE FROM Crystal_animal WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_animal WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("INSERT INTO Crystal_animal(Crystal_id, animal_id) VALUES(?,?)");
+    query.prepare("INSERT INTO crystal_animal(Crystal_id, animal_id) VALUES(?,?)");
     for (QString &name: animals) {
         AnimalModel animal = AnimalModel::load(name);
         query.addBindValue(m_id);
@@ -115,11 +115,11 @@ void CrystalModel::saveAnimals(QList<QString> animals)
 void CrystalModel::saveColours(QList<QString> colours)
 {
     QSqlQuery query;
-    query.prepare("DELETE FROM Crystal_colour WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_colour WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("INSERT INTO Crystal_colour(Crystal_id, colour_id) VALUES(?,?)");
+    query.prepare("INSERT INTO crystal_colour(Crystal_id, colour_id) VALUES(?,?)");
     for (QString &name: colours) {
         ColourModel colour = ColourModel::load(name);
         query.addBindValue(m_id);
@@ -131,11 +131,11 @@ void CrystalModel::saveColours(QList<QString> colours)
 void CrystalModel::saveGods(QList<QString> gods)
 {
     QSqlQuery query;
-    query.prepare("DELETE FROM Crystal_god WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_god WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("INSERT INTO Crystal_god(Crystal_id, god_id) VALUES(?,?)");
+    query.prepare("INSERT INTO crystal_god(Crystal_id, god_id) VALUES(?,?)");
     for (QString &name: gods) {
         GodModel god = GodModel::load(name);
         query.addBindValue(m_id);
@@ -147,11 +147,11 @@ void CrystalModel::saveGods(QList<QString> gods)
 void CrystalModel::saveHerbs(QList<QString> herbs)
 {
     QSqlQuery query;
-    query.prepare("DELETE FROM Crystal_herb WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_herb WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("INSERT INTO Crystal_herb(Crystal_id, herb_id) VALUES(?,?)");
+    query.prepare("INSERT INTO crystal_herb(Crystal_id, herb_id) VALUES(?,?)");
     for (QString &name: herbs) {
         HerbModel herb = HerbModel::load(name);
         query.addBindValue(m_id);
@@ -163,11 +163,11 @@ void CrystalModel::saveHerbs(QList<QString> herbs)
 void CrystalModel::saveTrees(QList<QString> trees)
 {
     QSqlQuery query;
-    query.prepare("DELETE FROM Crystal_tree WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_tree WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("INSERT INTO Crystal_tree(Crystal_id, tree_id) VALUES(?,?)");
+    query.prepare("INSERT INTO crystal_tree(Crystal_id, tree_id) VALUES(?,?)");
     for (QString &name: trees) {
         TreeModel tree = TreeModel::load(name);
         query.addBindValue(m_id);
@@ -180,27 +180,27 @@ void CrystalModel::remove()
 {
     QSqlQuery query;
 
-    query.prepare("DELETE FROM Crystal_animal WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_animal WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("DELETE FROM Crystal_colour WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_colour WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("DELETE FROM Crystal_god WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_god WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("DELETE FROM Crystal_herb WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_herb WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("DELETE FROM Crystal_tree WHERE Crystal_id=?");
+    query.prepare("DELETE FROM crystal_tree WHERE Crystal_id=?");
     query.addBindValue(m_id);
     query.exec();
 
-    query.prepare("DELETE FROM Crystals WHERE id=?");
+    query.prepare("DELETE FROM crystals WHERE id=?");
     query.addBindValue(m_id);
     query.exec();
 }

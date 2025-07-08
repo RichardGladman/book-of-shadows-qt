@@ -53,6 +53,8 @@ QList<TreeModel> TreeModel::load(QString &arcana, int id)
         sql = "SELECT t2.* FROM runestone_tree t1 INNER JOIN trees t2 ON t1.tree_id = t2.id WHERE t1.runestone_id = ?";
     } else if (arcana == "tarot") {
         sql = "SELECT t2.* FROM tarot_tree t1 INNER JOIN trees t2 ON t1.tree_id = t2.id WHERE t1.tarot_id = ?";
+    } else if (arcana == "crystal") {
+        sql = "SELECT t2.* FROM crystal_tree t1 INNER JOIN trees t2 ON t1.tree_id = t2.id WHERE t1.tree_id = ?";
     }
 
     QSqlQuery query;
