@@ -1,5 +1,5 @@
-#include "corresponderchooser.h"
-#include "ui_corresponderchooser.h"
+#include "runestonecorresponderchooser.h"
+#include "ui_runestonecorresponderchooser.h"
 
 #include <QListView>
 #include <QSqlQuery>
@@ -12,9 +12,9 @@
 #include "../herbs/herbmodel.h"
 #include "../trees/treemodel.h"
 
-CorresponderChooser::CorresponderChooser(RunestoneForm *parent, std::string corresponder)
+RunestoneCorresponderChooser::RunestoneCorresponderChooser(RunestoneForm *parent, std::string corresponder)
     : QDialog(parent)
-    , ui(new Ui::CorresponderChooser)
+    , ui(new Ui::RunestoneCorresponderChooser)
 {
     ui->setupUi(this);
 
@@ -44,18 +44,18 @@ CorresponderChooser::CorresponderChooser(RunestoneForm *parent, std::string corr
     m_corresponder = corresponder;
 }
 
-CorresponderChooser::~CorresponderChooser()
+RunestoneCorresponderChooser::~RunestoneCorresponderChooser()
 {
     delete ui;
 }
 
-void CorresponderChooser::on_closeButton_clicked()
+void RunestoneCorresponderChooser::on_closeButton_clicked()
 {
     reject();
 }
 
 
-void CorresponderChooser::on_addButton_clicked()
+void RunestoneCorresponderChooser::on_addButton_clicked()
 {
     QListWidget *listWidget = m_parent->getListView(m_corresponder);
     new QListWidgetItem {ui->corresponderCombo->currentText(), listWidget};

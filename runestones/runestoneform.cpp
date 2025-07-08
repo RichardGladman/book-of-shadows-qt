@@ -9,7 +9,7 @@
 #include "runestonemodel.h"
 #include "../zodiac/zodiacmodel.h"
 
-#include "corresponderchooser.h"
+#include "runestonecorresponderchooser.h"
 
 RunestoneForm::RunestoneForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
@@ -100,7 +100,7 @@ QListWidget* RunestoneForm::getListView(std::string view)
 
 void RunestoneForm::on_addAnimalButton_clicked()
 {
-    CorresponderChooser *chooser = new CorresponderChooser(this, "Animal");
+    RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "Animal");
     chooser->setWindowTitle("Choose Animals");
     chooser->exec();
 }
@@ -108,7 +108,7 @@ void RunestoneForm::on_addAnimalButton_clicked()
 
 void RunestoneForm::on_addColourButton_clicked()
 {
-    CorresponderChooser *chooser = new CorresponderChooser(this, "Colour");
+    RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "Colour");
     chooser->setWindowTitle("Choose Colours");
     chooser->exec();
 }
@@ -116,7 +116,7 @@ void RunestoneForm::on_addColourButton_clicked()
 
 void RunestoneForm::on_addGodButton_clicked()
 {
-    CorresponderChooser *chooser = new CorresponderChooser(this, "God");
+    RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "God");
     chooser->setWindowTitle("Choose Gods");
     chooser->exec();
 }
@@ -124,7 +124,7 @@ void RunestoneForm::on_addGodButton_clicked()
 
 void RunestoneForm::on_Herb_clicked()
 {
-    CorresponderChooser *chooser = new CorresponderChooser(this, "Herb");
+    RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "Herb");
     chooser->setWindowTitle("Choose Herbs");
     chooser->exec();
 }
@@ -132,7 +132,7 @@ void RunestoneForm::on_Herb_clicked()
 
 void RunestoneForm::on_addTreeButton_clicked()
 {
-    CorresponderChooser *chooser = new CorresponderChooser(this, "Tree");
+    RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "Tree");
     chooser->setWindowTitle("Choose Trees");
     chooser->exec();
 }
