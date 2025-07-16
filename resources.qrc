@@ -1,12 +1,30 @@
 <RCC>
     <qresource prefix="/">
         <file>icons/book.png</file>
-        <file>icons/copy.png</file>
-        <file>icons/cut.png</file>
-        <file>icons/undo.png</file>
-        <file>icons/redo.png</file>
-        <file>icons/bold.png</file>
-        <file>icons/italic.png</file>
-        <file>icons/paste.png</file>
+        <file>glyphs/algiz.png</file>
+        <file>glyphs/ansuz.png</file>
+        <file>glyphs/berkana.png</file>
+        <file>glyphs/dagaz.png</file>
+        <file>glyphs/ehwaz.png</file>
+        <file>glyphs/eihwaz.png</file>
+        <file>glyphs/fehu.png</file>
+        <file>glyphs/gebo.png</file>
+        <file>glyphs/hagalaz.png</file>
+        <file>glyphs/inguz.png</file>
+        <file>glyphs/isa.png</file>
+        <file>glyphs/jera.png</file>
+        <file>glyphs/kaunaz.png</file>
+        <file>glyphs/laguz.png</file>
+        <file>glyphs/mannaz.png</file>
+        <file>glyphs/nauthiz.png</file>
+        <file>glyphs/othila.png</file>
+        <file>glyphs/pertho.png</file>
+        <file>glyphs/raido.png</file>
+        <file>glyphs/sowulo.png</file>
+        <file>glyphs/teiwaz.png</file>
+        <file>glyphs/thurisaz.png</file>
+        <file>glyphs/uruz.png</file>
+        <file>glyphs/wunjo.png</file>
+        <file>glyphs/wyrd.png</file>
     </qresource>
 </RCC>

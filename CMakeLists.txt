@@ -66,7 +66,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         crystals/crystalframe.h crystals/crystalframe.cpp crystals/crystalframe.ui
         notes/noteform.h notes/noteform.cpp notes/noteform.ui
         notes/notesframe.h notes/notesframe.cpp notes/notesframe.ui
-
+        resources.qrc
 
     )
 # Define target properties for Android with Qt 6 as:
