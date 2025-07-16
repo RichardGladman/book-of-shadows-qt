@@ -26,7 +26,7 @@ QRectF ResizablePixmap::boundingRect() const
     return selectorFrameBounds();
 }
 
-void ResizablePixmap::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget widget)
+void ResizablePixmap::paint(QPainter *painter, QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
