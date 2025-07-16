@@ -67,7 +67,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         notes/noteform.h notes/noteform.cpp notes/noteform.ui
         notes/notesframe.h notes/notesframe.cpp notes/notesframe.ui
         resources.qrc
-        spellbook/resizablehandle.h spellbook/resizablehandle.cpp
+        spellbook/renderhandles.h spellbook/renderhandles.cpp
         spellbook/handle.h spellbook/handle.cpp
 
     )

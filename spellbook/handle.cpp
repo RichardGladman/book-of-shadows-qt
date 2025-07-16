@@ -1,5 +1,5 @@
 #include "handle.h"
-#include "resizablehandle.h"
+#include "renderhandles.h"
 
 Handle::Handle(Position position) : handlePosition {position}
 {
