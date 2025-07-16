@@ -8,7 +8,7 @@ Handle::Handle(Position position) : handlePosition {position}
 
 void Handle::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    ResizableHandle *rectItem = dynamic_cast<ResizableHandle *>(parentItem());
+    RenderHandles *rectItem = dynamic_cast<RenderHandles *>(parentItem());
     if (rectItem) {
         QRectF boundingFrame = rectItem->selectorFrameBounds();
 
@@ -31,6 +31,6 @@ void Handle::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
             break;
         }
 
-        rectItem->setSelectorFrameBounds(boundingFrame.normalized());
+        rectItem->selectorFrameBounds(boundingFrame.normalized());
     }
 }
