@@ -13,7 +13,7 @@ public:
     virtual ~RenderHandles() = default;
 
     virtual QRectF selectorFrameBounds() const = 0;
-    virtual void setSelectorFrameBounds(const QRectF bounsRect) = 0;
+    virtual void selectorFrameBounds(const QRectF bounsRect) = 0;
 
     void drawHandlesIfNecessary();
     void setOwner(QGraphicsItem *item);

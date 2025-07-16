@@ -69,6 +69,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         resources.qrc
         spellbook/renderhandles.h spellbook/renderhandles.cpp
         spellbook/handle.h spellbook/handle.cpp
+        spellbook/resizablepixmap.h spellbook/resizablepixmap.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
