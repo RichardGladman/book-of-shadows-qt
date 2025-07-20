@@ -7,6 +7,7 @@ ResizablePixmap::ResizablePixmap(QPixmap pixmap) : mPixmap{pixmap}
 {
     setOwner(this);
     setRect(0, 0, pixmap.width(), pixmap.height());
+    setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }
 
 QRectF ResizablePixmap::selectorFrameBounds() const

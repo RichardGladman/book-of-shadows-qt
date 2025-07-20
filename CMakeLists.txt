@@ -71,6 +71,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         spellbook/handle.h spellbook/handle.cpp
         spellbook/resizablepixmap.h spellbook/resizablepixmap.cpp
 
+        spellbook/runespellform.h spellbook/runespellform.cpp spellbook/runespellform.ui
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET BookOfShadows APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
