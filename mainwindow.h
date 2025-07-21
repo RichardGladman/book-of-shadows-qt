@@ -48,6 +48,8 @@ private slots:
 
     void on_actionNotes_triggered();
 
+    void on_actionRunes_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

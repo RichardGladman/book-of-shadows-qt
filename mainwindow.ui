@@ -69,9 +69,16 @@
     <addaction name="actionAbout"/>
     <addaction name="actionAbout_Qt"/>
    </widget>
+   <widget class="QMenu" name="menuSpellbook">
+    <property name="title">
+     <string>Spellbook</string>
+    </property>
+    <addaction name="actionRunes"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRunestones"/>
    <addaction name="menuMinor"/>
+   <addaction name="menuSpellbook"/>
    <addaction name="menuNotes_2"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -154,6 +161,11 @@
   <action name="actionNotes">
    <property name="text">
     <string>Notes</string>
+   </property>
+  </action>
+  <action name="actionRunes">
+   <property name="text">
+    <string>Runes</string>
    </property>
   </action>
  </widget>

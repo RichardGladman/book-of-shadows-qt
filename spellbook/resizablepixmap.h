@@ -14,7 +14,7 @@ public:
 
     QRectF boundingRect() const override;
 
-    void paint(QPainter *painter, QStyleOptionGraphicsItem *option, QWidget *widget);
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
     QPixmap pixmap() const;
     void pixmap(const QPixmap &value);

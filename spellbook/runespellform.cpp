@@ -1,6 +1,7 @@
 #include "runespellform.h"
 #include "ui_runespellform.h"
 
+#include <QDebug>
 #include <QGraphicsView>
 #include "resizablepixmap.h"
 
@@ -66,7 +67,7 @@ void RuneSpellForm::on_kaunazButton_clicked()
 
 void RuneSpellForm::on_geboButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/gebo.pmg"));
+    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/gebo.png"));
     scene->addItem(pixmap);
 }
 
@@ -122,7 +123,7 @@ void RuneSpellForm::on_perthoButton_clicked()
 
 void RuneSpellForm::on_algizButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/algiz.pmg"));
+    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/algiz.png"));
     scene->addItem(pixmap);
 }
 

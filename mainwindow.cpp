@@ -15,6 +15,7 @@
 #include "runestones/runestoneframe.h"
 #include "tarot/tarotframe.h"
 #include "crystals/crystalframe.h"
+#include "spellbook/runespellframe.h"
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
@@ -164,6 +165,13 @@ void MainWindow::on_actionTarot_Cards_triggered()
 void MainWindow::on_actionNotes_triggered()
 {
     NotesFrame *frame = new NotesFrame(this);
+    setCentralWidget(frame);
+}
+
+
+void MainWindow::on_actionRunes_triggered()
+{
+    RuneSpellFrame *frame = new RuneSpellFrame(this);
     setCentralWidget(frame);
 }
 
