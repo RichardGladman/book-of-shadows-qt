@@ -736,6 +736,13 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QLineEdit" name="tagsLineEdit">
+           <property name="placeholderText">
+            <string>Enter tags separated by commas (Optional)</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>
