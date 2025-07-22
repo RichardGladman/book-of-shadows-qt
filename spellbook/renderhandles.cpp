@@ -47,7 +47,6 @@ void RenderHandles::drawHandles()
     if (!handles.isEmpty() && !handlesAdded) {
         handles[0]->setPen(pen);
         handles[0]->setBrush(Qt::gray);
-        owner->scene()->addItem(handles[0]);
         handles[0]->setParentItem(owner);
     }
 
@@ -56,7 +55,6 @@ void RenderHandles::drawHandles()
     if (!handles.isEmpty() && !handlesAdded) {
         handles[1]->setPen(pen);
         handles[1]->setBrush(Qt::gray);
-        owner->scene()->addItem(handles[1]);
         handles[1]->setParentItem(owner);
     }
 
@@ -65,7 +63,6 @@ void RenderHandles::drawHandles()
     if (!handles.isEmpty() && !handlesAdded) {
         handles[2]->setPen(pen);
         handles[2]->setBrush(Qt::gray);
-        owner->scene()->addItem(handles[2]);
         handles[2]->setParentItem(owner);
     }
 
@@ -74,7 +71,6 @@ void RenderHandles::drawHandles()
     if (!handles.isEmpty() && !handlesAdded) {
         handles[3]->setPen(pen);
         handles[3]->setBrush(Qt::gray);
-        owner->scene()->addItem(handles[3]);
         handles[3]->setParentItem(owner);
     }
 }
