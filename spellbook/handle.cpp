@@ -27,7 +27,7 @@ void Handle::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
             break;
         case BOTTOM_LEFT:
             boundingFrame.setBottom(event->pos().y() - 6);
-            boundingFrame.setLeft(event->pos().x() - 6);
+            boundingFrame.setLeft(event->pos().x() + 6);
             break;
         }
 

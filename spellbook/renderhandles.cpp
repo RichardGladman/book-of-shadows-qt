@@ -42,33 +42,39 @@ void RenderHandles::drawHandles()
     pen.setWidth(2);
     pen.setColor(Qt::black);
 
-    if (!handles.isEmpty() && !handlesAdded) {
         QPointF corner = selectorFrameBounds().topLeft() + QPointF(-12, -12);
         handles[0]->setRect(QRectF(corner, QSize(12, 12)));
-        handles[0]->setPen(pen);
-        handles[0]->setBrush(Qt::gray);
-        handles[0]->setParentItem(owner);
-        owner->scene()->addItem(handles[0]);
+        if (!handles.isEmpty() && !handlesAdded) {
+            handles[0]->setPen(pen);
+            handles[0]->setBrush(Qt::gray);
+            handles[0]->setParentItem(owner);
+            owner->scene()->addItem(handles[0]);
+        }
 
         corner = selectorFrameBounds().topRight() + QPointF(0, -12);
         handles[1]->setRect(QRectF(corner, QSize(12, 12)));
-        handles[1]->setPen(pen);
-        handles[1]->setBrush(Qt::gray);
-        handles[1]->setParentItem(owner);
-        owner->scene()->addItem(handles[1]);
+        if (!handles.isEmpty() && !handlesAdded) {
+            handles[1]->setPen(pen);
+            handles[1]->setBrush(Qt::gray);
+            handles[1]->setParentItem(owner);
+            owner->scene()->addItem(handles[1]);
+        }
 
         corner = selectorFrameBounds().bottomRight() + QPointF(0, 0);
         handles[2]->setRect(QRectF(corner, QSize(12, 12)));
-        handles[2]->setPen(pen);
-        handles[2]->setBrush(Qt::gray);
-        handles[2]->setParentItem(owner);
-        owner->scene()->addItem(handles[2]);
+        if (!handles.isEmpty() && !handlesAdded) {
+            handles[2]->setPen(pen);
+            handles[2]->setBrush(Qt::gray);
+            handles[2]->setParentItem(owner);
+            owner->scene()->addItem(handles[2]);
+        }
 
         corner = selectorFrameBounds().bottomLeft() + QPointF(-12, 0);
         handles[3]->setRect(QRectF(corner, QSize(12, 12)));
-        handles[3]->setPen(pen);
-        handles[3]->setBrush(Qt::gray);
-        handles[3]->setParentItem(owner);
-        owner->scene()->addItem(handles[3]);
-    }
+        if (!handles.isEmpty() && !handlesAdded) {
+            handles[3]->setPen(pen);
+            handles[3]->setBrush(Qt::gray);
+            handles[3]->setParentItem(owner);
+            owner->scene()->addItem(handles[3]);
+        }
 }
