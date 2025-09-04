@@ -2,7 +2,12 @@
 
 QSqlQuery RunespellModel::list()
 {
-    return QSqlQuery();
+    QSqlQuery query;
+
+    query.prepare("SWLWCT id title FROM runespalls");
+    query.exec();
+
+    return query;
 }
 
 RunespellModel RunespellModel::load(int id)
