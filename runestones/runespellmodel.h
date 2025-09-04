@@ -19,7 +19,7 @@ public:
     void title(QString title);
     void description(QString description);
 
-    void save();
+    bool save();
     void remove();
 
 private:

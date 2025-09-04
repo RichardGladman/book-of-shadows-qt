@@ -59,8 +59,26 @@ void RunespellModel::description(QString description)
     m_description = description;
 }
 
-void RunespellModel::save()
+bool RunespellModel::save()
 {
+    QString sql;
+
+    if (m_id == 0) {
+        sql = "INSERT INTO runespells(title, description) VALUES(?, ?)";
+    } else {
+        sql = "UPDATE runespells SET title = ?, description = ? WHERE id = ?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+
+    query.addBindValue(m_title);
+    query.addBindValue(m_description);
+
+    if (m_id != 0) {
+        query.addBindValue(m_id);
+    }
+
 
 }
 
