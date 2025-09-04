@@ -79,10 +79,13 @@ bool RunespellModel::save()
         query.addBindValue(m_id);
     }
 
-
+    return query.exec();
 }
 
 void RunespellModel::remove()
 {
-
+    QSqlQuery query;
+    query.prepare("DELETE FROM runespells WHERE id=?");
+    query.addBindValue(m_id);
+    query.exec();
 }
