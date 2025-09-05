@@ -141,5 +141,8 @@ bool GlyphModel::save()
 }
 void GlyphModel::remove()
 {
-
+    QSqlQuery query;
+    query.prepare("DELETE FROM glyphs WHERE id=?");
+    query.addBindValue(m_id);
+    query.exec();
 }
