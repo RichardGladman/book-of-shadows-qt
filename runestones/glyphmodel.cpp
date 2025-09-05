@@ -115,7 +115,29 @@ void GlyphModel::height(int height)
 
 bool GlyphModel::save()
 {
-    return false;
+    QString sql;
+
+    if (m_id == 0) {
+        sql = "INSERT INTO glyphs(name, runespell, xpos, ypos, width, height) VALUES(?, ?, ?, ?, ?, ?)";
+    } else {
+        sql = "UPDATE glyphs SET name=?, runespell=?, xpos=?, ypos=?, width=?, height=? WHERE id=?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+
+    query.addBindValue(m_name);
+    query.addBindValue(m_runespell);
+    query.addBindValue(m_xpos);
+    query.addBindValue(m_ypos);
+    query.addBindValue(m_width);
+    query.addBindValue(m_height);
+
+    if (m_id != 0) {
+        query.addBindValue(m_id);
+    }
+
+    return query.exec();
 }
 void GlyphModel::remove()
 {
