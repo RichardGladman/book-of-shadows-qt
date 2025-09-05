@@ -74,6 +74,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         spellbook/runespellform.h spellbook/runespellform.cpp spellbook/runespellform.ui
         spellbook/runespellframe.h spellbook/runespellframe.cpp spellbook/runespellframe.ui
         runestones/runespellmodel.h runestones/runespellmodel.cpp
+        runestones/glyphmodel.h runestones/glyphmodel.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
