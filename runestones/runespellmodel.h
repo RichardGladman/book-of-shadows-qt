@@ -22,6 +22,7 @@ public:
     void id(int i);
     void title(QString title);
     void description(QString description);
+    void glyphs(QList<GlyphModel> glyphs);
 
     void add_glyph(GlyphModel glyph);
 

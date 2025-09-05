@@ -22,6 +22,7 @@ RunespellModel RunespellModel::load(int id)
         model.id(query.value(0).toInt());
         model.title(query.value(1).toString());
         model.description(query.value(2).toString());
+        model.glyphs(GlyphModel::list(model.id()));
     }
 
     return model;
@@ -62,6 +63,11 @@ void RunespellModel::title(QString title)
 void RunespellModel::description(QString description)
 {
     m_description = description;
+}
+
+void RunespellModel::glyphs(QList<GlyphModel> glyphs)
+{
+    m_glyphs = glyphs;
 }
 
 void RunespellModel::add_glyph(GlyphModel glyph)
