@@ -108,6 +108,10 @@ bool RunespellModel::save()
 
 void RunespellModel::remove()
 {
+    for (GlyphModel &glyph: m_glyphs) {
+        glyph.remove();
+    }
+
     QSqlQuery query;
     query.prepare("DELETE FROM runespells WHERE id=?");
     query.addBindValue(m_id);
