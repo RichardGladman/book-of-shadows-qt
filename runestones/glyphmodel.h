@@ -7,7 +7,7 @@
 class GlyphModel
 {
 public:
-    static QSqlQuery list(int runespell);
+    static QList<GlyphModel> list(int runespell);
     static GlyphModel load(int id);
 
     GlyphModel(int id, QString name, int runespell, int xpos, int ypos, int width, int height);

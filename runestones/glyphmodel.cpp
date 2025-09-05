@@ -1,8 +1,9 @@
 #include "glyphmodel.h"
 
-QSqlQuery GlyphModel::list(int runespell)
+QList<GlyphModel> GlyphModel::list(int runespell)
 {
-    return QSqlQuery {};
+    QSqlQuery query;
+    query.prepare("SELECT * FROM glyphs WHERE runespell = ?");
 }
 
 GlyphModel GlyphModel::load(int id)
