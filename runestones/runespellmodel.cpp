@@ -44,6 +44,11 @@ QString RunespellModel::description() const
     return m_description;
 }
 
+QList<GlyphModel> RunespellModel::glyphs() const
+{
+    return m_glyphs;
+}
+
 void RunespellModel::id(int i)
 {
     m_id = i;
@@ -57,6 +62,11 @@ void RunespellModel::title(QString title)
 void RunespellModel::description(QString description)
 {
     m_description = description;
+}
+
+void RunespellModel::add_glyph(GlyphModel glyph)
+{
+    m_glyphs.push_back(glyph);
 }
 
 bool RunespellModel::save()
@@ -79,7 +89,21 @@ bool RunespellModel::save()
         query.addBindValue(m_id);
     }
 
-    return query.exec();
+    if (query.exec()) {
+        if (m_id == 0) {
+            m_id = query.lastInsertId().toInt();
+        }
+        for (GlyphModel &glyph: m_glyphs) {
+            glyph.runespell(m_id);
+            if (!glyph.save()) {
+                return false;
+            }
+        }
+    } else {
+        return false;
+    }
+
+    return true;
 }
 
 void RunespellModel::remove()

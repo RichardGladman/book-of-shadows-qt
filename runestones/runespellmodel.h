@@ -4,6 +4,8 @@
 #include <QSqlQuery>
 #include <QString>
 
+#include "glyphmodel.h"
+
 class RunespellModel
 {
 public:
@@ -15,9 +17,13 @@ public:
     QString title() const;
     QString description() const;
 
+    QList<GlyphModel> glyphs() const;
+
     void id(int i);
     void title(QString title);
     void description(QString description);
+
+    void add_glyph(GlyphModel glyph);
 
     bool save();
     void remove();
@@ -26,6 +32,8 @@ private:
     int m_id;
     QString m_title;
     QString m_description;
+
+    QList<GlyphModel> m_glyphs;
 };
 
 #endif // RUNESPELLMODEL_H
