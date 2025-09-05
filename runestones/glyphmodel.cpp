@@ -2,13 +2,40 @@
 
 QList<GlyphModel> GlyphModel::list(int runespell)
 {
+    QList<GlyphModel> glyphs;
     QSqlQuery query;
     query.prepare("SELECT * FROM glyphs WHERE runespell = ?");
+
+    if (query.exec()) {
+        while (query.next()) {
+            GlyphModel glyph {query.value(0).toInt(), query.value(1).toString(), query.value(2).toInt(),
+                                query.value(3).toInt(), query.value(4).toInt(), query.value(5).toInt(), query.value(6).toInt()};
+            glyphs.push_back(glyph);
+        }
+    }
+
+    return glyphs;
 }
 
 GlyphModel GlyphModel::load(int id)
 {
-    return GlyphModel {};
+    GlyphModel glyph {};
+    QSqlQuery query;
+
+    query.prepare("SELECT * FROM glyphs WHERE id = ?");
+    query.addBindValue(id);
+
+    if (query.exec() && query.next()) {
+        glyph.id(query.value(0).toInt());
+        glyph.name(query.value(1).toString());
+        glyph.runespell(query.value(2).toInt());
+        glyph.xpos(query.value(3).toInt());
+        glyph.ypos(query.value(4).toInt());
+        glyph.width(query.value(5).toInt());
+        glyph.height(query.value(6).toInt());
+    }
+
+    return glyph;
 }
 
 GlyphModel::GlyphModel(int id, QString name, int runespell, int xpos, int ypos, int width, int height) :
