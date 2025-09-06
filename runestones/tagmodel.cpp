@@ -2,7 +2,19 @@
 
 QList<TagModel> TagModel::list(int runespell)
 {
-    return QList<TagModel> {};
+    QList<TagModel> tags;
+    QSqlQuery query;
+
+    query.prepare("SELECT * FROM tags WHERE runespell = ?");
+
+    if (query.exec()) {
+        while (query.next()) {
+            TagModel tag {query.value(0).toInt(), query.value(1).toString(), query.value(2).toInt()};
+            tags.push_back(tag);
+        }
+    }
+
+    return tags;
 }
 
 TagModel TagModel::load(int id)
