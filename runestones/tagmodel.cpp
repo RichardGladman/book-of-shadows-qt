@@ -72,7 +72,25 @@ void TagModel::runespell(int runespell)
 
 bool TagModel::save()
 {
-    return false;
+    QString sql;
+
+    if (m_id == 0) {
+        sql = "INSERT INTO tags(tag, runespell) VALUES(?, ?)";
+    } else {
+        sql = "UPDATE tags SET tag = ?, runespell = ? WHERE id =?";
+    }
+
+    QSqlQuery query;
+    query.prepare(sql);
+
+    query.addBindValue(m_tag);
+    query.addBindValue(m_runespell);
+
+    if (m_id != 0) {
+        query.addBindValue(m_id);
+    }
+
+    return query.exec();
 }
 
 void TagModel::remove()
