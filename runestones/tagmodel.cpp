@@ -95,5 +95,8 @@ bool TagModel::save()
 
 void TagModel::remove()
 {
-
+    QSqlQuery query;
+    query.prepare("DELETE FROM tags WHERE id = ?");
+    query.addBindValue(m_id);
+    query.exec();
 }
