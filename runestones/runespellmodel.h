@@ -5,6 +5,7 @@
 #include <QString>
 
 #include "glyphmodel.h"
+#include "tagmodel.h"
 
 class RunespellModel
 {
@@ -18,13 +19,16 @@ public:
     QString description() const;
 
     QList<GlyphModel> glyphs() const;
+    QList<TagModel> tags() const;
 
     void id(int i);
     void title(QString title);
     void description(QString description);
     void glyphs(QList<GlyphModel> glyphs);
+    void tags(QList<TagModel> tags);
 
     void add_glyph(GlyphModel glyph);
+    void add_tag(TagModel tag);
 
     bool save();
     void remove();
@@ -35,6 +39,7 @@ private:
     QString m_description;
 
     QList<GlyphModel> m_glyphs;
+    QList<TagModel> m_tags;
 };
 
 #endif // RUNESPELLMODEL_H

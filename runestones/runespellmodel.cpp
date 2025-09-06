@@ -23,6 +23,7 @@ RunespellModel RunespellModel::load(int id)
         model.title(query.value(1).toString());
         model.description(query.value(2).toString());
         model.glyphs(GlyphModel::list(model.id()));
+        model.tags(TagModel::list(model.id()));
     }
 
     return model;
@@ -50,6 +51,11 @@ QList<GlyphModel> RunespellModel::glyphs() const
     return m_glyphs;
 }
 
+QList<TagModel> RunespellModel::tags() const
+{
+    return m_tags;
+}
+
 void RunespellModel::id(int i)
 {
     m_id = i;
@@ -70,9 +76,19 @@ void RunespellModel::glyphs(QList<GlyphModel> glyphs)
     m_glyphs = glyphs;
 }
 
+void RunespellModel::tags(QList<TagModel> tags)
+{
+    m_tags = tags;
+}
+
 void RunespellModel::add_glyph(GlyphModel glyph)
 {
     m_glyphs.push_back(glyph);
+}
+
+void RunespellModel::add_tag(TagModel tag)
+{
+    m_tags.push_back(tag);
 }
 
 bool RunespellModel::save()
@@ -99,9 +115,17 @@ bool RunespellModel::save()
         if (m_id == 0) {
             m_id = query.lastInsertId().toInt();
         }
+
         for (GlyphModel &glyph: m_glyphs) {
             glyph.runespell(m_id);
             if (!glyph.save()) {
+                return false;
+            }
+        }
+
+        for (TagModel &tag: m_tags) {
+            tag.runespell(m_id);
+            if (!tag.save()) {
                 return false;
             }
         }
@@ -116,6 +140,10 @@ void RunespellModel::remove()
 {
     for (GlyphModel &glyph: m_glyphs) {
         glyph.remove();
+    }
+
+    for (TagModel &tag: m_tags) {
+        tag.remove();
     }
 
     QSqlQuery query;
