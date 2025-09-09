@@ -65,9 +65,14 @@ private slots:
 
     void on_dagazButton_clicked();
 
+    void on_closeButton_clicked();
+
+    void on_saveButton_clicked();
+
 private:
     Ui::RuneSpellForm *ui;
     QGraphicsScene *scene;
+    QGraphicsView *view;
 };
 
 #endif // RUNESPELLFORM_H

@@ -2,8 +2,12 @@
 #include "ui_runespellform.h"
 
 #include <QDebug>
+#include <QGraphicsItem>
 #include <QGraphicsView>
+#include <QMessageBox>
 #include "resizablepixmap.h"
+#include "runespellmodel.h"
+#include "tagmodel.h"
 
 RuneSpellForm::RuneSpellForm(QWidget *parent)
     : QDialog(parent)
@@ -11,7 +15,7 @@ RuneSpellForm::RuneSpellForm(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QGraphicsView *view = new QGraphicsView(this);
+    view = new QGraphicsView(this);
     scene = new QGraphicsScene(this);
 
     view->setScene(scene);
@@ -188,5 +192,32 @@ void RuneSpellForm::on_dagazButton_clicked()
 {
     ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/dagaz.png"));
     scene->addItem(pixmap);
+}
+
+
+void RuneSpellForm::on_closeButton_clicked()
+{
+    reject();
+}
+
+
+void RuneSpellForm::on_saveButton_clicked()
+{
+    QString name = ui->nameLineEdit->text();
+    QString description = ui->descriptionEditBox->toPlainText();
+    QString tags = ui->tagsLineEdit->text();
+    QList<QGraphicsItem *> glyphs = view->items();
+
+    if (name.isEmpty()) {
+        QMessageBox::critical(this, "Input Error", "Name must be entered");
+        return;
+    }
+
+    RunespellModel model { name, description };
+
+    QStringList tag_strings = tags.split(',');
+    for (QString &t: tag_strings) {
+        model.add_tag(TagModel {0, t, 0});
+    }
 }
 

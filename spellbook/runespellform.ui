@@ -730,7 +730,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QTextEdit" name="spellSteps">
+          <widget class="QTextEdit" name="descriptionEditBox">
            <property name="placeholderText">
             <string>Describe the spell</string>
            </property>
