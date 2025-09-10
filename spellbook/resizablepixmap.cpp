@@ -3,7 +3,7 @@
 #include <QGraphicsScene>
 #include <QPainter>
 
-ResizablePixmap::ResizablePixmap(QPixmap pixmap) : mPixmap{pixmap}
+ResizablePixmap::ResizablePixmap(QPixmap pixmap, QString glyph) : mPixmap{pixmap}, m_glyph{glyph}
 {
     setOwner(this);
     setRect(0, 0, pixmap.width(), pixmap.height());
@@ -46,4 +46,9 @@ QPixmap ResizablePixmap::pixmap() const
 void ResizablePixmap::pixmap(const QPixmap &value)
 {
     mPixmap = value;
+}
+
+QString ResizablePixmap::glyph() const
+{
+    return m_glyph;
 }

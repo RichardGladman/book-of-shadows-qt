@@ -7,7 +7,7 @@
 class ResizablePixmap: public QGraphicsRectItem, public RenderHandles
 {
 public:
-    explicit ResizablePixmap(QPixmap pixmap);
+    explicit ResizablePixmap(QPixmap pixmap, QString glyph);
 
     QRectF selectorFrameBounds() const override;
     void selectorFrameBounds(QRectF boundsRect) override;
@@ -19,8 +19,11 @@ public:
     QPixmap pixmap() const;
     void pixmap(const QPixmap &value);
 
+    QString glyph() const;
+
 private:
     QPixmap mPixmap;
+    QString m_glyph;
 };
 
 #endif // RESIZABLEPIXMAP_H

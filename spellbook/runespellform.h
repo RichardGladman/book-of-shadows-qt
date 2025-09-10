@@ -73,6 +73,8 @@ private:
     Ui::RuneSpellForm *ui;
     QGraphicsScene *scene;
     QGraphicsView *view;
+
+    int m_id {};
 };
 
 #endif // RUNESPELLFORM_H

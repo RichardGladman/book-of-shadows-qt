@@ -36,7 +36,7 @@ public:
     void remove();
 
 private:
-    int m_id;
+    int m_id {};
     QString m_title;
     QString m_description;
 
