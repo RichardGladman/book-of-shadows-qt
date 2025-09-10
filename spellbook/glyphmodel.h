@@ -10,24 +10,24 @@ public:
     static QList<GlyphModel> list(int runespell);
     static GlyphModel load(int id);
 
-    GlyphModel(int id, QString name, int runespell, int xpos, int ypos, int width, int height);
+    GlyphModel(int id, QString name, int runespell, double xpos, double ypos, double width, double height);
     GlyphModel();
 
     int id();
     QString name();
     int runespell();
-    int xpos();
-    int ypos();
-    int width();
-    int height();
+    double xpos();
+    double ypos();
+    double width();
+    double height();
 
     void id(int id);
     void name(QString name);
     void runespell(int runespell);
-    void xpos(int xpos);
-    void ypos(int ypos);
-    void width(int width);
-    void height(int height);
+    void xpos(double xpos);
+    void ypos(double ypos);
+    void width(double width);
+    void height(double height);
 
     bool save();
     void remove();
@@ -36,10 +36,10 @@ private:
     int m_id;
     QString m_name;
     int m_runespell;
-    int m_xpos;
-    int m_ypos;
-    int m_width;
-    int m_height;
+    double m_xpos;
+    double m_ypos;
+    double m_width;
+    double m_height;
 };
 
 #endif // GLYPHMODEL_H

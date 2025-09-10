@@ -201,7 +201,7 @@ void DBInitializer::createSpellbook()
     std::vector<QString> statements {};
 
     statements.push_back("CREATE TABLE IF NOT EXISTS runespells (id INTEGER PRIMARY KEY, title TEXT, description TEXT)");
-    statements.push_back("CREATE TABLE IF NOT EXISTS glyphs (id INTEGER PRIMARY KEY, name TEXT, runespell INTEGER, x_pos INTEGER, y_pos INTEGER, width INTEGER, height INTEGER)");
+    statements.push_back("CREATE TABLE IF NOT EXISTS glyphs (id INTEGER PRIMARY KEY, name TEXT, runespell INTEGER, x_pos REAL, y_pos REAL, width REAL, height REAL)");
     statements.push_back("CREATE TABLE IF NOT EXISTS tags (id INTEGER PRIMARY KEY, tag VARCHAR(255), runespell INTEGER)");
 
     QSqlQuery query;

@@ -9,7 +9,7 @@ QList<GlyphModel> GlyphModel::list(int runespell)
     if (query.exec()) {
         while (query.next()) {
             GlyphModel glyph {query.value(0).toInt(), query.value(1).toString(), query.value(2).toInt(),
-                                query.value(3).toInt(), query.value(4).toInt(), query.value(5).toInt(), query.value(6).toInt()};
+                                query.value(3).toDouble(), query.value(4).toDouble(), query.value(5).toDouble(), query.value(6).toDouble()};
             glyphs.push_back(glyph);
         }
     }
@@ -29,16 +29,16 @@ GlyphModel GlyphModel::load(int id)
         glyph.id(query.value(0).toInt());
         glyph.name(query.value(1).toString());
         glyph.runespell(query.value(2).toInt());
-        glyph.xpos(query.value(3).toInt());
-        glyph.ypos(query.value(4).toInt());
-        glyph.width(query.value(5).toInt());
-        glyph.height(query.value(6).toInt());
+        glyph.xpos(query.value(3).toDouble());
+        glyph.ypos(query.value(4).toDouble());
+        glyph.width(query.value(5).toDouble());
+        glyph.height(query.value(6).toDouble());
     }
 
     return glyph;
 }
 
-GlyphModel::GlyphModel(int id, QString name, int runespell, int xpos, int ypos, int width, int height) :
+GlyphModel::GlyphModel(int id, QString name, int runespell, double xpos, double ypos, double width, double height) :
     m_id {id}, m_name {name}, m_runespell {runespell}, m_xpos {xpos}, m_ypos {ypos}, m_width {width}, m_height { height} {}
 
 GlyphModel::GlyphModel() : GlyphModel(0, "", 0, 0, 0, 0, 0) {}
@@ -58,22 +58,22 @@ int GlyphModel::runespell()
     return m_runespell;
 }
 
-int GlyphModel::xpos()
+double GlyphModel::xpos()
 {
     return m_xpos;
 }
 
-int GlyphModel::ypos()
+double GlyphModel::ypos()
 {
     return m_ypos;
 }
 
-int GlyphModel::width()
+double GlyphModel::width()
 {
     return m_width;
 }
 
-int GlyphModel::height()
+double GlyphModel::height()
 {
     return m_height;
 }
@@ -93,22 +93,22 @@ void GlyphModel::runespell(int runespell)
     m_runespell = runespell;
 }
 
-void GlyphModel::xpos(int xpos)
+void GlyphModel::xpos(double xpos)
 {
     m_xpos = xpos;
 }
 
-void GlyphModel::ypos(int ypos)
+void GlyphModel::ypos(double ypos)
 {
     m_ypos = ypos;
 }
 
-void GlyphModel::width(int width)
+void GlyphModel::width(double width)
 {
     m_width = width;
 }
 
-void GlyphModel::height(int height)
+void GlyphModel::height(double height)
 {
     m_height = height;
 }
@@ -118,9 +118,9 @@ bool GlyphModel::save()
     QString sql;
 
     if (m_id == 0) {
-        sql = "INSERT INTO glyphs(name, runespell, xpos, ypos, width, height) VALUES(?, ?, ?, ?, ?, ?)";
+        sql = "INSERT INTO glyphs(name, runespell, x_pos, y_pos, width, height) VALUES(?, ?, ?, ?, ?, ?)";
     } else {
-        sql = "UPDATE glyphs SET name=?, runespell=?, xpos=?, ypos=?, width=?, height=? WHERE id=?";
+        sql = "UPDATE glyphs SET name=?, runespell=?, x_pos=?, y_pos=?, width=?, height=? WHERE id=?";
     }
 
     QSqlQuery query;
