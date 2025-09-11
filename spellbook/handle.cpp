@@ -34,3 +34,8 @@ void Handle::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         rectItem->selectorFrameBounds(boundingFrame.normalized());
     }
 }
+
+int Handle::type() const
+{
+    return Type;
+}

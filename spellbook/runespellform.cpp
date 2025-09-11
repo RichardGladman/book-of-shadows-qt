@@ -221,7 +221,7 @@ void RuneSpellForm::on_saveButton_clicked()
     }
 
     foreach (QGraphicsItem *glyph, glyphs) {
-        ResizablePixmap *pixmap = static_cast<ResizablePixmap *>(glyph);
+        ResizablePixmap *pixmap = qgraphicsitem_cast<ResizablePixmap *>(glyph);
         if (pixmap) {
             GlyphModel glyph_model {0, pixmap->glyph(), 0, pixmap->rect().left(), pixmap->rect().top(), pixmap->rect().width(), pixmap->rect().height()};
             model.add_glyph(glyph_model);

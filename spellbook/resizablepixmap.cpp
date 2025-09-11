@@ -52,3 +52,8 @@ QString ResizablePixmap::glyph() const
 {
     return m_glyph;
 }
+
+int ResizablePixmap::type() const
+{
+    return Type;
+}

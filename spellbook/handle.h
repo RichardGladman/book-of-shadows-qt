@@ -16,7 +16,11 @@ public:
         BOTTOM_RIGHT
     };
 
+    enum {Type = UserType + 2 };
+
     explicit Handle(Position position);
+
+    int type() const override;
 
 protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
