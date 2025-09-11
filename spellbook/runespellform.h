@@ -13,7 +13,7 @@ class RuneSpellForm : public QDialog
     Q_OBJECT
 
 public:
-    explicit RuneSpellForm(QWidget *parent = nullptr);
+    explicit RuneSpellForm(QWidget *parent = nullptr, int id=0, QString mode="edit");
     ~RuneSpellForm();
 
 private slots:

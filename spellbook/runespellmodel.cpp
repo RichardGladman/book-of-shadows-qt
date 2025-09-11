@@ -29,8 +29,8 @@ RunespellModel RunespellModel::load(int id)
     return model;
 }
 
-RunespellModel::RunespellModel(QString name, QString description) : m_id {0}, m_title {name}, m_description {description} {}
-RunespellModel::RunespellModel() : RunespellModel {"", ""} {}
+RunespellModel::RunespellModel(int id, QString name, QString description) : m_id {id}, m_title {name}, m_description {description} {}
+RunespellModel::RunespellModel() : RunespellModel {0, "", ""} {}
 
 int RunespellModel::id() const
 {

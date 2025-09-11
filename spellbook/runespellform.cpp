@@ -9,7 +9,7 @@
 #include "runespellmodel.h"
 #include "tagmodel.h"
 
-RuneSpellForm::RuneSpellForm(QWidget *parent)
+RuneSpellForm::RuneSpellForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
     , ui(new Ui::RuneSpellForm)
 {
@@ -20,6 +20,31 @@ RuneSpellForm::RuneSpellForm(QWidget *parent)
 
     view->setScene(scene);
     ui->sceneLayout->addWidget(view);
+
+    if (id != 0) {
+        RunespellModel model = RunespellModel::load(id);
+        ui->nameLineEdit->setText(model.title());
+        ui->descriptionEditBox->setPlainText(model.description());
+
+        QString tags {};
+        foreach (TagModel tag_model, model.tags()) {
+            tags += tag_model.tag() + ",";
+        }
+
+        tags = tags.slice(0, tags.length() - 1);
+        ui->tagsLineEdit->setText(tags);
+
+        foreach (GlyphModel glyph_model, model.glyphs()) {
+            ResizablePixmap *pixmap = new ResizablePixmap(glyph_model.id(), QPixmap(":/glyphs/" + glyph_model.name() + ".png"), glyph_model.name());
+            pixmap->scenePos().setX(glyph_model.xpos());
+            pixmap->scenePos().setY(glyph_model.ypos());
+            QRectF rect = QRectF(QPointF(glyph_model.xpos(), glyph_model.ypos()), QPointF(glyph_model.xpos() + glyph_model.width(), glyph_model.ypos() + glyph_model.height()));
+            pixmap->setRect(rect.normalized());
+            scene->addItem(pixmap);
+        }
+
+        m_id = id;
+    }
 }
 
 RuneSpellForm::~RuneSpellForm()
@@ -29,168 +54,168 @@ RuneSpellForm::~RuneSpellForm()
 
 void RuneSpellForm::on_fehuButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/fehu.png"), "fehu");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/fehu.png"), "fehu");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_uruzButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/uruz.png"), "uruz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/uruz.png"), "uruz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_thurisazButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/thurisaz.png"), "thurisaz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/thurisaz.png"), "thurisaz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_ansuzButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/ansuz.png"), "ansuz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/ansuz.png"), "ansuz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_raidoButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/raido.png"), "raido");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/raido.png"), "raido");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_kaunazButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/kaunaz.png"), "kaunaz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/kaunaz.png"), "kaunaz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_geboButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/gebo.png"), "gebo");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/gebo.png"), "gebo");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_wunjoButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/wunjo.png"), "wunjo");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/wunjo.png"), "wunjo");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_hagalazButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/hagalaz.png"), "hagalaz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/hagalaz.png"), "hagalaz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_nauthizButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/nauthiz.png"), "nauthiz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/nauthiz.png"), "nauthiz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_isaButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/isa.png"), "isa");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/isa.png"), "isa");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_jeraButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/jera.png"), "jera");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/jera.png"), "jera");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_eihwazButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/eihwaz.png"), "eihwaz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/eihwaz.png"), "eihwaz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_perthoButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/pertho.png"), "pertho");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/pertho.png"), "pertho");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_algizButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/algiz.png"), "algiz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/algiz.png"), "algiz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_sowuloButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/sowulo.png"), "sowulo");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/sowulo.png"), "sowulo");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_teiwazButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/teiwaz.png"), "teiwaz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/teiwaz.png"), "teiwaz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_berkanaButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/berkana.png"), "berkana");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/berkana.png"), "berkana");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_ehwazButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/ehwaz.png"), "ehwaz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/ehwaz.png"), "ehwaz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_mannazButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/mannaz.png"), "mannaz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/mannaz.png"), "mannaz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_laguzButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/laguz.png"), "laguz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/laguz.png"), "laguz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_inguzButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/inguz.png"), "inguz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/inguz.png"), "inguz");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_othilaButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/othila.png"), "othila");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/othila.png"), "othila");
     scene->addItem(pixmap);
 }
 
 
 void RuneSpellForm::on_dagazButton_clicked()
 {
-    ResizablePixmap *pixmap = new ResizablePixmap(QPixmap(":/glyphs/dagaz.png"), "dagaz");
+    ResizablePixmap *pixmap = new ResizablePixmap(0, QPixmap(":/glyphs/dagaz.png"), "dagaz");
     scene->addItem(pixmap);
 }
 
@@ -213,7 +238,7 @@ void RuneSpellForm::on_saveButton_clicked()
         return;
     }
 
-    RunespellModel model { name, description };
+    RunespellModel model {m_id, name, description };
 
     QStringList tag_strings = tags.split(',');
     for (QString &t: tag_strings) {
@@ -223,7 +248,7 @@ void RuneSpellForm::on_saveButton_clicked()
     foreach (QGraphicsItem *glyph, glyphs) {
         ResizablePixmap *pixmap = qgraphicsitem_cast<ResizablePixmap *>(glyph);
         if (pixmap) {
-            GlyphModel glyph_model {0, pixmap->glyph(), 0, pixmap->rect().left(), pixmap->rect().top(), pixmap->rect().width(), pixmap->rect().height()};
+            GlyphModel glyph_model {pixmap->id(), pixmap->glyph(), m_id, pixmap->scenePos().x(), pixmap->scenePos().y(), pixmap->rect().width(), pixmap->rect().height()};
             model.add_glyph(glyph_model);
         }
     }

@@ -5,6 +5,7 @@ QList<GlyphModel> GlyphModel::list(int runespell)
     QList<GlyphModel> glyphs;
     QSqlQuery query;
     query.prepare("SELECT * FROM glyphs WHERE runespell = ?");
+    query.addBindValue(runespell);
 
     if (query.exec()) {
         while (query.next()) {

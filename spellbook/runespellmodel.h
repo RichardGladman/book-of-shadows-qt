@@ -13,7 +13,7 @@ public:
     static QSqlQuery list();
     static RunespellModel load(int id);
 
-    RunespellModel(QString name, QString description);
+    RunespellModel(int id, QString name, QString description);
     RunespellModel();
 
     int id() const;

@@ -32,6 +32,20 @@ void RuneSpellFrame::on_addButton_clicked()
     loadData();
 }
 
+void RuneSpellFrame::on_editButton_clicked()
+{
+    QModelIndexList selectedRows = ui->spellTableView->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    RuneSpellForm *form = new RuneSpellForm(this, ui->spellTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+    form->setWindowTitle("Edit Rune Spell");
+    form->exec();
+
+    loadData();
+}
+
 void RuneSpellFrame::loadData()
 {
     QSqlQuery query = RunespellModel::list();

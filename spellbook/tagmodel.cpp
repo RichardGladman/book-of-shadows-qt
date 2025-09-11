@@ -6,6 +6,7 @@ QList<TagModel> TagModel::list(int runespell)
     QSqlQuery query;
 
     query.prepare("SELECT * FROM tags WHERE runespell = ?");
+    query.addBindValue(runespell);
 
     if (query.exec()) {
         while (query.next()) {
