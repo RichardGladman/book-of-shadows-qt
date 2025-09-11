@@ -36,8 +36,6 @@ RuneSpellForm::RuneSpellForm(QWidget *parent, int id, QString mode)
 
         foreach (GlyphModel glyph_model, model.glyphs()) {
             ResizablePixmap *pixmap = new ResizablePixmap(glyph_model.id(), QPixmap(":/glyphs/" + glyph_model.name() + ".png"), glyph_model.name());
-            pixmap->scenePos().setX(glyph_model.xpos());
-            pixmap->scenePos().setY(glyph_model.ypos());
             QRectF rect = QRectF(QPointF(glyph_model.xpos(), glyph_model.ypos()), QPointF(glyph_model.xpos() + glyph_model.width(), glyph_model.ypos() + glyph_model.height()));
             pixmap->setRect(rect.normalized());
             scene->addItem(pixmap);
