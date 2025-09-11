@@ -4,7 +4,7 @@ QSqlQuery RunespellModel::list()
 {
     QSqlQuery query;
 
-    query.prepare("SELECT id title FROM runespells");
+    query.prepare("SELECT id, title FROM runespells");
     query.exec();
 
     return query;

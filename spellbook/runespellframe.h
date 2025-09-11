@@ -20,6 +20,8 @@ private slots:
 
 private:
     Ui::RuneSpellFrame *ui;
+
+    void loadData();
 };
 
 #endif // RUNESPELLFRAME_H
