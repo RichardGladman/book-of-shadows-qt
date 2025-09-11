@@ -29,6 +29,7 @@ void RuneSpellFrame::on_addButton_clicked()
     form->setWindowTitle("Add New Rune Spell");
 
     form->exec();
+    loadData();
 }
 
 void RuneSpellFrame::loadData()
