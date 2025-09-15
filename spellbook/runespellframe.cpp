@@ -57,3 +57,21 @@ void RuneSpellFrame::loadData()
 
     ui->spellTableView->setModel(tableModel);
 }
+
+void RuneSpellFrame::on_deleteButton_clicked()
+{
+    QModelIndexList selectedRows = ui->spellTableView->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    RunespellModel model = RunespellModel::load(ui->spellTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+
+
+    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.title() + "? This action cannot be undone.");
+    if (confirmed == QMessageBox::Yes) {
+        model.remove();
+        loadData();
+    }
+}
+
