@@ -75,3 +75,18 @@ void RuneSpellFrame::on_deleteButton_clicked()
     }
 }
 
+
+void RuneSpellFrame::on_viewButton_clicked()
+{
+    QModelIndexList selectedRows = ui->spellTableView->selectionModel()->selectedIndexes();
+    if (selectedRows.empty()) {
+        return;
+    }
+
+    RuneSpellForm *form = new RuneSpellForm(this, ui->spellTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
+    form->setWindowTitle("View Rune Spell");
+    form->exec();
+
+    loadData();
+}
+

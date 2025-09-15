@@ -22,6 +22,8 @@ private slots:
 
     void on_deleteButton_clicked();
 
+    void on_viewButton_clicked();
+
 private:
     Ui::RuneSpellFrame *ui;
 

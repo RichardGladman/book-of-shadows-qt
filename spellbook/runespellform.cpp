@@ -42,6 +42,11 @@ RuneSpellForm::RuneSpellForm(QWidget *parent, int id, QString mode)
         }
 
         m_id = id;
+
+        if (mode == "view") {
+            ui->saveButton->setDisabled(true);
+            ui->saveButton->setVisible(false);
+        }
     }
 }
 
