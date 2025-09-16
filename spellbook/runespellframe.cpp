@@ -48,7 +48,7 @@ void RuneSpellFrame::on_editButton_clicked()
 
 void RuneSpellFrame::loadData()
 {
-    QSqlQuery query = RunespellModel::list();
+    QSqlQuery query = RunespellModel::list(m_search_for);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
@@ -87,6 +87,13 @@ void RuneSpellFrame::on_viewButton_clicked()
     form->setWindowTitle("View Rune Spell");
     form->exec();
 
+    loadData();
+}
+
+
+void RuneSpellFrame::on_searchButton_clicked()
+{
+    m_search_for = ui->searchLineEdit->text();
     loadData();
 }
 

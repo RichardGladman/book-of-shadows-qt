@@ -10,7 +10,7 @@
 class RunespellModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(QString search_for = "");
     static RunespellModel load(int id);
 
     RunespellModel(int id, QString name, QString description);

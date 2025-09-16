@@ -24,10 +24,14 @@ private slots:
 
     void on_viewButton_clicked();
 
+    void on_searchButton_clicked();
+
 private:
     Ui::RuneSpellFrame *ui;
 
     void loadData();
+
+    QString m_search_for;
 };
 
 #endif // RUNESPELLFRAME_H
