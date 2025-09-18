@@ -75,6 +75,10 @@ private:
     QGraphicsView *view;
 
     int m_id {};
+
+    // QWidget interface
+protected:
+    virtual void keyPressEvent(QKeyEvent *event) override;
 };
 
 #endif // RUNESPELLFORM_H

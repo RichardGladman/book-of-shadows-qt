@@ -269,3 +269,17 @@ void RuneSpellForm::on_saveButton_clicked()
     }
 }
 
+void RuneSpellForm::keyPressEvent(QKeyEvent *event)
+{
+    QList<QGraphicsItem *> glyphs = view->items();
+
+    foreach (QGraphicsItem *glyph, glyphs) {
+        ResizablePixmap *pixmap = qgraphicsitem_cast<ResizablePixmap *>(glyph);
+        if (pixmap && pixmap->isSelected()) {
+            scene->removeItem(pixmap);
+        }
+    }
+
+    QDialog::keyPressEvent(event);
+}
+
