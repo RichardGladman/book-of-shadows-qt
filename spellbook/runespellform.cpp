@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QGraphicsItem>
 #include <QGraphicsView>
+#include <QKeyEvent>
 #include <QMessageBox>
 #include "resizablepixmap.h"
 #include "runespellmodel.h"
@@ -271,12 +272,14 @@ void RuneSpellForm::on_saveButton_clicked()
 
 void RuneSpellForm::keyPressEvent(QKeyEvent *event)
 {
-    QList<QGraphicsItem *> glyphs = view->items();
+    if (event->key() == Qt::Key_Delete) {
+        QList<QGraphicsItem *> glyphs = view->items();
 
-    foreach (QGraphicsItem *glyph, glyphs) {
-        ResizablePixmap *pixmap = qgraphicsitem_cast<ResizablePixmap *>(glyph);
-        if (pixmap && pixmap->isSelected()) {
-            scene->removeItem(pixmap);
+        foreach (QGraphicsItem *glyph, glyphs) {
+            ResizablePixmap *pixmap = qgraphicsitem_cast<ResizablePixmap *>(glyph);
+            if (pixmap && pixmap->isSelected()) {
+                scene->removeItem(pixmap);
+            }
         }
     }
 
