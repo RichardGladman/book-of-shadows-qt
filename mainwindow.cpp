@@ -78,6 +78,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionPolarity_triggered()
 {
     PolarityFrame *polarityFrame = new PolarityFrame(this);
+    setWindowTitle("Book of Shadows:- Polarity");
     setCentralWidget(polarityFrame);
 }
 
@@ -85,48 +86,56 @@ void MainWindow::on_actionPolarity_triggered()
 void MainWindow::on_actionSettinga_triggered()
 {
     SettingsFrame *settingsFrame = new SettingsFrame(this);
+    setWindowTitle("Book of Shadows:- Settings");
     setCentralWidget(settingsFrame);
 }
 
 void MainWindow::on_actionColours_triggered()
 {
     ColourFrame *coloursFrame = new ColourFrame(this);
+    setWindowTitle("Book of Shadows:- Colours");
     setCentralWidget(coloursFrame);
 }
 
 void MainWindow::on_actionGods_triggered()
 {
     GodFrame *godFrame = new GodFrame(this);
+    setWindowTitle("Book of Shadows:- Gods");
     setCentralWidget(godFrame);
 }
 
 void MainWindow::on_actionHerbs_triggered()
 {
     HerbFrame *herbFrame = new HerbFrame(this);
+    setWindowTitle("Book of Shadows:- Herbs");
     setCentralWidget(herbFrame);
 }
 
 void MainWindow::on_actionPlanets_triggered()
 {
     PlanetsFrame *planetsFrame = new PlanetsFrame(this);
+    setWindowTitle("Book of Shadows:- Planets");
     setCentralWidget(planetsFrame);
 }
 
 void MainWindow::on_actionAnimals_triggered()
 {
     AnimalFrame *animalFrame = new AnimalFrame(this);
+    setWindowTitle("Book of Shadows:- Animals");
     setCentralWidget(animalFrame);
 }
 
 void MainWindow::on_actionTrees_triggered()
 {
     TreesFrame *treeFrame = new TreesFrame(this);
+    setWindowTitle("Book of Shadows:- Trees");
     setCentralWidget(treeFrame);
 }
 
 void MainWindow::on_actionZodiac_triggered()
 {
     ZodiacFrame *frame = new ZodiacFrame(this);
+    setWindowTitle("Book of Shadows:- Zodiac");
     setCentralWidget(frame);
 }
 
@@ -145,12 +154,14 @@ void MainWindow::on_actionAbout_Qt_triggered()
 void MainWindow::on_actionRunestones_triggered()
 {
     RunestoneFrame *frame = new RunestoneFrame(this);
+    setWindowTitle("Book of Shadows:- Runes");
     setCentralWidget(frame);
 }
 
 void MainWindow::on_actionCrystals_triggered()
 {
     CrystalFrame *frame = new CrystalFrame(this);
+    setWindowTitle("Book of Shadows:- Crystals");
     setCentralWidget(frame);
 }
 
@@ -158,6 +169,7 @@ void MainWindow::on_actionCrystals_triggered()
 void MainWindow::on_actionTarot_Cards_triggered()
 {
     TarotFrame *frame = new TarotFrame(this);
+    setWindowTitle("Book of Shadows:- Tarot Cards");
     setCentralWidget(frame);
 }
 
@@ -165,6 +177,7 @@ void MainWindow::on_actionTarot_Cards_triggered()
 void MainWindow::on_actionNotes_triggered()
 {
     NotesFrame *frame = new NotesFrame(this);
+    setWindowTitle("Book of Shadows:- Notes");
     setCentralWidget(frame);
 }
 
@@ -172,6 +185,7 @@ void MainWindow::on_actionNotes_triggered()
 void MainWindow::on_actionRunes_triggered()
 {
     RuneSpellFrame *frame = new RuneSpellFrame(this);
+    setWindowTitle("Book of Shadows:- Rune Spells");
     setCentralWidget(frame);
 }
 
