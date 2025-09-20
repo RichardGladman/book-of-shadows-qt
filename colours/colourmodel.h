@@ -7,7 +7,7 @@
 class ColourModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(QString search_for = "");
     static ColourModel load(int id);
     static ColourModel load(QString name);
     static QList<ColourModel> load(QString &arcana, int id);
