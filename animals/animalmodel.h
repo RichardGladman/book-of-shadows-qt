@@ -7,7 +7,7 @@
 class AnimalModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(QString search_for = "");
     static AnimalModel load(int id);
     static AnimalModel load(QString name);
     static QList<AnimalModel> load(QString &arcana, int id);

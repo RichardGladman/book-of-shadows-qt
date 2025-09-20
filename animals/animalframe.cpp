@@ -80,9 +80,15 @@ void AnimalFrame::on_deleteButton_clicked()
 
 }
 
+void AnimalFrame::on_searchPushButton_clicked()
+{
+    m_search_for = ui->searchLineEdit->text();
+    loadData();
+}
+
 void AnimalFrame::loadData()
 {
-    QSqlQuery query = AnimalModel::list();
+    QSqlQuery query = AnimalModel::list(m_search_for);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 

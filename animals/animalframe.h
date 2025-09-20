@@ -24,8 +24,12 @@ private slots:
 
     void on_deleteButton_clicked();
 
+    void on_searchPushButton_clicked();
+
 private:
     Ui::AnimalFrame *ui;
+
+    QString m_search_for;
 
     void loadData();
 };
