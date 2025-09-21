@@ -7,7 +7,7 @@
 class HerbModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(QString search_for = "");
     static HerbModel load(int id);
     static HerbModel load(QString name);
     static QList<HerbModel> load(QString &arcana, int id);

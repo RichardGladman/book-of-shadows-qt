@@ -76,7 +76,7 @@ void HerbFrame::on_deleteButton_clicked()
 
 void HerbFrame::loadData()
 {
-    QSqlQuery query = HerbModel::list();
+    QSqlQuery query = HerbModel::list(m_search_for);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
@@ -85,3 +85,10 @@ void HerbFrame::loadData()
 
     ui->HerbTable->setModel(tableModel);
 }
+
+void HerbFrame::on_search_button_clicked()
+{
+    m_search_for = ui->search_line_edit->text();
+    loadData();
+}
+
