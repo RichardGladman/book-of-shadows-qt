@@ -7,7 +7,7 @@
 class GodModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(QString search_for = "");
     static GodModel load(int id);
     static GodModel load(QString name);
     static QList<GodModel> load(QString &arcana, int id);

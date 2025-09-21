@@ -62,7 +62,7 @@ void GodFrame::on_viewButton_clicked()
 
 void GodFrame::loadData()
 {
-    QSqlQuery query = GodModel::list();
+    QSqlQuery query = GodModel::list(m_search_for);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
@@ -88,5 +88,12 @@ void GodFrame::on_deleteButton_clicked()
         model.remove();
         loadData();
     }
+}
+
+
+void GodFrame::on_search_button_clicked()
+{
+    m_search_for = ui->search_line_edit->text();
+    loadData();
 }
 
