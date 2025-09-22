@@ -82,7 +82,7 @@ void PlanetsFrame::on_deleteButton_clicked()
 
 void PlanetsFrame::loadData()
 {
-    QSqlQuery query = PlanetModel::list();
+    QSqlQuery query = PlanetModel::list(m_search_for);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
@@ -90,5 +90,12 @@ void PlanetsFrame::loadData()
     tableModel->setHeaderData(1, Qt::Horizontal, "Planet");
 
     ui->planetsTableView->setModel(tableModel);
+}
+
+
+void PlanetsFrame::on_search_button_clicked()
+{
+    m_search_for = ui->search_line_edit->text();
+    loadData();
 }
 

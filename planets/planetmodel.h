@@ -7,7 +7,7 @@
 class PlanetModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(QString search_for = "");
     static PlanetModel load(int id);
     static PlanetModel load(QString name);
 
