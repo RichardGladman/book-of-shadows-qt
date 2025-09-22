@@ -24,8 +24,12 @@ private slots:
 
     void on_editButton_clicked();
 
+    void on_search_button_clicked();
+
 private:
     Ui::TreesFrame *ui;
+
+    QString m_search_for;
 
     void loadData();
 };

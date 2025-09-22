@@ -7,7 +7,7 @@
 class TreeModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(QString search_for = "");
     static TreeModel load(int id);
     static TreeModel load(QString name);
     static QList<TreeModel> load(QString &arcana, int id);

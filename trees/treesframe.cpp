@@ -82,7 +82,7 @@ void TreesFrame::on_editButton_clicked()
 
 void TreesFrame::loadData()
 {
-    QSqlQuery query = TreeModel::list();
+    QSqlQuery query = TreeModel::list(m_search_for);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
@@ -91,3 +91,10 @@ void TreesFrame::loadData()
 
     ui->treesTable->setModel(tableModel);
 }
+
+void TreesFrame::on_search_button_clicked()
+{
+    m_search_for = ui->search_line_edit->text();
+    loadData();
+}
+
