@@ -82,7 +82,7 @@ void ZodiacFrame::on_deleteButton_clicked()
 
 void ZodiacFrame::loadData()
 {
-    QSqlQuery query = ZodiacModel::list();
+    QSqlQuery query = ZodiacModel::list(m_search_for);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
@@ -90,5 +90,12 @@ void ZodiacFrame::loadData()
     tableModel->setHeaderData(1, Qt::Horizontal, "Zodiac");
 
     ui->zodiacTable->setModel(tableModel);
+}
+
+
+void ZodiacFrame::on_search_button_clicked()
+{
+    m_search_for = ui->search_line_edit->text();
+    loadData();
 }
 

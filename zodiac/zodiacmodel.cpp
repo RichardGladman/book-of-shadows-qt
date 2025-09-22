@@ -1,10 +1,21 @@
 #include "zodiacmodel.h"
 
-QSqlQuery ZodiacModel::list()
+QSqlQuery ZodiacModel::list(QString search_for)
 {
     QSqlQuery query;
 
-    query.prepare("SELECT id, name FROM zodiac ORDER BY name");
+    QString select_clause = "SELECT id, name FROM zodiac ";
+    QString order_clause = "ORDER BY name";
+    QString where_clause = "";
+    if (!search_for.isEmpty()) {
+        where_clause = "WHERE name LIKE ? ";
+    }
+
+    query.prepare(select_clause + where_clause + order_clause);
+    if (!search_for.isEmpty()) {
+        query.addBindValue("%" + search_for.trimmed() + "%");
+    }
+
     query.exec();
 
     return query;

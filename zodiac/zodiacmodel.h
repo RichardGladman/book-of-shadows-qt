@@ -7,7 +7,7 @@
 class ZodiacModel
 {
 public:
-    static QSqlQuery list();
+    static QSqlQuery list(QString search_for = "");
     static ZodiacModel load(int id);
     static ZodiacModel load(QString name);
 

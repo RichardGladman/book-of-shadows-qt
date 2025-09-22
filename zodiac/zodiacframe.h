@@ -21,8 +21,12 @@ private slots:
     void on_editButton_clicked();
     void on_deleteButton_clicked();
 
+    void on_search_button_clicked();
+
 private:
     Ui::ZodiacFrame *ui;
+
+    QString m_search_for;
 
     void loadData();
 };
