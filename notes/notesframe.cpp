@@ -83,7 +83,7 @@ void NotesFrame::on_deleteButton_clicked()
 
 void NotesFrame::loadData()
 {
-    QSqlQuery query = NoteModel::list();
+    QSqlQuery query = NoteModel::list(m_search_for);
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
@@ -92,3 +92,10 @@ void NotesFrame::loadData()
 
     ui->noteTable->setModel(tableModel);
 }
+
+void NotesFrame::on_search_button_clicked()
+{
+    m_search_for = ui->search_line_edit->text();
+    loadData();
+}
+
