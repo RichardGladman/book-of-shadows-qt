@@ -32,7 +32,7 @@ RuneSpellForm::RuneSpellForm(QWidget *parent, int id, QString mode)
             tags += tag_model.tag() + ",";
         }
 
-        tags = tags.slice(0, tags.length() - 1);
+        tags.truncate(tags.length() - 1);
         ui->tagsLineEdit->setText(tags);
 
         foreach (GlyphModel glyph_model, model.glyphs()) {
