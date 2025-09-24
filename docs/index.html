@@ -1,1 +1,107 @@
-Book of Shadows documentation
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Book of Shadows Qt</title>
+	<meta name="generator" content="LibreOffice 25.8.1.1 (Linux)"/>
+	<meta name="created" content="2025-09-23T13:37:12.320996335"/>
+	<meta name="changed" content="2025-09-24T12:15:35.445171692"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-weight: bold; font-size: 18pt; font-family: "Liberation Sans", sans-serif }
+		h1.cjk { font-weight: bold; font-size: 18pt; font-family: "Noto Sans CJK SC" }
+		h1.ctl { font-weight: bold; font-family: "Noto Sans Devanagari"; font-size: 18pt }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h2.western { font-weight: bold; font-size: 16pt; font-family: "Liberation Sans", sans-serif }
+		h2.cjk { font-weight: bold; font-size: 16pt; font-family: "Noto Sans CJK SC" }
+		h2.ctl { font-weight: bold; font-family: "Noto Sans Devanagari"; font-size: 16pt }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h3.western { font-weight: bold; font-size: 14pt; font-family: "Liberation Sans", sans-serif }
+		h3.cjk { font-weight: bold; font-size: 14pt; font-family: "Noto Sans CJK SC" }
+		h3.ctl { font-weight: bold; font-family: "Noto Sans Devanagari"; font-size: 14pt }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-GB" link="#000080" vlink="#800000" dir="ltr">
+	<h1 class="western">Book of Shadows Documentation</h1>
+<h2 class="western">Building</h2>
+<p>The book of shadows will build against any Qt version of 6.7 or
+higher. It may buid against an earlier version, but this hasn’t
+been tested. 
+</p>
+<h3 class="western">Building in Linux</h3>
+<p>First install Qt 6.7 or greater from your distro’a repositories,
+as well as the compiler tools and cmake. If Qt 6.7 is unavailable in
+the repositories, you can get a later version from
+<a href="https://www.qt.io/">https://www.qt.io/</a>.</p>
+<p>Once these are installed, download the source code from the
+releases page at
+<a href="https://github.com/RichardGladman/book-of-shadows-qt/releases">https://github.com/RichardGladman/book-of-shadows-qt/releases</a>
+and run the following commands:</p>
+<pre class="western">cd bool-of-shadows-qt
+mkdir build
+cd build
+cmake ..
+make</pre>
+<p >And if you want to install globally, run:</p>
+<pre class="western">sudo make install</pre><h3 class="western">
+Installing on Windows</h3>
+<p>I’m afraid if you’re installing on Windows, you are mostly on
+your own. I haven’t used Windows since 2003 when XP came out. And
+why aren’t you running a version Linux anyway?</p>
+<p>You can get the necessary software online.</p>
+<p>Qt <a href="https://qt.io/">https:qt.io</a></p>
+<p>Cmake <a href="https://cmake.org/download/">https://cmake.org/download/</a></p>
+<p>GCC Toolchain <a href="https://www.mingw-w64.org/">https://www.mingw-w64.org/</a></p>
+<p>Once you have these installed, you can follow the same steps as in
+the Linux install.</p>
+<h2 class="western">List View</h2>
+<p>The list view is the main window of the book of shadows, Each menu
+entry under Arcana, Corresponders, Spellbook, and notes will have a
+list view.</p>
+<p><img src="index_html_b8651e11.png" name="Image1" width="643" height="522" border="0"/></p>
+<p>
+From
+here you can carry out any operation against the data type. The basic
+operations are searching, viewing, adding, editing, and deleting.</p>
+<h3 class="western">Corresponder View / Add / Edit</h3>
+<p>These three views all use the same window, for edit and view, the
+fields are prepopulated and the buttons are adjusted accordingly..</p>
+<p><img src="index_html_4adb379b.png" name="Image2" width="643" height="502" border="0"/>
+</p>
+<p>It goes without saying that the save button saves any changes you
+have made and the close button closes the window without saving your
+changes. It is worth mentioning that currently there are no warnings.</p>
+<h3 class="western">Arcana Add / Edit / View</h3>
+<p>These three views use the same layout to work with the specific
+data. For edit and view, the data is prepopulated and the buttons are
+adjusted accordingly.</p>
+<p><img src="index_html_9425199d.png" name="Image4" width="643" height="455" border="0"/>
+</p>
+<p>The save and close buttons act as you would expect, except that
+there is no warning when closing without saving your changes.</p>
+<h3 class="western">Delete view</h3>
+<p>The delete view is simply a confirmation that you want to carry
+out this irreversible action.</p>
+<p><img src="index_html_70554a34.png" name="Image3" width="643" height="502" border="0"/>
+</p>
+<p>You can choose yes or no depending on your needs.</p>
+<h2 class="western">Spellbook</h2>
+<p>At the moment, the spellbook only provudes for rune spells.</p>
+<h3 class="western">Add / Edit / View Rune Spell</h3>
+<p>This window allows you to manage rune spells. You place and drag
+runes in to an appropriate pattern and fill in the details on the
+second tab.</p>
+<p><img src="index_html_9eeeea7c.png" name="Image5" width="643" height="504" border="0"/>
+</p>
+<p>The save and close buttons work as you would expect, excepting
+that there are no warinins when closing the window without saving.</p>
+</body>
+</html>

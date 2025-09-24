@@ -74,3 +74,10 @@ CMakeLists.txt.user*
 
 build/
 *.idx
+
+docs/add*
+docs/arcana*
+docs/delete*
+docs/documentation*
+docs/list*
+docs/spellbook*
