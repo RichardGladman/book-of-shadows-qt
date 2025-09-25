@@ -11,3 +11,5 @@ cmake ..
 make
 sudo make install
 ```
+
+For more details, visit the [book of shadows documentation](https://richardgladman.github.io/book-of-shadows-qt/)
