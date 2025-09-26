@@ -16,7 +16,7 @@ bool SettingsModel::show_warnings()
     return m_show_warnings;
 }
 
-void SettingsModel::data_directory(QString &data_directory)
+void SettingsModel::data_directory(const QString &data_directory)
 {
     m_data_directory = data_directory;
 }

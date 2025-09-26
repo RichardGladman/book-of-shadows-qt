@@ -15,6 +15,7 @@ SettingsFrame::SettingsFrame(QWidget *parent)
     ui->setupUi(this);
 
     ui->directoryLineEdit->setText(settings.data_directory());
+    ui->warnings_checkbox->setChecked(settings.show_warnings());
 }
 
 SettingsFrame::~SettingsFrame()
@@ -33,7 +34,8 @@ void SettingsFrame::on_directoryButton_clicked()
 
 void SettingsFrame::on_saveButton_clicked()
 {
-    settings.data_directory() = ui->directoryLineEdit->text();
+    settings.data_directory(ui->directoryLineEdit->text());
+    settings.show_warnings(ui->warnings_checkbox->isChecked());
 
     if (settings.data_directory().isEmpty()) {
         QMessageBox::warning(this, "Validation Error", "You must choose a directory");

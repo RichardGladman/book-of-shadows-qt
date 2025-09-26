@@ -12,7 +12,7 @@ public:
     QString data_directory();
     bool show_warnings();
 
-    void data_directory(QString &data_directory);
+    void data_directory(const QString &data_directory);
     void show_warnings(bool show_warnings);
 
     void load();
