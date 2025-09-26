@@ -76,6 +76,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         spellbook/runespellmodel.h spellbook/runespellmodel.cpp
         spellbook/glyphmodel.h spellbook/glyphmodel.cpp
         spellbook/tagmodel.h spellbook/tagmodel.cpp
+        settings/settingsmodel.h settings/settingsmodel.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
