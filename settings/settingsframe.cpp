@@ -3,7 +3,10 @@
 
 #include <QFileDialog>
 #include <QMessageBox>
-#include <QSettings>
+
+#include "settingsmodel.h"
+
+extern SettingsModel settings;
 
 SettingsFrame::SettingsFrame(QWidget *parent)
     : QFrame(parent)
@@ -11,11 +14,7 @@ SettingsFrame::SettingsFrame(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QSettings settings("TheFifthContinent", "BookOfShadows");
-
-    settings.beginGroup("Paths");
-    ui->directoryLineEdit->setText(settings.value("datadir").toString());
-    settings.endGroup();
+    ui->directoryLineEdit->setText(settings.data_directory());
 }
 
 SettingsFrame::~SettingsFrame()
@@ -34,16 +33,12 @@ void SettingsFrame::on_directoryButton_clicked()
 
 void SettingsFrame::on_saveButton_clicked()
 {
-    QString dirName = ui->directoryLineEdit->text();
+    settings.data_directory() = ui->directoryLineEdit->text();
 
-    if (dirName.isEmpty()) {
+    if (settings.data_directory().isEmpty()) {
         QMessageBox::warning(this, "Validation Error", "You must choose a directory");
         return;
     }
 
-    QSettings settings("TheFifthContinent", "BookOfShadows");
-
-    settings.beginGroup("Paths");
-    settings.setValue("datadir", dirName);
-    settings.endGroup();
+    settings.save();
 }

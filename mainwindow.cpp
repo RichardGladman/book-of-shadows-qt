@@ -19,44 +19,38 @@
 #include <QDir>
 #include <QFile>
 #include <QIODevice>
-#include <QSettings>
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 
 #include "dbinitializer.h"
+#include "settings/settingsmodel.h"
 
 extern int version_major;
 extern int version_minor;
 extern int version_patch;
 
-QString baseDir;
+SettingsModel settings;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    settings.load();
 
-
-    QSettings settings("TheFifthContinent", "BookOfShadows");
-
-    settings.beginGroup("Paths");
-    baseDir = settings.value("datadir").toString();
-    settings.endGroup();
-
-    if (baseDir.isEmpty()) {
+    if (settings.data_directory().isEmpty()) {
         on_actionSettinga_triggered();
-        QMessageBox::information(this, "Action Required", "Please select a data directory and restart");
+        QMessageBox::information(this, "Action Required", "Please select a data directory.");
         return;
     }
 
     DBInitializer *init = new DBInitializer();
 
-    init->createDataStore(baseDir);
+    init->createDataStore(settings.data_directory());
 
     QSqlDatabase dbConnection = QSqlDatabase::addDatabase("QSQLITE");
-    dbConnection.setDatabaseName(baseDir + "/data/bos.db");
+    dbConnection.setDatabaseName(settings.data_directory() + "/data/bos.db");
 
     if (!dbConnection.open()) {
         qDebug() << "Database connection error";

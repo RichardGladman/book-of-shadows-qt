@@ -2,12 +2,13 @@
 #include "ui_polarityform.h"
 
 #include "polaritymodel.h"
+#include "../settings/settingsmodel.h"
 
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
 
-extern QString baseDir;
+extern SettingsModel settings;
 
 PolarityForm::PolarityForm(QWidget *parent, int id)
     : QDialog(parent)
@@ -46,12 +47,12 @@ void PolarityForm::on_saveButton_clicked()
 
     QString finalImage;
 
-    if (image.contains(baseDir)) {
+    if (image.contains(settings.data_directory())) {
         finalImage = image;
     } else {
         QList<QString> parts = image.split("/");
         QString filename = parts[parts.length() - 1];
-        finalImage = baseDir + "/images/" + filename;
+        finalImage = settings.data_directory() + "/images/" + filename;
 
         QFile file(image);
         file.copy(finalImage);
