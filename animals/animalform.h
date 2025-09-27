@@ -22,6 +22,9 @@ private slots:
 private:
     Ui::AnimalForm *ui;
 
+    QString m_default_name;
+    QString m_default_description;
+
     int m_id {};
 };
 
