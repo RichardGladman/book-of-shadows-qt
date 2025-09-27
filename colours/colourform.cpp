@@ -2,11 +2,14 @@
 #include "ui_colourform.h"
 
 #include "colourmodel.h"
+#include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
 
+extern SettingsModel settings;
+
 ColourForm::ColourForm(QWidget *parent, int id, QString mode)
-    : QDialog(parent)
+    : QDialog(parent), m_default_name {""}, m_default_description {""}
     , ui(new Ui::ColourForm)
 {
     ui->setupUi(this);
@@ -34,6 +37,17 @@ ColourForm::~ColourForm()
 
 void ColourForm::on_closeButton_clicked()
 {
+    if (settings.show_warnings() &&
+        (m_default_name != ui->nameLineEdit->text() || m_default_description != ui->meaningTextEdit->toPlainText())) {
+        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
+            "You have unsaved changes. If you continue they will be lost, do you want to continue?",
+            QMessageBox::Yes | QMessageBox::No);
+
+        if (button == QMessageBox::No) {
+            return;
+        }
+    }
+
     reject();
 }
 
