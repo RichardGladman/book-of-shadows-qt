@@ -23,6 +23,11 @@ private slots:
 private:
     Ui::GodForm *ui;
 
+    QString m_default_name;
+    QString m_default_description;
+
+    int m_default_polarity;
+
     int m_id {};
 };
 
