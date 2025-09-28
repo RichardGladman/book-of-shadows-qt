@@ -3,13 +3,16 @@
 
 #include "godmodel.h"
 #include "../polarity/polaritymodel.h"
+#include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
 #include <QSqlQuery>
 
+extern SettingsModel settings;
+
 GodForm::GodForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
-    , ui(new Ui::GodForm)
+    , ui(new Ui::GodForm), m_default_name {""}, m_default_description {""}, m_default_polarity {0}
 {
     ui->setupUi(this);
 
@@ -26,6 +29,9 @@ GodForm::GodForm(QWidget *parent, int id, QString mode)
         ui->polarityCombo->setCurrentIndex(ui->polarityCombo->findData(model.polarityId()));
 
         m_id = id;
+        m_default_name = model.name();
+        m_default_description = model.description();
+        m_default_polarity = model.polarityId();
     }
 
     if (mode == "view") {
@@ -44,6 +50,16 @@ GodForm::~GodForm()
 
 void GodForm::on_closeButton_clicked()
 {
+    if (settings.show_warnings() && (m_default_name != ui->nameLineEdit->text() ||
+                                     m_default_description != ui->descriptionTextEdit->toPlainText() ||
+                                     m_default_polarity != ui->polarityCombo->currentData().toInt())) {
+        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
+            "You have unsaved changes. If you continue, you will lose them. Do you want to continue?",
+                                                                  QMessageBox::Yes | QMessageBox::No);
+        if (button == QMessageBox::No) {
+            return;
+        }
+    }
     reject();
 }
 
