@@ -2,12 +2,15 @@
 #include "ui_herbform.h"
 
 #include "herbmodel.h"
+#include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
 
+extern SettingsModel settings;
+
 HerbForm::HerbForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
-    , ui(new Ui::HerbForm)
+    , ui(new Ui::HerbForm), m_default_name {""}, m_default_description {""}
 {
     ui->setupUi(this);
 
@@ -17,6 +20,8 @@ HerbForm::HerbForm(QWidget *parent, int id, QString mode)
         ui->descriptionTextEdit->setText(model.description());
 
         m_id = id;
+        m_default_name = model.name();
+        m_default_description = model.description();
     }
 
     if (mode == "view") {
@@ -34,6 +39,17 @@ HerbForm::~HerbForm()
 
 void HerbForm::on_closeButton_clicked()
 {
+    if (settings.show_warnings() && (ui->nameLineEdit->text() != m_default_name ||
+                                     ui->descriptionTextEdit->toPlainText() != m_default_description)) {
+        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
+            "You have unsaved changes. If you continue they will be lost, do you want to continue?",
+                                                                  QMessageBox::Yes | QMessageBox::No);
+
+        if (button == QMessageBox::No) {
+            return;
+        }
+    }
+
     reject();
 }
 
