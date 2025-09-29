@@ -24,6 +24,9 @@ private:
     Ui::HerbForm *ui;
 
     int m_id {};
+
+    QString m_default_name;
+    QString m_default_description;
 };
 
 #endif // HERBFORM_H
