@@ -23,6 +23,9 @@ private:
     Ui::NoteForm *ui;
 
     int m_id {};
+
+    QString m_default_title;
+    QString m_default_text;
 };
 
 #endif // NOTEFORM_H
