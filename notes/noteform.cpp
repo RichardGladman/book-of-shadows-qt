@@ -2,12 +2,15 @@
 #include "ui_noteform.h"
 
 #include "notemodel.h"
+#include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
 
+extern SettingsModel settings;
+
 NoteForm::NoteForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
-    , ui(new Ui::NoteForm)
+    , ui(new Ui::NoteForm), m_default_title {""}, m_default_text {""}
 {
     ui->setupUi(this);
 
@@ -16,6 +19,8 @@ NoteForm::NoteForm(QWidget *parent, int id, QString mode)
         ui->titleLineEdit->setText(model.title());
         ui->textTextEdit->setPlainText(model.text());
         m_id = id;
+        m_default_title = model.title();
+        m_default_text = model.text();
     }
 
     if (mode == "view") {
@@ -58,5 +63,16 @@ void NoteForm::on_saveButton_clicked()
 
 void NoteForm::on_closeButton_clicked()
 {
+    if (settings.show_warnings() && (m_default_title != ui->titleLineEdit->text() ||
+                                     m_default_text != ui->textTextEdit->toPlainText())) {
+        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
+                    "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+                    QMessageBox::Yes | QMessageBox::No);
+
+        if (button == QMessageBox::No) {
+            return;
+        }
+    }
+
     reject();
 }
