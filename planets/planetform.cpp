@@ -2,12 +2,15 @@
 #include "ui_planetform.h"
 
 #include "planetmodel.h"
+#include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
 
+extern SettingsModel settings;
+
 PlanetForm::PlanetForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
-    , ui(new Ui::PlanetForm)
+    , ui(new Ui::PlanetForm), m_default_name {}, m_default_description {}
 {
     ui->setupUi(this);
 
@@ -17,6 +20,8 @@ PlanetForm::PlanetForm(QWidget *parent, int id, QString mode)
         ui->meaningTextEdit->setPlainText(model.description());
 
         m_id = id;
+        m_default_name = model.name();
+        m_default_description = model.description();
     }
 
     if (mode == "view") {
@@ -60,6 +65,15 @@ void PlanetForm::on_saveButton_clicked()
 
 void PlanetForm::on_closeButton_clicked()
 {
+    if (settings.show_warnings() && (m_default_name != ui->nameLineEdit->text() ||
+                                     m_default_description != ui->meaningTextEdit->toPlainText())) {
+        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
+            "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+                                                                  QMessageBox::Yes | QMessageBox::No);
+        if (button == QMessageBox::No) {
+            return;
+        }
+    }
     reject();
 }
 
