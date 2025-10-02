@@ -12,7 +12,7 @@ extern SettingsModel settings;
 
 PolarityForm::PolarityForm(QWidget *parent, int id)
     : QDialog(parent)
-    , ui(new Ui::PolarityForm)
+    , ui(new Ui::PolarityForm), m_default_name {}, m_default_meaning {}, m_default_image {}
 {
     ui->setupUi(this);
 
@@ -23,6 +23,10 @@ PolarityForm::PolarityForm(QWidget *parent, int id)
         ui->imageLineEdit->setText(model.image());
 
         m_id = id;
+
+        m_default_name = model.name();
+        m_default_meaning = model.meaning();
+        m_default_image = model.image();
     }
 }
 
@@ -81,6 +85,18 @@ void PolarityForm::on_saveButton_clicked()
 
 void PolarityForm::on_closeButton_clicked()
 {
+    if (settings.show_warnings() && (m_default_name != ui->nameLineEdit->text() ||
+                                     m_default_meaning != ui->descriptionTextEdit->toPlainText() ||
+                                     m_default_image != ui->imageLineEdit->text())) {
+        int button = QMessageBox::warning(this, "Unsaved Changes",
+                                                                  "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+                                                                  QMessageBox::Yes, QMessageBox::No);
+
+        if (button == QMessageBox::No) {
+            return;
+        }
+    }
+
     reject();
 }
 
