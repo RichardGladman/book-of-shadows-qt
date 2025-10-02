@@ -2,12 +2,15 @@
 #include "ui_treeform.h"
 
 #include "treemodel.h"
+#include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
 
+extern SettingsModel settings;
+
 TreeForm::TreeForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
-    , ui(new Ui::TreeForm)
+    , ui(new Ui::TreeForm), m_default_name {}, m_default_description {}
 {
     ui->setupUi(this);
 
@@ -16,6 +19,8 @@ TreeForm::TreeForm(QWidget *parent, int id, QString mode)
         ui->nameLinedit->setText(model.name());
         ui->descriptionTexrEdit->setPlainText(model.description());
         m_id = id;
+        m_default_name = model.name();
+        m_default_description = model.description();
     }
 
     if (mode == "view") {
@@ -60,6 +65,17 @@ void TreeForm::on_saveButton_clicked()
 
 void TreeForm::on_closeButton_clicked()
 {
+    if (settings.show_warnings() && (m_default_name != ui->nameLinedit->text() ||
+                                     m_default_description != ui->descriptionTexrEdit->toPlainText())) {
+        int button = QMessageBox::warning(this, "Unsaved Changes",
+            "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+                                          QMessageBox::Yes | QMessageBox::No);
+
+        if (button == QMessageBox::No) {
+            return;
+        }
+    }
+
     reject();
 }
 
