@@ -26,6 +26,10 @@ private:
     Ui::PolarityForm *ui;
 
     int m_id {0};
+
+    QString m_default_name;
+    QString m_default_meaning;
+    QString m_default_image;
 };
 
 #endif // POLARITYFORM_H
