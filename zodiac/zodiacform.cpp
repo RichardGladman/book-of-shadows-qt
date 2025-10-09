@@ -2,12 +2,15 @@
 #include "ui_zodiacform.h"
 
 #include "zodiacmodel.h"
+#include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
 
+extern SettingsModel settings;
+
 ZodiacForm::ZodiacForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
-    , ui(new Ui::ZodiacForm)
+    , ui(new Ui::ZodiacForm), m_default_name {}, m_default_description {}
 {
     ui->setupUi(this);
 
@@ -16,6 +19,9 @@ ZodiacForm::ZodiacForm(QWidget *parent, int id, QString mode)
         ui->nameLineEdit->setText(model.name());
         ui->descriptionTextEdit->setPlainText(model.description());
         m_id = id;
+
+        m_default_name = model.name();
+        m_default_description = model.description();
     }
 
     if (mode == "view") {
@@ -58,6 +64,16 @@ void ZodiacForm::on_saveButton_clicked()
 
 void ZodiacForm::on_closeButton_clicked()
 {
+    if (settings.show_warnings() && (m_default_name != ui->nameLineEdit->text() ||
+                                     m_default_description != ui->descriptionTextEdit->toPlainText())) {
+        int button = QMessageBox::warning(this, "Unsaved Changes",
+                "You have unsaved changes, if you continue they will be lost. Do you want to continue",
+                                          QMessageBox::Yes | QMessageBox::No);
+        if (button == QMessageBox::No) {
+            return;
+        }
+    }
+
     reject();
 }
 
