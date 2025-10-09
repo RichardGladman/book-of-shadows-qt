@@ -3,79 +3,21 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title>Book of Shadows Qt</title>
-	<meta name="generator" content="LibreOffice 25.8.1.1 (Linux)"/>
-	<meta name="created" content="2025-09-23T13:37:12.320996335"/>
-	<meta name="changed" content="2025-09-24T12:15:35.445171692"/>
-	<style type="text/css">
-
-		h2, h3 { 
-			display: block;
-			clear: both;
-		}
-		img {
-			float: left;
-			margin-right: 1rem;
-			margin-bottom: 5rem;
-			width: 600px;
-		}
-	</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-	<h1>Book of Shadows Documentation</h1>
-<h2>Building</h2>
-<p>The book of shadows will build against any Qt version of 6.7 or
-higher. It may buid against an earlier version, but this hasn’t
-been tested. 
-</p>
-<h3>Building in Linux</h3>
-<p>First install Qt 6.7 or greater from your distro’a repositories, as well as the compiler tools and cmake. If Qt 6.7 is unavailable in
-the repositories, you can get a later version from <a href="https://www.qt.io/">https://www.qt.io/</a>.</p>
-<p>Once these are installed, download the source code from the releases page at
-<a href="https://github.com/RichardGladman/book-of-shadows-qt/releases">https://github.com/RichardGladman/book-of-shadows-qt/releases</a>
-and run the following commands:</p>
-<pre>cd bool-of-shadows-qt
-mkdir build
-cd build
-cmake ..
-make</pre>
-<p >And if you want to install globally, run:</p>
-<pre>sudo make install</pre>
-<h3>Installing on Windows</h3>
-<p>I’m afraid if you’re installing on Windows, you are mostly on
-your own. I haven’t used Windows since 2003 when XP came out. And
-why aren’t you running a version Linux anyway?</p>
-<p>You can get the necessary software online.</p>
-<p>Qt <a href="https://qt.io/">https:qt.io</a></p>
-<p>Cmake <a href="https://cmake.org/download/">https://cmake.org/download/</a></p>
-<p>GCC Toolchain <a href="https://www.mingw-w64.org/">https://www.mingw-w64.org/</a></p>
-<p>Once you have these installed, you can follow the same steps as in
-the Linux install.</p>
-<h2>List View</h2>
-<img src="index_html_b8651e11.png" alt="Screenshot of the list view window"/>
-<p>The list view is the main window of the book of shadows, Each menu
-entry under Arcana, Corresponders, Spellbook, and notes will have a
-list view.</p>
-<p>From here you can carry out any operation against the data type. The basic operations are searching, viewing, adding, editing, and deleting.</p>
-<h3>Corresponder View / Add / Edit</h3>
-<img src="index_html_4adb379b.png" alt="Screenshot of the Add corresponder window"/>
-<p>These three views all use the same window, for edit and view, the fields are prepopulated and the buttons are adjusted accordingly..</p>
-<p>It goes without saying that the save button saves any changes you have made and the close button closes the window without saving your
-changes. It is worth mentioning that currently there are no warnings.</p>
-<h3>Arcana Add / Edit / View</h3>
-<img src="index_html_9425199d.png" alt="Screen shot of the add rune window"/>
-<p>These three views use the same layout to work with the specific data. For edit and view, the data is prepopulated and the buttons are
-adjusted accordingly.</p>
-<p>The save and close buttons act as you would expect, except that there is no warning when closing without saving your changes.</p>
-<h3>Delete view</h3>
-<img src="index_html_70554a34.png" Screenshot of the delete confirmation dialog/>
-<p>The delete view is simply a confirmation that you want to carry out this irreversible action.</p>
-<p>You can choose yes or no depending on your needs.</p>
-<h2>Spellbook</h2>
-<p>At the moment, the spellbook only provudes for rune spells.</p>
-<h3>Add / Edit / View Rune Spell</h3>
-<img src="index_html_9eeeea7c.png" alt="Screenshot of the add runespell window"/>
-<p>This window allows you to manage rune spells. You place and drag runes in to an appropriate pattern and fill in the details on the
-second tab.</p>
-<p>The save and close buttons work as you would expect, excepting that there are no warinins when closing the window without saving.</p>
+	<div class="container">
+		<header class="header">
+			<img class="header-image" src="images/arcana-view.png" alt="Screen shot of the major arcana form in the book of shadows">
+			<div class="header-content">
+				<h1 class="header-headline">Book of Shadows Qt</h1>
+				<p class="header-text">Manage your runes, tarot, crystals and spells in one place using this easy to use software.</p>
+				<p>
+					<a class="button" href="https://github.com/RichardGladman/book-of-shadows-qt">Download and build</a>
+				</p>
+			</div>
+		</header>
+	</div>
 </body>
 </html>
