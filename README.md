@@ -4,7 +4,7 @@ To build from source, run the following commands
 
 ```
 git clone https://github.com/RichardGladman/book-of-shadows-qt.git
-cd bool-of-shadows-qt
+cd book-of-shadows-qt
 mkdir build
 cd build
 cmake ..
