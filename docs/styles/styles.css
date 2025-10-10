@@ -39,6 +39,10 @@ body {
     gap: 48px;
 }
 
+section {
+    margin-bottom: 96px;
+}
+
 .header img {
     width: 450px;
     border-radius: 12px;
@@ -62,8 +66,14 @@ h2 {
     margin-bottom: 32px;
 }
 
+h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
 p, ul {
     font-size: 20px;
+    margin-bottom: 12px;
 }
 
 .button:link, .button:visited {
@@ -107,12 +117,16 @@ article {
     margin-bottom: 16px;
 }
 
-.article-list {
+ul {
     margin-left: 48px;
 }
 
-.article-list li {
+li {
     margin-bottom: 8px;
+}
+
+li:last-child {
+    margin-bottom: 0px;
 }
 
 article img {
