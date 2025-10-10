@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<title>Book of Shadows Qt</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles/styles.css">
@@ -64,15 +64,28 @@
 			<h2>How to Build</h2>
 			<h3>Quick Start</h3>
 			<p>For those who know, follow these steps:</p>
-			<ul>
+			<ul class="margin">
 				<li>git clone https://github.com/RichardGladman/book-of-shadows-qt.git</li>
 				<li>cd book-of-shadows-qt</li>
 				<li>mkdir build</li>
 				<li>cd build</li>
 				<li>cmake ..</li>
 				<li>make</li>
-				<li>sudo make install</li>
+				<li>Copy the binary to your bin directory</li>
 			</ul>
+			<h3>Step by step</h3>
+			<h4>01 - Install the necessary tools</h4>
+			<p>You will need a C++ compiler (gcc), the cmake build tool, the Qt framework, and optionally git.</p>
+			<p class="margin">Linux users can install the compiler, cmake and git by using the appropriate packages from your package manager. The QT framework
+				can be installed from <a href="https://qt.io">qt.io</a>. Windows users can install the 
+				<a href="https://www.mingw-w64.org/">mingw compiler</a>, <a href="https://cmake.org/download/">cmake</a>, and
+				<a href="https://git-scm.com/downloads">git</a>.
+			</p>
+			<h4>02 - Download and buildthe software</h4>
+			<p>If you chose to install git, you're basically done, simply follow the quick start steps above</p>
+			<p>If you didn't install git, go to <a href="https://github.com/RichardGladman/book-of-shadows-qt">the repository</a> and click on the down 
+				arrow by the code button. Choose Download ZIP to get the latest source code and extract it to a chosen location. Then follow the quick
+				start guide from step number two.</p>
 		</section>
 	</div>
 </body>
