@@ -19,6 +19,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     font-family: "Inter", sans-serif;
     color: #343a40;
@@ -27,24 +31,25 @@ body {
 }
 
 .container {
-    width: 960px;
-    margin: 64px auto;
+    width: 96rem;
+    margin: 6.4rem auto;
+    padding: 0 4.8rem;
 }
 
 .header {
-    margin-bottom: 96px;
+    margin-bottom: 9.6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 48px;
+    gap: 4.8rem;
 }
 
 section {
-    margin-bottom: 96px;
+    margin-bottom: 9.6rem;
 }
 
 .header img {
-    width: 450px;
+    width: 100%;
     border-radius: 12px;
 }
 
@@ -52,37 +57,37 @@ section {
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 3.2rem;
 }
 
 h1 {
-    font-size: 44px;
+    font-size: 4.4rem;
     font-weight: 700;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 3.6rem;
     font-weight: 600;
-    margin-bottom: 32px;
+    margin-bottom: 3.2rem;
 }
 
 h3 {
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 2rem;
 }
 
 h4 {
-    font-size: 24px;
-    padding: 18px;
+    font-size: 2.4rem;
+    padding: 1.8rem;
     background-color: #087f5b;
     color: #e6fcf5;
     border-radius: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 1.8rem;
 }
 
 p, ul {
-    font-size: 20px;
-    margin-bottom: 12px;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
 }
 
 p {
@@ -98,9 +103,9 @@ a:hover, a:active {
 }
 
 .button:link, .button:visited {
-    padding: 12px 24px;
+    padding: 1.2rem 2.4rem;
     background-color: #087f5b;
-    border-radius: 100px;
+    border-radius: 12px;
     text-decoration: none;
     color: #e6fcf5;
 }
@@ -111,50 +116,51 @@ a:hover, a:active {
 
 .odd-article {
     background-color: #087f5b;
-    padding: 24px;
+    padding: 2.4rem;
     display: flex;
-    gap:32px;
+    gap:3.2rem;
     color: #e6fcf5;
 }
 
 .even-article {
-    padding: 24px;
+    padding: 2.4rem;
     display: flex;
-    gap:32px;
+    gap:3.2rem;
     justify-content: space-between;
 }
 
 article {
-    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
     border-radius: 12px;
+
 }
 
 .article-title {
-    font-size: 30px;
-    margin-bottom: 24px;
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
 }
 
 .article-text {
-    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
 }
 
 ul {
-    margin-left: 48px;
+    margin-left: 4.8rem;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
 }
 
 li:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 article img {
-    width: 300px;
+    width: 100%;
     border-radius: 12px;
 }
 
 .margin {
-    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
 }
