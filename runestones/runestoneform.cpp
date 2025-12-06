@@ -9,7 +9,12 @@
 #include "runestonemodel.h"
 #include "../zodiac/zodiacmodel.h"
 
+#include "../settings/settingsmodel.h"
+#include "../util/compare.h"
+
 #include "runestonecorresponderchooser.h"
+
+extern SettingsModel settings;
 
 RunestoneForm::RunestoneForm(QWidget *parent, int id, QString mode)
     : QDialog(parent)
@@ -51,24 +56,36 @@ RunestoneForm::RunestoneForm(QWidget *parent, int id, QString mode)
 
         for (AnimalModel &animal: model.animals()) {
             ui->animalList->addItem(animal.name());
+            default_animals.append(animal.name());
         }
-
+        
         for (ColourModel &colour: model.colours()) {
             ui->colourList->addItem(colour.name());
+            default_colours.append(colour.name());
         }
-
+        
         for (GodModel &god: model.gods()) {
             ui->godList->addItem(god.name());
+            default_gods.append(god.name());
         }
-
+        
         for (HerbModel &herb: model.herbs()) {
             ui->herbList->addItem(herb.name());
+            default_herbs.append(herb.name());
         }
-
+        
         for (TreeModel &tree: model.trees()) {
             ui->treeList->addItem(tree.name());
+            default_trees.append(tree.name());
         }
     }
+
+    default_name = ui->nameTextField->text();
+    default_description = ui->descriptionTextEdit->toPlainText();
+
+    default_polarity = ui->polarityCombo->currentData().toInt();
+    default_planet = ui->planetCombo->currentData().toInt();
+    default_zodiac = ui->zodiacCombo->currentData().toInt();
 
     if (mode == "view") {
         ui->saveButton->setDisabled(true);
@@ -175,6 +192,31 @@ void RunestoneForm::on_removeAnimalButton_clicked()
 
 void RunestoneForm::on_closeButton_clicked()
 {
+    QString name = ui->nameTextField->text();
+    QString description = ui->descriptionTextEdit->toPlainText();
+    int planetId = ui->planetCombo->currentData().toInt();
+    int polarityId = ui->polarityCombo->currentData().toInt();
+    int zodiacId = ui->zodiacCombo->currentData().toInt();
+
+    QList<QListWidgetItem*> animals = ui->animalList->findItems("*", Qt::MatchWildcard);
+    QList<QListWidgetItem*> colours = ui->colourList->findItems("*", Qt::MatchWildcard);
+    QList<QListWidgetItem*> gods = ui->godList->findItems("*", Qt::MatchWildcard);
+    QList<QListWidgetItem*> herbs = ui->herbList->findItems("*", Qt::MatchWildcard);
+    QList<QListWidgetItem*> trees = ui->treeList->findItems("*", Qt::MatchWildcard);
+
+    if (settings.show_warnings() && (name != default_name || description != default_description || planetId != default_planet || 
+        polarityId != default_polarity ||zodiacId != default_zodiac || !Compare::areEqual(animals, default_animals) ||
+        !Compare::areEqual(colours, default_colours) || !Compare::areEqual(gods, default_gods) ||
+        !Compare::areEqual(herbs, default_herbs) || !Compare::areEqual(trees, default_trees))) {
+        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
+                             "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+                                QMessageBox::Yes | QMessageBox::No);
+
+        if (button == QMessageBox::No) {
+            return;
+        }   
+    }
+
     reject();
 }
 
