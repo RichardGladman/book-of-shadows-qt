@@ -40,6 +40,19 @@ private:
 
     int m_id {};
 
+    int default_polarity;
+    int default_planet;
+    int default_zodiac;
+
+    QString default_name;
+    QString default_description;
+
+    QList<QString> default_animals;
+    QList<QString> default_colours;
+    QList<QString> default_gods;
+    QList<QString> default_herbs;
+    QList<QString> default_trees;
+
     void saveCorresponders(TarotModel model);
 };
 
