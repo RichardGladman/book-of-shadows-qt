@@ -2,7 +2,8 @@
 #define CRYSTALFORM_H
 
 #include <QDialog>
-#include <QListWidget>
+#include <QList>
+#include <qlistwidget.h>
 
 #include "crystalmodel.h"
 
@@ -18,7 +19,7 @@ public:
     explicit CrystalForm(QWidget *parent = nullptr, int id = 0, QString mode = "edit");
     ~CrystalForm();
 
-    QListWidget* getListView(std::string view);
+    QListWidget *getListView(std::string view);
 
 private slots:
     void on_addAnimalButton_clicked();
@@ -49,6 +50,19 @@ private:
     Ui::CrystalForm *ui;
 
     int m_id {};
+
+    int default_polarity;
+    int default_planet;
+    int default_zodiac;
+
+    QString default_name;
+    QString default_description;
+
+    QList<QString> default_animals;
+    QList<QString> default_colours;
+    QList<QString> default_gods;
+    QList<QString> default_herbs;
+    QList<QString> default_trees;
 
     void saveCorresponders(CrystalModel model);
 };
