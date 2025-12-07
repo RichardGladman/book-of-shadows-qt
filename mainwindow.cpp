@@ -44,24 +44,26 @@ MainWindow::MainWindow(QWidget *parent)
         QMessageBox::information(this, "Action Required", "Please select a data directory.");
         return;
     }
-
+    
+    
     DBInitializer *init = new DBInitializer();
-
+    
     init->createDataStore(settings.data_directory());
-
+    
     QSqlDatabase dbConnection = QSqlDatabase::addDatabase("QSQLITE");
     dbConnection.setDatabaseName(settings.data_directory() + "/data/bos.db");
-
+    
     if (!dbConnection.open()) {
         qDebug() << "Database connection error";
     } else {
         qDebug() << "Database connection success";
     }
-
+    
     init->createDatabaseTables();
-
+    
     delete init;
-
+    
+    on_actionRunes_triggered();
 }
 
 MainWindow::~MainWindow()
