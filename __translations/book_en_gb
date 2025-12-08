@@ -1,0 +1,1376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1">
+<context>
+    <name>AboutDialog</name>
+    <message>
+        <location filename="../about/aboutdialog.ui" line="14"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about/aboutdialog.ui" line="49"/>
+        <source>Book of Shadows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about/aboutdialog.ui" line="56"/>
+        <source>Version 0.9.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about/aboutdialog.ui" line="80"/>
+        <source>Icon from: https://www.flaticon.com/free-icons/book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about/aboutdialog.ui" line="87"/>
+        <source>Runes from an anonymous source on the Internet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about/aboutdialog.ui" line="109"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AnimalForm</name>
+    <message>
+        <location filename="../animals/animalform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../animals/animalform.ui" line="41"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../animals/animalform.ui" line="48"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AnimalFrame</name>
+    <message>
+        <location filename="../animals/animalframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../animals/animalframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../animals/animalframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../animals/animalframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../animals/animalframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../animals/animalframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColourForm</name>
+    <message>
+        <location filename="../colours/colourform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourform.ui" line="20"/>
+        <source>Enter the colour&apos;s name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourform.ui" line="27"/>
+        <source>Enter the colour&apos;s meaning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourform.ui" line="49"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourform.ui" line="56"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColourFrame</name>
+    <message>
+        <location filename="../colours/colourframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../colours/colourframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrystalCorresponderChooser</name>
+    <message>
+        <location filename="../crystals/crystalcorresponderchooser.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalcorresponderchooser.ui" line="51"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalcorresponderchooser.ui" line="58"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrystalForm</name>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="20"/>
+        <source>Enter the crystal&apos;s name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="27"/>
+        <source>Enter the crystal&apos;s description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="53"/>
+        <source>Animals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="82"/>
+        <source>Add Animal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="107"/>
+        <source> Remove Animal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="130"/>
+        <source>Colours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="159"/>
+        <source>Add Colour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="184"/>
+        <source>Remove Colour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="207"/>
+        <source>Gods</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="236"/>
+        <source>Add God</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="261"/>
+        <source>Remove God</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="284"/>
+        <source>Herbs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="313"/>
+        <source>Add Herb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="338"/>
+        <source>Remove Herb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="361"/>
+        <source>Trees</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="390"/>
+        <source>Add Tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="415"/>
+        <source>Remove Tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="468"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalform.ui" line="487"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CrystalFrame</name>
+    <message>
+        <location filename="../crystals/crystalframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../crystals/crystalframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GodForm</name>
+    <message>
+        <location filename="../gods/godform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godform.ui" line="20"/>
+        <source>Enter the God&apos;s name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godform.ui" line="27"/>
+        <source>Select the God&apos;s polarity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godform.ui" line="34"/>
+        <source>Enter the God&apos;s description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godform.ui" line="56"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godform.ui" line="63"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GodFrame</name>
+    <message>
+        <location filename="../gods/godframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gods/godframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HerbForm</name>
+    <message>
+        <location filename="../herbs/herbform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbform.ui" line="20"/>
+        <source>Enter the herb&apos;s name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbform.ui" line="27"/>
+        <source>Enter the herb&apos;s description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbform.ui" line="49"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbform.ui" line="56"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HerbFrame</name>
+    <message>
+        <location filename="../herbs/herbframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../herbs/herbframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../mainwindow.ui" line="14"/>
+        <source>Book of Shadows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="32"/>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="40"/>
+        <source>Arcana</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="48"/>
+        <source>Corresponders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="61"/>
+        <location filename="../mainwindow.ui" line="163"/>
+        <source>Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="67"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="74"/>
+        <source>Spellbook</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="88"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="93"/>
+        <source>Runestones</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="98"/>
+        <source>Tarot Cards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="103"/>
+        <source>Crystals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="108"/>
+        <source>Colours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="113"/>
+        <source>Gods</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="118"/>
+        <source>Herbs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="123"/>
+        <source>Planets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="128"/>
+        <source>Polarity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="133"/>
+        <source>Trees</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="138"/>
+        <source>Zodiac</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="143"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="148"/>
+        <source>Animals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="153"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="158"/>
+        <source>About Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="168"/>
+        <source>Runes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NoteForm</name>
+    <message>
+        <location filename="../notes/noteform.ui" line="14"/>
+        <source>Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notes/noteform.ui" line="41"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notes/noteform.ui" line="48"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NotesFrame</name>
+    <message>
+        <location filename="../notes/notesframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notes/notesframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notes/notesframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notes/notesframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notes/notesframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notes/notesframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlanetForm</name>
+    <message>
+        <location filename="../planets/planetform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetform.ui" line="20"/>
+        <source>Enter the planet&apos;s name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetform.ui" line="27"/>
+        <source>Enter the planet&apos;s meaning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetform.ui" line="49"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetform.ui" line="56"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlanetsFrame</name>
+    <message>
+        <location filename="../planets/planetsframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetsframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetsframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetsframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetsframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../planets/planetsframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolarityForm</name>
+    <message>
+        <location filename="../polarity/polarityform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityform.ui" line="20"/>
+        <source>Enter the polarity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityform.ui" line="27"/>
+        <source>Enter the description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityform.ui" line="36"/>
+        <source>Select an image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityform.ui" line="43"/>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityform.ui" line="80"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityform.ui" line="87"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolarityFrame</name>
+    <message>
+        <location filename="../polarity/polarityframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityframe.ui" line="32"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityframe.ui" line="39"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityframe.ui" line="46"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityframe.ui" line="53"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PolarityViewDialog</name>
+    <message>
+        <location filename="../polarity/polarityviewdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityviewdialog.ui" line="26"/>
+        <location filename="../polarity/polarityviewdialog.ui" line="39"/>
+        <location filename="../polarity/polarityviewdialog.ui" line="57"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../polarity/polarityviewdialog.ui" line="66"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RuneSpellForm</name>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="24"/>
+        <source>Spell Glyph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="46"/>
+        <source>Fehu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="72"/>
+        <source>Uruz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="102"/>
+        <source>Yhurisaz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="128"/>
+        <source>Ansuz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="158"/>
+        <source>Raido</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="184"/>
+        <source>Kaunaz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="214"/>
+        <source>Gebo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="240"/>
+        <source>Wunjo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="270"/>
+        <source>Hagalaz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="296"/>
+        <source>Nauthiz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="326"/>
+        <source>Isa</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="352"/>
+        <source>Jera</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="382"/>
+        <source>Eihwaz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="408"/>
+        <source>Pertho</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="438"/>
+        <source>Algiz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="464"/>
+        <source>Sowulo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="494"/>
+        <source>Teiwaz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="520"/>
+        <source>Berkana</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="550"/>
+        <source>Ehwaz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="576"/>
+        <source>Mannz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="606"/>
+        <source>Laguz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="659"/>
+        <source>Othila</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="685"/>
+        <source>Dagaz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="720"/>
+        <source>Spell Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="728"/>
+        <source>Enter the spell&apos;s name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="735"/>
+        <source>Describe the spell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="742"/>
+        <source>Enter tags separated by commas (Optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="770"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellform.ui" line="777"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RuneSpellFrame</name>
+    <message>
+        <location filename="../spellbook/runespellframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../spellbook/runespellframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RunestoneCorresponderChooser</name>
+    <message>
+        <location filename="../runestones/runestonecorresponderchooser.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestonecorresponderchooser.ui" line="51"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestonecorresponderchooser.ui" line="58"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RunestoneForm</name>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="20"/>
+        <source>Enter the runestone&apos;s name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="27"/>
+        <source>Enter the runestone&apos;s description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="53"/>
+        <source>Animals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="82"/>
+        <source>Add Animal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="107"/>
+        <source> Remove Animal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="130"/>
+        <source>Colours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="159"/>
+        <source>Add Colour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="184"/>
+        <source>Remove Colour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="207"/>
+        <source>Gods</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="236"/>
+        <source>Add God</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="261"/>
+        <source>Remove God</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="284"/>
+        <source>Herbs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="313"/>
+        <source>Add Herb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="338"/>
+        <source>Remove Herb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="361"/>
+        <source>Trees</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="390"/>
+        <source>Add Tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="415"/>
+        <source>Remove Tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="468"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneform.ui" line="487"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RunestoneFrame</name>
+    <message>
+        <location filename="../runestones/runestoneframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../runestones/runestoneframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsFrame</name>
+    <message>
+        <location filename="../settings/settingsframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings/settingsframe.ui" line="22"/>
+        <source>Enter directory for data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings/settingsframe.ui" line="29"/>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings/settingsframe.ui" line="38"/>
+        <source>Show Warnings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings/settingsframe.ui" line="76"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TarotCorresponderChooser</name>
+    <message>
+        <location filename="../tarot/tarotcorresponderchooser.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotcorresponderchooser.ui" line="51"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotcorresponderchooser.ui" line="58"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TarotForm</name>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="20"/>
+        <source>Enter the tarot&apos;s name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="27"/>
+        <source>Enter the tarot&apos;s description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="53"/>
+        <source>Animals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="82"/>
+        <source>Add Animal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="107"/>
+        <source> Remove Animal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="130"/>
+        <source>Colours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="159"/>
+        <source>Add Colour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="184"/>
+        <source>Remove Colour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="207"/>
+        <source>Gods</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="236"/>
+        <source>Add God</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="261"/>
+        <source>Remove God</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="284"/>
+        <source>Herbs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="313"/>
+        <source>Add Herb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="338"/>
+        <source>Remove Herb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="361"/>
+        <source>Trees</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="390"/>
+        <source>Add Tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="415"/>
+        <source>Remove Tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="468"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotform.ui" line="487"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TarotFrame</name>
+    <message>
+        <location filename="../tarot/tarotframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tarot/tarotframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TreeForm</name>
+    <message>
+        <location filename="../trees/treeform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trees/treeform.ui" line="41"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trees/treeform.ui" line="48"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TreesFrame</name>
+    <message>
+        <location filename="../trees/treesframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trees/treesframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trees/treesframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trees/treesframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trees/treesframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../trees/treesframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ZodiacForm</name>
+    <message>
+        <location filename="../zodiac/zodiacform.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../zodiac/zodiacform.ui" line="41"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../zodiac/zodiacform.ui" line="48"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ZodiacFrame</name>
+    <message>
+        <location filename="../zodiac/zodiacframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../zodiac/zodiacframe.ui" line="25"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../zodiac/zodiacframe.ui" line="48"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../zodiac/zodiacframe.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../zodiac/zodiacframe.ui" line="62"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../zodiac/zodiacframe.ui" line="69"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+</TS>
