@@ -42,7 +42,7 @@ void AnimalForm::on_saveButton_clicked()
     QString description = ui->descriptionTextEdit->toPlainText();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must not be empty"));
         return;
     }
 
@@ -53,10 +53,10 @@ void AnimalForm::on_saveButton_clicked()
             ui->nameLineEdit->clear();
             ui->descriptionTextEdit->clear();
         } else {
-            QMessageBox::information(this, "Success", "Animal saved");
+            QMessageBox::information(this, tr("Success"), tr("Animal saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Animal not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Animal not saved"));
     }
 }
 
@@ -65,8 +65,8 @@ void AnimalForm::on_closeButton_clicked()
 {
     if (settings.show_warnings() && (ui->nameLineEdit->text() != m_default_name ||
                                          ui->descriptionTextEdit->toPlainText() != m_default_description)) {
-        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
-                             "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+        QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Unsaved Changes"),
+                             tr("You have unsaved changes, if you continue they will be lost. Do you want to continue?"),
                                 QMessageBox::Yes | QMessageBox::No);
 
         if (button == QMessageBox::No) {

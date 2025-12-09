@@ -29,7 +29,7 @@ void AnimalFrame::on_viewButton_clicked()
     }
 
     AnimalForm *form = new AnimalForm(this, ui->animalsTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Animal");
+    form->setWindowTitle(tr("View Animal"));
     form->exec();
 
     loadData();
@@ -39,7 +39,7 @@ void AnimalFrame::on_viewButton_clicked()
 void AnimalFrame::on_addButton_clicked()
 {
     AnimalForm *form = new AnimalForm(this);
-    form->setWindowTitle("Add New Animal");
+    form->setWindowTitle(tr("Add New Animal"));
 
     form->exec();
     loadData();
@@ -55,7 +55,7 @@ void AnimalFrame::on_editButton_clicked()
     }
 
     AnimalForm *form = new AnimalForm(this, ui->animalsTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Animal");
+    form->setWindowTitle(tr("Edit Animal"));
     form->exec();
 
     loadData();
@@ -72,7 +72,8 @@ void AnimalFrame::on_deleteButton_clicked()
     AnimalModel model = AnimalModel::load(ui->animalsTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") + 
+                                    model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
