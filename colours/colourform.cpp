@@ -39,8 +39,8 @@ void ColourForm::on_closeButton_clicked()
 {
     if (settings.show_warnings() &&
         (m_default_name != ui->nameLineEdit->text() || m_default_description != ui->meaningTextEdit->toPlainText())) {
-        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
-            "You have unsaved changes. If you continue they will be lost, do you want to continue?",
+        QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Unsaved Changes"),
+            tr("You have unsaved changes. If you continue they will be lost, do you want to continue?"),
             QMessageBox::Yes | QMessageBox::No);
 
         if (button == QMessageBox::No) {
@@ -58,7 +58,7 @@ void ColourForm::on_saveButton_clicked()
     QString meaning = ui->meaningTextEdit->toPlainText();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must not be empty"));
         return;
     }
 
@@ -69,10 +69,10 @@ void ColourForm::on_saveButton_clicked()
             ui->nameLineEdit->clear();
             ui->meaningTextEdit->clear();
         } else {
-            QMessageBox::information(this, "Success", "Colour saved");
+            QMessageBox::information(this, tr("Success"), tr("Colour saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Colour not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Colour not saved"));
     }
 }
 

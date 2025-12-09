@@ -25,7 +25,7 @@ ColourFrame::~ColourFrame()
 void ColourFrame::on_addButton_clicked()
 {
     ColourForm *form = new ColourForm(this);
-    form->setWindowTitle("Add New Colour");
+    form->setWindowTitle(tr("Add New Colour"));
 
     form->exec();
     loadData();
@@ -39,7 +39,7 @@ void ColourFrame::on_editButton_clicked()
     }
 
     ColourForm *form = new ColourForm(this, ui->colourTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Colour");
+    form->setWindowTitle(tr("Edit Colour"));
     form->exec();
 
     loadData();
@@ -53,7 +53,7 @@ void ColourFrame::on_viewButton_clicked()
     }
 
     ColourForm *form = new ColourForm(this, ui->colourTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Colour");
+    form->setWindowTitle(tr("View Colour"));
     form->exec();
 
     loadData();
@@ -69,7 +69,7 @@ void ColourFrame::on_deleteButton_clicked()
     ColourModel model = ColourModel::load(ui->colourTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") + model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
