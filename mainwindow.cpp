@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     if (settings.data_directory().isEmpty()) {
         on_actionSettinga_triggered();
-        QMessageBox::information(this, "Action Required", "Please select a data directory.");
+        QMessageBox::information(this, tr("Action Required"), tr("Please select a data directory."));
         return;
     }
     
@@ -74,7 +74,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionPolarity_triggered()
 {
     PolarityFrame *polarityFrame = new PolarityFrame(this);
-    setWindowTitle("Book of Shadows:- Polarity");
+    setWindowTitle(tr("Book of Shadows:- Polarity"));
     setCentralWidget(polarityFrame);
 }
 
@@ -82,56 +82,56 @@ void MainWindow::on_actionPolarity_triggered()
 void MainWindow::on_actionSettinga_triggered()
 {
     SettingsFrame *settingsFrame = new SettingsFrame(this);
-    setWindowTitle("Book of Shadows:- Settings");
+    setWindowTitle(tr("Book of Shadows:- Settings"));
     setCentralWidget(settingsFrame);
 }
 
 void MainWindow::on_actionColours_triggered()
 {
     ColourFrame *coloursFrame = new ColourFrame(this);
-    setWindowTitle("Book of Shadows:- Colours");
+    setWindowTitle(tr("Book of Shadows:- Colours"));
     setCentralWidget(coloursFrame);
 }
 
 void MainWindow::on_actionGods_triggered()
 {
     GodFrame *godFrame = new GodFrame(this);
-    setWindowTitle("Book of Shadows:- Gods");
+    setWindowTitle(tr("Book of Shadows:- Gods"));
     setCentralWidget(godFrame);
 }
 
 void MainWindow::on_actionHerbs_triggered()
 {
     HerbFrame *herbFrame = new HerbFrame(this);
-    setWindowTitle("Book of Shadows:- Herbs");
+    setWindowTitle(tr("Book of Shadows:- Herbs"));
     setCentralWidget(herbFrame);
 }
 
 void MainWindow::on_actionPlanets_triggered()
 {
     PlanetsFrame *planetsFrame = new PlanetsFrame(this);
-    setWindowTitle("Book of Shadows:- Planets");
+    setWindowTitle(tr("Book of Shadows:- Planets"));
     setCentralWidget(planetsFrame);
 }
 
 void MainWindow::on_actionAnimals_triggered()
 {
     AnimalFrame *animalFrame = new AnimalFrame(this);
-    setWindowTitle("Book of Shadows:- Animals");
+    setWindowTitle(tr("Book of Shadows:- Animals"));
     setCentralWidget(animalFrame);
 }
 
 void MainWindow::on_actionTrees_triggered()
 {
     TreesFrame *treeFrame = new TreesFrame(this);
-    setWindowTitle("Book of Shadows:- Trees");
+    setWindowTitle(tr("Book of Shadows:- Trees"));
     setCentralWidget(treeFrame);
 }
 
 void MainWindow::on_actionZodiac_triggered()
 {
     ZodiacFrame *frame = new ZodiacFrame(this);
-    setWindowTitle("Book of Shadows:- Zodiac");
+    setWindowTitle(tr("Book of Shadows:- Zodiac"));
     setCentralWidget(frame);
 }
 
@@ -150,14 +150,14 @@ void MainWindow::on_actionAbout_Qt_triggered()
 void MainWindow::on_actionRunestones_triggered()
 {
     RunestoneFrame *frame = new RunestoneFrame(this);
-    setWindowTitle("Book of Shadows:- Runes");
+    setWindowTitle(tr("Book of Shadows:- Runes"));
     setCentralWidget(frame);
 }
 
 void MainWindow::on_actionCrystals_triggered()
 {
     CrystalFrame *frame = new CrystalFrame(this);
-    setWindowTitle("Book of Shadows:- Crystals");
+    setWindowTitle(tr("Book of Shadows:- Crystals"));
     setCentralWidget(frame);
 }
 
@@ -165,7 +165,7 @@ void MainWindow::on_actionCrystals_triggered()
 void MainWindow::on_actionTarot_Cards_triggered()
 {
     TarotFrame *frame = new TarotFrame(this);
-    setWindowTitle("Book of Shadows:- Tarot Cards");
+    setWindowTitle(tr("Book of Shadows:- Tarot Cards"));
     setCentralWidget(frame);
 }
 
@@ -173,7 +173,7 @@ void MainWindow::on_actionTarot_Cards_triggered()
 void MainWindow::on_actionNotes_triggered()
 {
     NotesFrame *frame = new NotesFrame(this);
-    setWindowTitle("Book of Shadows:- Notes");
+    setWindowTitle(tr("Book of Shadows:- Notes"));
     setCentralWidget(frame);
 }
 
@@ -181,7 +181,7 @@ void MainWindow::on_actionNotes_triggered()
 void MainWindow::on_actionRunes_triggered()
 {
     RuneSpellFrame *frame = new RuneSpellFrame(this);
-    setWindowTitle("Book of Shadows:- Rune Spells");
+    setWindowTitle(tr("Book of Shadows:- Rune Spells"));
     setCentralWidget(frame);
 }
 
