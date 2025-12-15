@@ -53,8 +53,8 @@ void GodForm::on_closeButton_clicked()
     if (settings.show_warnings() && (m_default_name != ui->nameLineEdit->text() ||
                                      m_default_description != ui->descriptionTextEdit->toPlainText() ||
                                      m_default_polarity != ui->polarityCombo->currentData().toInt())) {
-        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
-            "You have unsaved changes. If you continue, you will lose them. Do you want to continue?",
+        QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Unsaved Changes"),
+            tr("You have unsaved changes. If you continue, you will lose them. Do you want to continue?"),
                                                                   QMessageBox::Yes | QMessageBox::No);
         if (button == QMessageBox::No) {
             return;
@@ -73,15 +73,15 @@ void GodForm::on_saveButton_clicked()
     QString message;
 
     if (name.isEmpty()) {
-        message += "Name must not be empty\n";
+        message += tr("Name must not be empty\n");
     }
 
     if (polarityId == 0) {
-        message += "You must select a polarity";
+        message += tr("You must select a polarity");
     }
 
     if (!message.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", message);
+        QMessageBox::critical(this, tr("Input Error"), message);
         return;
     }
 
@@ -93,10 +93,10 @@ void GodForm::on_saveButton_clicked()
             ui->descriptionTextEdit->clear();
             ui->polarityCombo->clear();
         } else {
-            QMessageBox::information(this, "Success", "God saved");
+            QMessageBox::information(this, tr("Success"), tr("God saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "God not saved");
+        QMessageBox::critical(this, tr("Error"), tr("God not saved"));
     }
 }
 

@@ -25,7 +25,7 @@ GodFrame::~GodFrame()
 void GodFrame::on_addButton_clicked()
 {
     GodForm *form = new GodForm(this);
-    form->setWindowTitle("Add New God");
+    form->setWindowTitle(tr("Add New God"));
 
     form->exec();
     loadData();
@@ -39,7 +39,7 @@ void GodFrame::on_editButton_clicked()
     }
 
     GodForm *form = new GodForm(this, ui->godTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit God");
+    form->setWindowTitle(tr("Edit God"));
     form->exec();
 
     loadData();
@@ -54,7 +54,7 @@ void GodFrame::on_viewButton_clicked()
     }
 
     GodForm *form = new GodForm(this, ui->godTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View God");
+    form->setWindowTitle(tr("View God"));
     form->exec();
 
     loadData();
@@ -83,7 +83,8 @@ void GodFrame::on_deleteButton_clicked()
     GodModel model = GodModel::load(ui->godTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), 
+        tr("Are you sure you want to delete ") + model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
