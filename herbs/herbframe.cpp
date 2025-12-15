@@ -25,7 +25,7 @@ HerbFrame::~HerbFrame()
 void HerbFrame::on_addButton_clicked()
 {
     HerbForm *form = new HerbForm(this);
-    form->setWindowTitle("Add New Herb");
+    form->setWindowTitle(tr("Add New Herb"));
     form->exec();
     loadData();
 }
@@ -38,7 +38,7 @@ void HerbFrame::on_editButton_clicked()
     }
 
     HerbForm *form = new HerbForm(this, ui->HerbTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Herb");
+    form->setWindowTitle(tr("Edit Herb"));
     form->exec();
 
     loadData();
@@ -52,7 +52,7 @@ void HerbFrame::on_viewButton_clicked()
     }
 
     HerbForm *form = new HerbForm(this, ui->HerbTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Herb");
+    form->setWindowTitle(tr("View Herb"));
     form->exec();
 }
 
@@ -66,7 +66,8 @@ void HerbFrame::on_deleteButton_clicked()
     HerbModel model = HerbModel::load(ui->HerbTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") + 
+                model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();

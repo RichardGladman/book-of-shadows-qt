@@ -41,8 +41,8 @@ void HerbForm::on_closeButton_clicked()
 {
     if (settings.show_warnings() && (ui->nameLineEdit->text() != m_default_name ||
                                      ui->descriptionTextEdit->toPlainText() != m_default_description)) {
-        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
-            "You have unsaved changes. If you continue they will be lost, do you want to continue?",
+        QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Unsaved Changes"),
+            tr("You have unsaved changes. If you continue they will be lost, do you want to continue?"),
                                                                   QMessageBox::Yes | QMessageBox::No);
 
         if (button == QMessageBox::No) {
@@ -60,7 +60,7 @@ void HerbForm::on_saveButton_clicked()
     QString description = ui->descriptionTextEdit->toPlainText();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must not be empty"));
         return;
     }
 
@@ -71,10 +71,10 @@ void HerbForm::on_saveButton_clicked()
             ui->nameLineEdit->clear();
             ui->descriptionTextEdit->clear();
         } else {
-            QMessageBox::information(this, "Success", "Herb saved");
+            QMessageBox::information(this, tr("Success"), tr("Herb saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Herb not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Herb not saved"));
     }
 }
 
