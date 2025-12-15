@@ -35,7 +35,7 @@ void CrystalFrame::on_viewButton_clicked()
     }
 
     CrystalForm *form = new CrystalForm(this, ui->crystalTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Crystal");
+    form->setWindowTitle(tr("View Crystal"));
     form->exec();
 }
 
@@ -43,7 +43,7 @@ void CrystalFrame::on_viewButton_clicked()
 void CrystalFrame::on_addButton_clicked()
 {
     CrystalForm *form = new CrystalForm(this);
-    form->setWindowTitle("Add New Crystal");
+    form->setWindowTitle(tr("Add New Crystal"));
 
     form->exec();
     loadData();
@@ -58,7 +58,7 @@ void CrystalFrame::on_editButton_clicked()
     }
 
     CrystalForm *form = new CrystalForm(this, ui->crystalTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Crystal");
+    form->setWindowTitle(tr("Edit Crystal"));
     form->exec();
 
     loadData();
@@ -75,7 +75,8 @@ void CrystalFrame::on_deleteButton_clicked()
     CrystalModel model = CrystalModel::load(ui->crystalTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") + 
+        model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -88,8 +89,8 @@ void CrystalFrame::loadData(const QString &term)
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
-    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
-    tableModel->setHeaderData(1, Qt::Horizontal, "Crystal");
+    tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+    tableModel->setHeaderData(1, Qt::Horizontal, tr("Crystal"));
 
     ui->crystalTable->setModel(tableModel);
 }
