@@ -30,7 +30,7 @@ void NotesFrame::on_viewButton_clicked()
     }
 
     NoteForm *form = new NoteForm(this, ui->noteTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Animal");
+    form->setWindowTitle(tr("View Note"));
     form->exec();
 
     loadData();
@@ -40,7 +40,7 @@ void NotesFrame::on_viewButton_clicked()
 void NotesFrame::on_addButton_clicked()
 {
     NoteForm *form = new NoteForm(this);
-    form->setWindowTitle("Add New Animal");
+    form->setWindowTitle(tr("Add New Note"));
 
     form->exec();
     loadData();
@@ -56,7 +56,7 @@ void NotesFrame::on_editButton_clicked()
     }
 
     NoteForm *form = new NoteForm(this, ui->noteTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Animal");
+    form->setWindowTitle(tr("Edit Note"));
     form->exec();
 
     loadData();
@@ -73,7 +73,8 @@ void NotesFrame::on_deleteButton_clicked()
     NoteModel model = NoteModel::load(ui->noteTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.title() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), 
+                            tr("Are you sure you want to delete ") + model.title() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -87,8 +88,8 @@ void NotesFrame::loadData()
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
-    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
-    tableModel->setHeaderData(1, Qt::Horizontal, "Note");
+    tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+    tableModel->setHeaderData(1, Qt::Horizontal, tr("Note"));
 
     ui->noteTable->setModel(tableModel);
 }

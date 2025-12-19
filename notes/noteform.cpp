@@ -42,7 +42,7 @@ void NoteForm::on_saveButton_clicked()
     QString text = ui->textTextEdit->toPlainText();
 
     if (title.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Title must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Title must not be empty"));
         return;
     }
 
@@ -53,10 +53,10 @@ void NoteForm::on_saveButton_clicked()
             ui->titleLineEdit->clear();
             ui->textTextEdit->clear();
         } else {
-            QMessageBox::information(this, "Success", "Note saved");
+            QMessageBox::information(this, tr("Success"), tr("Note saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Note not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Note not saved"));
     }
 }
 
@@ -65,8 +65,8 @@ void NoteForm::on_closeButton_clicked()
 {
     if (settings.show_warnings() && (m_default_title != ui->titleLineEdit->text() ||
                                      m_default_text != ui->textTextEdit->toPlainText())) {
-        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
-                    "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+        QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Unsaved Changes"),
+                    tr("You have unsaved changes, if you continue they will be lost. Do you want to continue?"),
                     QMessageBox::Yes | QMessageBox::No);
 
         if (button == QMessageBox::No) {
