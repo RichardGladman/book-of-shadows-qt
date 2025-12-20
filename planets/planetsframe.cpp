@@ -25,7 +25,7 @@ PlanetsFrame::~PlanetsFrame()
 void PlanetsFrame::on_addButton_clicked()
 {
     PlanetForm *form = new PlanetForm(this);
-    form->setWindowTitle("Add new Planet");
+    form->setWindowTitle(tr("Add new Planet"));
 
     form->exec();
 
@@ -41,7 +41,7 @@ void PlanetsFrame::on_editButton_clicked()
     }
 
     PlanetForm *form = new PlanetForm(this, ui->planetsTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Planet");
+    form->setWindowTitle(tr("Edit Planet"));
     form->exec();
 
     loadData();
@@ -56,7 +56,7 @@ void PlanetsFrame::on_viewButton_clicked()
     }
 
     PlanetForm *form = new PlanetForm(this, ui->planetsTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Planet");
+    form->setWindowTitle(tr("View Planet"));
     form->exec();
 
     loadData();
@@ -73,7 +73,8 @@ void PlanetsFrame::on_deleteButton_clicked()
     PlanetModel model = PlanetModel::load(ui->planetsTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ")
+                         + model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -86,8 +87,8 @@ void PlanetsFrame::loadData()
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
-    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
-    tableModel->setHeaderData(1, Qt::Horizontal, "Planet");
+    tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+    tableModel->setHeaderData(1, Qt::Horizontal, tr("Planet"));
 
     ui->planetsTableView->setModel(tableModel);
 }

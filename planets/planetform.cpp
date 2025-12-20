@@ -43,7 +43,7 @@ void PlanetForm::on_saveButton_clicked()
     QString description = ui->meaningTextEdit->toPlainText();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must not be empty"));
         return;
     }
 
@@ -55,10 +55,10 @@ void PlanetForm::on_saveButton_clicked()
             ui->meaningTextEdit->clear();
             ui->nameLineEdit->focusWidget();
         } else {
-            QMessageBox::information(this, "Success", "Planet saved");
+            QMessageBox::information(this, tr("Success"), tr("Planet saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Planet not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Planet not saved"));
     }
 }
 
@@ -67,8 +67,8 @@ void PlanetForm::on_closeButton_clicked()
 {
     if (settings.show_warnings() && (m_default_name != ui->nameLineEdit->text() ||
                                      m_default_description != ui->meaningTextEdit->toPlainText())) {
-        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
-            "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+        QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Unsaved Changes"),
+            tr("You have unsaved changes, if you continue they will be lost. Do you want to continue?"),
                                                                   QMessageBox::Yes | QMessageBox::No);
         if (button == QMessageBox::No) {
             return;
