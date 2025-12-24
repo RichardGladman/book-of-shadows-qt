@@ -27,7 +27,7 @@ PolarityFrame::~PolarityFrame()
 void PolarityFrame::on_addButton_clicked()
 {
     PolarityForm form = PolarityForm(this);
-    form.setWindowTitle("Add New Polarity");
+    form.setWindowTitle(tr("Add New Polarity"));
 
     form.exec();
     loadData();
@@ -41,6 +41,7 @@ void PolarityFrame::on_editButton_clicked()
     }
 
     PolarityForm *form = new PolarityForm(this, ui->polarityTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+    form->setWindowTitle(tr("Edit Polarity"));
     form->exec();
 
     loadData();
@@ -54,6 +55,7 @@ void PolarityFrame::on_viewButton_clicked()
     }
 
     PolarityViewDialog *dialog = new PolarityViewDialog(this, ui->polarityTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
+    dialog->setWindowTitle(tr("View Polarity"));
     dialog->exec();
 }
 
@@ -66,7 +68,8 @@ void PolarityFrame::on_deleteButton_clicked()
 
     PolarityModel model = PolarityModel::load(ui->polarityTable->model()->index(selectedRows.at(0).row(),0).data().toInt());
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), 
+                            tr("Are you sure you want to delete ") + model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -79,8 +82,8 @@ void PolarityFrame::loadData()
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
-    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
-    tableModel->setHeaderData(1, Qt::Horizontal, "Name");
+    tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+    tableModel->setHeaderData(1, Qt::Horizontal, tr("Name"));
 
     ui->polarityTable->setModel(tableModel);
 }
