@@ -35,7 +35,7 @@ void RunestoneFrame::on_viewButton_clicked()
     }
 
     RunestoneForm *form = new RunestoneForm(this, ui->runestoneTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Runestone");
+    form->setWindowTitle(tr("View Runestone"));
     form->exec();
 }
 
@@ -43,7 +43,7 @@ void RunestoneFrame::on_viewButton_clicked()
 void RunestoneFrame::on_addButton_clicked()
 {
     RunestoneForm *form = new RunestoneForm(this);
-    form->setWindowTitle("Add New Runestone");
+    form->setWindowTitle(tr("Add New Runestone"));
 
     form->exec();
     loadData();
@@ -58,7 +58,7 @@ void RunestoneFrame::on_editButton_clicked()
     }
 
     RunestoneForm *form = new RunestoneForm(this, ui->runestoneTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Runestone");
+    form->setWindowTitle(tr("Edit Runestone"));
     form->exec();
 
     loadData();
@@ -75,7 +75,8 @@ void RunestoneFrame::on_deleteButton_clicked()
     RunestoneModel model = RunestoneModel::load(ui->runestoneTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") +
+                                 model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -88,8 +89,8 @@ void RunestoneFrame::loadData(const QString &term)
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
-    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
-    tableModel->setHeaderData(1, Qt::Horizontal, "Rune");
+    tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+    tableModel->setHeaderData(1, Qt::Horizontal, tr("Rune"));
 
     ui->runestoneTable->setModel(tableModel);
 }

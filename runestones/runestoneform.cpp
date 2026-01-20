@@ -118,7 +118,7 @@ QListWidget* RunestoneForm::getListView(std::string view)
 void RunestoneForm::on_addAnimalButton_clicked()
 {
     RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "Animal");
-    chooser->setWindowTitle("Choose Animals");
+    chooser->setWindowTitle(tr("Choose Animals"));
     chooser->exec();
 }
 
@@ -126,7 +126,7 @@ void RunestoneForm::on_addAnimalButton_clicked()
 void RunestoneForm::on_addColourButton_clicked()
 {
     RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "Colour");
-    chooser->setWindowTitle("Choose Colours");
+    chooser->setWindowTitle(tr("Choose Colours"));
     chooser->exec();
 }
 
@@ -134,7 +134,7 @@ void RunestoneForm::on_addColourButton_clicked()
 void RunestoneForm::on_addGodButton_clicked()
 {
     RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "God");
-    chooser->setWindowTitle("Choose Gods");
+    chooser->setWindowTitle(tr("Choose Gods"));
     chooser->exec();
 }
 
@@ -142,7 +142,7 @@ void RunestoneForm::on_addGodButton_clicked()
 void RunestoneForm::on_Herb_clicked()
 {
     RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "Herb");
-    chooser->setWindowTitle("Choose Herbs");
+    chooser->setWindowTitle(tr("Choose Herbs"));
     chooser->exec();
 }
 
@@ -150,7 +150,7 @@ void RunestoneForm::on_Herb_clicked()
 void RunestoneForm::on_addTreeButton_clicked()
 {
     RunestoneCorresponderChooser *chooser = new RunestoneCorresponderChooser(this, "Tree");
-    chooser->setWindowTitle("Choose Trees");
+    chooser->setWindowTitle(tr("Choose Trees"));
     chooser->exec();
 }
 
@@ -208,8 +208,8 @@ void RunestoneForm::on_closeButton_clicked()
         polarityId != default_polarity ||zodiacId != default_zodiac || !Compare::areEqual(animals, default_animals) ||
         !Compare::areEqual(colours, default_colours) || !Compare::areEqual(gods, default_gods) ||
         !Compare::areEqual(herbs, default_herbs) || !Compare::areEqual(trees, default_trees))) {
-        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
-                             "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+        QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Unsaved Changes"),
+                             tr("You have unsaved changes, if you continue they will be lost. Do you want to continue?"),
                                 QMessageBox::Yes | QMessageBox::No);
 
         if (button == QMessageBox::No) {
@@ -230,7 +230,7 @@ void RunestoneForm::on_saveButton_clicked()
     int zodiacId = ui->zodiacCombo->currentData().toInt();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must not be empty"));
         return;
     }
 
@@ -251,10 +251,10 @@ void RunestoneForm::on_saveButton_clicked()
             ui->herbList->clear();
             ui->treeList->clear();
         } else {
-            QMessageBox::information(this, "Success", "Runestone saved");
+            QMessageBox::information(this, tr("Success"), tr("Runestone saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Runestone not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Runestone not saved"));
     }
 }
 
