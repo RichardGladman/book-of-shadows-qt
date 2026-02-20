@@ -35,8 +35,9 @@ void TarotFrame::on_viewButton_clicked()
         return;
     }
 
-    TarotForm *form = new TarotForm(this, ui->tarotTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Tarot");
+    TarotForm *form = new TarotForm(this, ui->tarotTable->model()->index(selectedRows.at(0).row(), 0)
+                                    .data().toInt(), "view");
+    form->setWindowTitle(tr("View Tarot"));
     form->exec();
 }
 
@@ -44,7 +45,7 @@ void TarotFrame::on_viewButton_clicked()
 void TarotFrame::on_addButton_clicked()
 {
     TarotForm *form = new TarotForm(this);
-    form->setWindowTitle("Add New Tarot");
+    form->setWindowTitle(tr("Add New Tarot"));
 
     form->exec();
     loadData();
@@ -58,8 +59,9 @@ void TarotFrame::on_editButton_clicked()
         return;
     }
 
-    TarotForm *form = new TarotForm(this, ui->tarotTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Tarot");
+    TarotForm *form = new TarotForm(this, ui->tarotTable->model()->index(selectedRows.at(0).row(), 0)
+                                    .data().toInt());
+    form->setWindowTitle(tr("Edit Tarot"));
     form->exec();
 
     loadData();
@@ -76,7 +78,8 @@ void TarotFrame::on_deleteButton_clicked()
     TarotModel model = TarotModel::load(ui->tarotTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") + 
+                                            model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -89,8 +92,8 @@ void TarotFrame::loadData(const QString &term)
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
-    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
-    tableModel->setHeaderData(1, Qt::Horizontal, "Rune");
+    tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+    tableModel->setHeaderData(1, Qt::Horizontal, tr("Tarot"));
 
     ui->tarotTable->setModel(tableModel);
 }

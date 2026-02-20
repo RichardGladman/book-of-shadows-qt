@@ -214,8 +214,8 @@ void TarotForm::on_closeButton_clicked()
         polarityId != default_polarity ||zodiacId != default_zodiac || !Compare::areEqual(animals, default_animals) ||
         !Compare::areEqual(colours, default_colours) || !Compare::areEqual(gods, default_gods) ||
         !Compare::areEqual(herbs, default_herbs) || !Compare::areEqual(trees, default_trees))) {
-        QMessageBox::StandardButton button = QMessageBox::warning(this, "Unsaved Changes",
-                             "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+        QMessageBox::StandardButton button = QMessageBox::warning(this, tr("Unsaved Changes"),
+                             tr("You have unsaved changes, if you continue they will be lost. Do you want to continue?"),
                                 QMessageBox::Yes | QMessageBox::No);
 
         if (button == QMessageBox::No) {
@@ -236,7 +236,7 @@ void TarotForm::on_saveButton_clicked()
     int zodiacId = ui->zodiacCombo->currentData().toInt();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must not be empty"));
         return;
     }
 
@@ -257,10 +257,10 @@ void TarotForm::on_saveButton_clicked()
             ui->herbList->clear();
             ui->treeList->clear();
         } else {
-            QMessageBox::information(this, "Success", "Tarot saved");
+            QMessageBox::information(this, tr("Success"), tr("Tarot saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Tarot not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Tarot not saved"));
     }
 }
 
