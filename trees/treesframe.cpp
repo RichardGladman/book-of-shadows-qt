@@ -30,7 +30,7 @@ void TreesFrame::on_viewButton_clicked()
     }
 
     TreeForm *form = new TreeForm(this, ui->treesTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Tree");
+    form->setWindowTitle(tr("View Tree"));
     form->exec();
 
     loadData();
@@ -40,7 +40,7 @@ void TreesFrame::on_viewButton_clicked()
 void TreesFrame::on_addButton_clicked()
 {
     TreeForm *form = new TreeForm(this);
-    form->setWindowTitle("Add New Tree");
+    form->setWindowTitle(tr("Add New Tree"));
 
     form->exec();
     loadData();
@@ -57,7 +57,8 @@ void TreesFrame::on_deleteButton_clicked()
     TreeModel model = TreeModel::load(ui->treesTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") + 
+                                            model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -73,7 +74,7 @@ void TreesFrame::on_editButton_clicked()
     }
 
     TreeForm *form = new TreeForm(this, ui->treesTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Tree");
+    form->setWindowTitle(tr("Edit Tree"));
     form->exec();
 
     loadData();
@@ -86,8 +87,8 @@ void TreesFrame::loadData()
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
-    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
-    tableModel->setHeaderData(1, Qt::Horizontal, "Tree");
+    tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+    tableModel->setHeaderData(1, Qt::Horizontal, tr("Tree"));
 
     ui->treesTable->setModel(tableModel);
 }

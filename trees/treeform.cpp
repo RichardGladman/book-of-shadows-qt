@@ -43,7 +43,7 @@ void TreeForm::on_saveButton_clicked()
 
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must not be empty"));
         return;
     }
 
@@ -54,10 +54,10 @@ void TreeForm::on_saveButton_clicked()
             ui->nameLinedit->clear();
             ui->descriptionTexrEdit->clear();
         } else {
-            QMessageBox::information(this, "Success", "Colour saved");
+            QMessageBox::information(this, tr("Success"), tr("Colour saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Colour not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Colour not saved"));
     }
 
 }
@@ -67,8 +67,8 @@ void TreeForm::on_closeButton_clicked()
 {
     if (settings.show_warnings() && (m_default_name != ui->nameLinedit->text() ||
                                      m_default_description != ui->descriptionTexrEdit->toPlainText())) {
-        int button = QMessageBox::warning(this, "Unsaved Changes",
-            "You have unsaved changes, if you continue they will be lost. Do you want to continue?",
+        int button = QMessageBox::warning(this, tr("Unsaved Changes"),
+            tr("You have unsaved changes, if you continue they will be lost. Do you want to continue?"),
                                           QMessageBox::Yes | QMessageBox::No);
 
         if (button == QMessageBox::No) {
