@@ -18,6 +18,8 @@ ColourForm::ColourForm(QWidget *parent, int id, QString mode)
         ColourModel model = ColourModel::load(id);
         ui->nameLineEdit->setText(model.name());
         ui->meaningTextEdit->setPlainText(model.meaning());
+        m_default_name = model.name();
+        m_default_description = model.meaning();
 
         m_id = id;
     }
