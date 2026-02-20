@@ -25,7 +25,7 @@ SettingsFrame::~SettingsFrame()
 
 void SettingsFrame::on_directoryButton_clicked()
 {
-    QString dirName = QFileDialog::getExistingDirectory(this, "Choose data directory", QString(), QFileDialog::ShowDirsOnly);
+    QString dirName = QFileDialog::getExistingDirectory(this, tr("Choose data directory"), QString(), QFileDialog::ShowDirsOnly);
     if (!dirName.isEmpty()) {
         ui->directoryLineEdit->setText(dirName);
     }
@@ -38,7 +38,7 @@ void SettingsFrame::on_saveButton_clicked()
     settings.show_warnings(ui->warnings_checkbox->isChecked());
 
     if (settings.data_directory().isEmpty()) {
-        QMessageBox::warning(this, "Validation Error", "You must choose a directory");
+        QMessageBox::warning(this, tr("Validation Error"), tr("You must choose a directory"));
         return;
     }
 
