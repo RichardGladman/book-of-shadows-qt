@@ -238,7 +238,7 @@ void RuneSpellForm::on_saveButton_clicked()
     QList<QGraphicsItem *> glyphs = view->items();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must be entered");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must be entered"));
         return;
     }
 
@@ -263,10 +263,10 @@ void RuneSpellForm::on_saveButton_clicked()
             ui->descriptionEditBox->clear();
             ui->tagsLineEdit->clear();
         } else {
-            QMessageBox::information(this, "Success", "Runespell has been saved");
+            QMessageBox::information(this, tr("Success"), tr("Runespell has been saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Runespell not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Runespell not saved"));
     }
 }
 

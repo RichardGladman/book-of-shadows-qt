@@ -26,7 +26,7 @@ RuneSpellFrame::~RuneSpellFrame()
 void RuneSpellFrame::on_addButton_clicked()
 {
     RuneSpellForm *form = new RuneSpellForm(this);
-    form->setWindowTitle("Add New Rune Spell");
+    form->setWindowTitle(tr("Add New Rune Spell"));
 
     form->exec();
     loadData();
@@ -40,7 +40,7 @@ void RuneSpellFrame::on_editButton_clicked()
     }
 
     RuneSpellForm *form = new RuneSpellForm(this, ui->spellTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Rune Spell");
+    form->setWindowTitle(tr("Edit Rune Spell"));
     form->exec();
 
     loadData();
@@ -68,7 +68,8 @@ void RuneSpellFrame::on_deleteButton_clicked()
     RunespellModel model = RunespellModel::load(ui->spellTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.title() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") + 
+                                            model.title() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -84,7 +85,7 @@ void RuneSpellFrame::on_viewButton_clicked()
     }
 
     RuneSpellForm *form = new RuneSpellForm(this, ui->spellTableView->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Rune Spell");
+    form->setWindowTitle(tr("View Rune Spell"));
     form->exec();
 
     loadData();
