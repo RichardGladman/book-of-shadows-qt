@@ -96,3 +96,9 @@ void ColourFrame::loadData()
     ui->colourTable->setModel(tableModel);
 }
 
+
+void ColourFrame::on_colourTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

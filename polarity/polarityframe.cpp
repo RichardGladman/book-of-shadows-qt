@@ -89,3 +89,9 @@ void PolarityFrame::loadData()
 }
 
 
+
+void PolarityFrame::on_polarityTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

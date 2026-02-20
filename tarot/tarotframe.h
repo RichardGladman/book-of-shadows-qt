@@ -22,6 +22,8 @@ private slots:
     void on_editButton_clicked();
     void on_deleteButton_clicked();
 
+    void on_tarotTable_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::TarotFrame *ui;
 

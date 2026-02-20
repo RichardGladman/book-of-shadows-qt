@@ -99,3 +99,9 @@ void AnimalFrame::loadData()
     ui->animalsTable->setModel(tableModel);
 }
 
+
+void AnimalFrame::on_animalsTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

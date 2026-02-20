@@ -98,3 +98,9 @@ void RuneSpellFrame::on_searchButton_clicked()
     loadData();
 }
 
+
+void RuneSpellFrame::on_spellTableView_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

@@ -26,6 +26,8 @@ private slots:
 
     void on_search_button_clicked();
 
+    void on_treesTable_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::TreesFrame *ui;
 

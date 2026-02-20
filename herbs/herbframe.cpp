@@ -93,3 +93,9 @@ void HerbFrame::on_search_button_clicked()
     loadData();
 }
 
+
+void HerbFrame::on_HerbTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

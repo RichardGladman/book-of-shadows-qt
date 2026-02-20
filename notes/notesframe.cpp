@@ -100,3 +100,9 @@ void NotesFrame::on_search_button_clicked()
     loadData();
 }
 
+
+void NotesFrame::on_noteTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

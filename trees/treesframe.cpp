@@ -99,3 +99,9 @@ void TreesFrame::on_search_button_clicked()
     loadData();
 }
 
+
+void TreesFrame::on_treesTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

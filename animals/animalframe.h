@@ -26,6 +26,8 @@ private slots:
 
     void on_searchPushButton_clicked();
 
+    void on_animalsTable_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::AnimalFrame *ui;
 

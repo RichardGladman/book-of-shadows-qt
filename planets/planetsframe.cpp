@@ -100,3 +100,9 @@ void PlanetsFrame::on_search_button_clicked()
     loadData();
 }
 
+
+void PlanetsFrame::on_planetsTableView_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

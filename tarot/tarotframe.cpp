@@ -97,3 +97,9 @@ void TarotFrame::loadData(const QString &term)
 
     ui->tarotTable->setModel(tableModel);
 }
+
+void TarotFrame::on_tarotTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

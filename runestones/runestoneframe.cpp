@@ -94,3 +94,9 @@ void RunestoneFrame::loadData(const QString &term)
 
     ui->runestoneTable->setModel(tableModel);
 }
+
+void RunestoneFrame::on_runestoneTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

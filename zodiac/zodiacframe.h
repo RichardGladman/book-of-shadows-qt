@@ -23,6 +23,8 @@ private slots:
 
     void on_search_button_clicked();
 
+    void on_zodiacTable_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::ZodiacFrame *ui;
 

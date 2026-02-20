@@ -24,6 +24,8 @@ private slots:
 
     void on_deleteButton_clicked();
 
+    void on_polarityTable_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::PolarityFrame *ui;
 

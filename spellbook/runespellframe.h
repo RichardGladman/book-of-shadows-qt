@@ -26,6 +26,8 @@ private slots:
 
     void on_searchButton_clicked();
 
+    void on_spellTableView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::RuneSpellFrame *ui;
 

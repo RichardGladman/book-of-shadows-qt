@@ -94,3 +94,9 @@ void CrystalFrame::loadData(const QString &term)
 
     ui->crystalTable->setModel(tableModel);
 }
+
+void CrystalFrame::on_crystalTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

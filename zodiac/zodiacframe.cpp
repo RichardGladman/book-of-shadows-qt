@@ -100,3 +100,9 @@ void ZodiacFrame::on_search_button_clicked()
     loadData();
 }
 
+
+void ZodiacFrame::on_zodiacTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+

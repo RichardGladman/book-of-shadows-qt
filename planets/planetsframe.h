@@ -26,6 +26,8 @@ private slots:
 
     void on_search_button_clicked();
 
+    void on_planetsTableView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::PlanetsFrame *ui;
 

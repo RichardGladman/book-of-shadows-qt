@@ -98,3 +98,9 @@ void GodFrame::on_search_button_clicked()
     loadData();
 }
 
+
+void GodFrame::on_godTable_doubleClicked(const QModelIndex &index)
+{
+    on_editButton_clicked();
+}
+
