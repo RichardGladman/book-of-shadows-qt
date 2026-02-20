@@ -30,7 +30,7 @@ void ZodiacFrame::on_viewButton_clicked()
     }
 
     ZodiacForm *form = new ZodiacForm(this, ui->zodiacTable->model()->index(selectedRows.at(0).row(), 0).data().toInt(), "view");
-    form->setWindowTitle("View Zodiac");
+    form->setWindowTitle(tr("View Zodiac"));
     form->exec();
 
     loadData();
@@ -41,7 +41,7 @@ void ZodiacFrame::on_viewButton_clicked()
 void ZodiacFrame::on_addButton_clicked()
 {
     ZodiacForm *form = new ZodiacForm(this);
-    form->setWindowTitle("Add New Zodiac");
+    form->setWindowTitle(tr("Add New Zodiac"));
 
     form->exec();
     loadData();
@@ -56,7 +56,7 @@ void ZodiacFrame::on_editButton_clicked()
     }
 
     ZodiacForm *form = new ZodiacForm(this, ui->zodiacTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
-    form->setWindowTitle("Edit Zodiac");
+    form->setWindowTitle(tr("Edit Zodiac"));
     form->exec();
 
     loadData();
@@ -73,7 +73,8 @@ void ZodiacFrame::on_deleteButton_clicked()
     ZodiacModel model = ZodiacModel::load(ui->zodiacTable->model()->index(selectedRows.at(0).row(), 0).data().toInt());
 
 
-    int confirmed = QMessageBox::question(this, "Please confirm", "Are you sure you want to delete " + model.name() + "? This action cannot be undone.");
+    int confirmed = QMessageBox::question(this, tr("Please confirm"), tr("Are you sure you want to delete ") + 
+                                            model.name() + tr("? This action cannot be undone."));
     if (confirmed == QMessageBox::Yes) {
         model.remove();
         loadData();
@@ -86,8 +87,8 @@ void ZodiacFrame::loadData()
     QSqlQueryModel *tableModel = new QSqlQueryModel(this);
     tableModel->setQuery(std::move(query));
 
-    tableModel->setHeaderData(0, Qt::Horizontal, "Id");
-    tableModel->setHeaderData(1, Qt::Horizontal, "Zodiac");
+    tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+    tableModel->setHeaderData(1, Qt::Horizontal, tr("Zodiac"));
 
     ui->zodiacTable->setModel(tableModel);
 }

@@ -43,7 +43,7 @@ void ZodiacForm::on_saveButton_clicked()
     QString description = ui->descriptionTextEdit->toPlainText();
 
     if (name.isEmpty()) {
-        QMessageBox::critical(this, "Input Error", "Name must not be empty");
+        QMessageBox::critical(this, tr("Input Error"), tr("Name must not be empty"));
         return;
     }
 
@@ -54,10 +54,10 @@ void ZodiacForm::on_saveButton_clicked()
             ui->nameLineEdit->clear();
             ui->descriptionTextEdit->clear();
         } else {
-            QMessageBox::information(this, "Success", "Zodiac saved");
+            QMessageBox::information(this, tr("Success"), tr("Zodiac saved"));
         }
     } else {
-        QMessageBox::critical(this, "Error", "Zodiac not saved");
+        QMessageBox::critical(this, tr("Error"), tr("Zodiac not saved"));
     }
 }
 
@@ -66,8 +66,8 @@ void ZodiacForm::on_closeButton_clicked()
 {
     if (settings.show_warnings() && (m_default_name != ui->nameLineEdit->text() ||
                                      m_default_description != ui->descriptionTextEdit->toPlainText())) {
-        int button = QMessageBox::warning(this, "Unsaved Changes",
-                "You have unsaved changes, if you continue they will be lost. Do you want to continue",
+        int button = QMessageBox::warning(this, tr("Unsaved Changes"),
+                tr("You have unsaved changes, if you continue they will be lost. Do you want to continue"),
                                           QMessageBox::Yes | QMessageBox::No);
         if (button == QMessageBox::No) {
             return;
