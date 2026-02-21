@@ -17,6 +17,9 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+    codex/codexframe.h
+    codex/codexframe.cpp
+    codex/codexframe.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -78,6 +81,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         spellbook/tagmodel.h spellbook/tagmodel.cpp
         settings/settingsmodel.h settings/settingsmodel.cpp
         util/compare.h util/compare.cpp
+
+        codex/codexframe.cpp codex/codexframe.h codex/codexframe.ui
 
     )
 # Define target properties for Android with Qt 6 as:

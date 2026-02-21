@@ -50,6 +50,8 @@ private slots:
 
     void on_actionRunes_triggered();
 
+    void on_actionCodex_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

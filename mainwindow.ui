@@ -74,6 +74,7 @@
      <string>Spellbook</string>
     </property>
     <addaction name="actionRunes"/>
+    <addaction name="actionCodex"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuRunestones"/>
@@ -166,6 +167,11 @@
   <action name="actionRunes">
    <property name="text">
     <string>Runes</string>
+   </property>
+  </action>
+  <action name="actionCodex">
+   <property name="text">
+    <string>Codex</string>
    </property>
   </action>
  </widget>

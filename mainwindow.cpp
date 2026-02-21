@@ -15,6 +15,7 @@
 #include "runestones/runestoneframe.h"
 #include "tarot/tarotframe.h"
 #include "crystals/crystalframe.h"
+#include "codex/codexframe.h"
 #include "spellbook/runespellframe.h"
 #include <QDir>
 #include <QFile>
@@ -182,6 +183,14 @@ void MainWindow::on_actionRunes_triggered()
 {
     RuneSpellFrame *frame = new RuneSpellFrame(this);
     setWindowTitle(tr("Book of Shadows:- Rune Spells"));
+    setCentralWidget(frame);
+}
+
+
+void MainWindow::on_actionCodex_triggered()
+{
+    CodexFrame *frame = new CodexFrame();
+    setWindowTitle(tr("Book of Shadows:- Codex"));
     setCentralWidget(frame);
 }
 
