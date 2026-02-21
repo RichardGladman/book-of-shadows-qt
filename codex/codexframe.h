@@ -20,4 +20,8 @@ private:
 
 private slots:
     void handleAddClicked();
+    void handleEditClicked();
+    void handleViewClicked();
+    void handleDeleteClicked();
+    void handleSearchClicked();
 };
