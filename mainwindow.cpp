@@ -189,7 +189,7 @@ void MainWindow::on_actionRunes_triggered()
 
 void MainWindow::on_actionCodex_triggered()
 {
-    CodexFrame *frame = new CodexFrame();
+    CodexFrame *frame = new CodexFrame(this);
     setWindowTitle(tr("Book of Shadows:- Codex"));
     setCentralWidget(frame);
 }
