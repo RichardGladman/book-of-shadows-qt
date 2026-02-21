@@ -47,6 +47,7 @@ void DBInitializer::createDatabaseTables()
     createTarot();
     createCrystals();
     createSpellbook();
+    createCodex();
 }
 
 void DBInitializer::createPolarity()
@@ -210,4 +211,13 @@ void DBInitializer::createSpellbook()
         query.prepare(sql);
         query.exec();
     }
+}
+
+void DBInitializer::createCodex()
+{
+    QString sql = "CREATE TABLE IF NOT EXISTS codex (id INTEGER PRIMARY KEY, title TEXT, description TEXT)";
+    QSqlQuery query;
+
+    query.prepare(sql);
+    query.exec();
 }

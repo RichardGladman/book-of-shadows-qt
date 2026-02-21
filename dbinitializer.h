@@ -26,6 +26,7 @@ private:
     void createTarot();
     void createCrystals();
     void createSpellbook();
+    void createCodex();
 };
 
 #endif // DBINITIALIZER_H
