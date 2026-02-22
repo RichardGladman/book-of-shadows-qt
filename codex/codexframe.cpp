@@ -15,6 +15,7 @@ CodexFrame::CodexFrame(QWidget *parent)
     connect(ui->viewButton, &QPushButton::clicked, this, &CodexFrame::handleViewClicked);
     connect(ui->deleteButton, &QPushButton::clicked, this, &CodexFrame::handleDeleteClicked);
     connect(ui->searchButton, &QPushButton::clicked, this, &CodexFrame::handleSearchClicked);
+    connect(ui->codexTable, &QTableView::doubleClicked, this, &CodexFrame::handleEditClicked);
 }
 
 CodexFrame::~CodexFrame()
