@@ -84,6 +84,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         codex/codexframe.cpp codex/codexframe.h codex/codexframe.ui
         codex/codexmodel.h codex/codexmodel.cpp
+        codex/codexform.h codex/codexform.cpp codex/codexform.ui
 
     )
 # Define target properties for Android with Qt 6 as:

@@ -1,8 +1,14 @@
 #include "codexframe.h"
 #include "ui_codexframe.h"
 
+#include "codexform.h"
+#include "codexmodel.h"
+
 #include <QDebug>
+#include <qnamespace.h>
 #include <qpushbutton.h>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
 
 CodexFrame::CodexFrame(QWidget *parent)
     : QFrame(parent)
@@ -25,7 +31,11 @@ CodexFrame::~CodexFrame()
 
 void CodexFrame::handleAddClicked()
 {
-    qDebug() << "Add";
+    CodexForm * form = new CodexForm(this);
+	form->setWindowTitle("Add New Codex Entry");
+	
+	form->exec();
+	loadData();
 }
 
 void CodexFrame::handleEditClicked()
@@ -46,4 +56,17 @@ void CodexFrame::handleDeleteClicked()
 void CodexFrame::handleSearchClicked()
 {
     qDebug() << "Search";
+}
+
+void CodexFrame::loadData()
+{
+	QSqlQuery query = CodexModel::list(m_search_for);
+	QSqlQueryModel *tableModel = new QSqlQueryModel(this);
+	tableModel->setQuery(std::move(query));
+	
+	tableModel->setHeaderData(0, Qt::Horizontal, tr("Id"));
+	tableModel->setHeaderData(1, Qt::Horizontal, tr("Entry"));
+	
+	ui->codexTable->setModel(tableModel);
+	
 }

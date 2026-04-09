@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QFrame>
+#include <qobject.h>
 #include <qtmetamacros.h>
 
 namespace Ui {
@@ -16,7 +17,10 @@ public:
     ~CodexFrame();
 
 private:
+	QString m_search_for;
+
     Ui::CodexFrame *ui;
+	void loadData();
 
 private slots:
     void handleAddClicked();
@@ -24,4 +28,5 @@ private slots:
     void handleViewClicked();
     void handleDeleteClicked();
     void handleSearchClicked();
+	
 };
