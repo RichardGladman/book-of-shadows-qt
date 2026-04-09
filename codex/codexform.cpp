@@ -4,6 +4,7 @@
 #include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
+#include <qlogging.h>
 #include <qmessagebox.h>
 
 extern SettingsModel settings;
@@ -24,10 +25,11 @@ CodexForm::CodexForm(QWidget *parent, int id, QString mode) :
 		m_default_name = model.name();
 		m_default_description = model.description();
 		
-		m_id = id;
 	}
 	
-	if (mode == "view") {
+	m_id = id;
+
+		if (mode == "view") {
 		ui->nameLineEdit->setEnabled(false);
 		ui->descriptionTextEdit->setEnabled(false);
 		ui->saveButton->setEnabled(false);
