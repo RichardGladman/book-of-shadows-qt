@@ -22,6 +22,8 @@ CodexFrame::CodexFrame(QWidget *parent)
     connect(ui->deleteButton, &QPushButton::clicked, this, &CodexFrame::handleDeleteClicked);
     connect(ui->searchButton, &QPushButton::clicked, this, &CodexFrame::handleSearchClicked);
     connect(ui->codexTable, &QTableView::doubleClicked, this, &CodexFrame::handleEditClicked);
+	
+	loadData();
 }
 
 CodexFrame::~CodexFrame()
@@ -40,7 +42,17 @@ void CodexFrame::handleAddClicked()
 
 void CodexFrame::handleEditClicked()
 {
-    qDebug() << "Edit";
+	QModelIndexList selectedRows = ui->codexTable->selectionModel()->selectedIndexes();
+	if (selectedRows.empty()) {
+	    return;
+	}
+
+	CodexForm *form = new CodexForm(this, ui->codexTable->model()->index(selectedRows.at(0).row(), 
+																						0).data().toInt());
+	form->setWindowTitle(tr("Edit Codex"));
+	form->exec();
+
+	loadData();
 }
 
 void CodexFrame::handleViewClicked()
