@@ -9,6 +9,7 @@
 #include <qpushbutton.h>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include <QMessageBox>
 
 CodexFrame::CodexFrame(QWidget *parent)
     : QFrame(parent)
@@ -57,17 +58,52 @@ void CodexFrame::handleEditClicked()
 
 void CodexFrame::handleViewClicked()
 {
-    qDebug() << "View";
+	QModelIndexList selectedRows =
+		ui->codexTable->selectionModel()->selectedIndexes();
+	if (selectedRows.empty()) {
+		return;
+	}
+
+	CodexForm *form = new CodexForm(this,
+									  ui->codexTable->model()
+										  ->index(selectedRows.at(0).row(), 0)
+										  .data()
+										  .toInt(),
+									  "view");
+	form->setWindowTitle(tr("View Codex Entry"));
+	form->exec();
+
+	loadData();
 }
 
 void CodexFrame::handleDeleteClicked()
 {
-    qDebug() << "Delete";
+QModelIndexList selectedRows =
+	ui->codexTable->selectionModel()->selectedIndexes();
+	if (selectedRows.empty()) {
+		return;
+	}
+	
+	CodexModel model =
+		CodexModel::load(ui->codexTable->model()
+							  ->index(selectedRows.at(0).row(), 0)
+							  .data()
+							  .toInt());
+	
+	int confirmed = QMessageBox::question(
+		this, tr("Please confirm"),
+		tr("Are you sure you want to delete ") + model.name() +
+			tr("? This action cannot be undone."));
+	if (confirmed == QMessageBox::Yes) {
+		model.remove();
+		loadData();
+	}
 }
 
 void CodexFrame::handleSearchClicked()
 {
-    qDebug() << "Search";
+	m_search_for = ui->searchLineEdit->text();
+	loadData();
 }
 
 void CodexFrame::loadData()
