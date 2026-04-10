@@ -215,7 +215,7 @@ void DBInitializer::createSpellbook()
 
 void DBInitializer::createCodex()
 {
-    QString sql = "CREATE TABLE IF NOT EXISTS codex (id INTEGER PRIMARY KEY, title TEXT, description TEXT)";
+    QString sql = "CREATE TABLE IF NOT EXISTS codex (id INTEGER PRIMARY KEY, name TEXT, description TEXT)";
     QSqlQuery query;
 
     query.prepare(sql);

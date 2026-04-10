@@ -4,7 +4,6 @@
 #include "../settings/settingsmodel.h"
 
 #include <QMessageBox>
-#include <qlogging.h>
 #include <qmessagebox.h>
 
 extern SettingsModel settings;
@@ -51,9 +50,9 @@ void CodexForm::handleCloseButtonClicked()
 		if (button == QMessageBox::No) {
 			return;
 		}
-		
-		reject();
 	}
+
+	reject();
 }
 
 void CodexForm::handleSaveButtonClicked()
