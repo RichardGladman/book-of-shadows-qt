@@ -23,8 +23,7 @@ CodexForm::CodexForm(QWidget *parent, int id, QString mode) :
 		
 		m_default_name = model.name();
 		m_default_description = model.description();
-		
-	}
+}
 	
 	m_id = id;
 
@@ -71,6 +70,10 @@ void CodexForm::handleSaveButtonClicked()
 	CodexModel model {m_id, name, description};
 	
 	if (model.save()) {
+		
+		m_default_name = name;
+		m_default_description = description;
+		
 		if (m_id == 0) {
 			ui->nameLineEdit->clear();
 			ui->descriptionTextEdit->clear();
