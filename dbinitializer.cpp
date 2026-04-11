@@ -27,8 +27,9 @@ void DBInitializer::createDataStore(const QString &base)
 
     QFile file(base + "/data/bos.db");
     if (!file.exists()) {
-        file.open(QIODevice::WriteOnly);
-        file.close();
+        if (file.open(QIODevice::WriteOnly)) {
+	        file.close();
+		}
     }
 }
 
