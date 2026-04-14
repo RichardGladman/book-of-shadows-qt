@@ -3,6 +3,7 @@
 #include <QDir>
 #include <QtDebug>
 #include <QSqlQuery>
+#include <qcontainerfwd.h>
 #include <vector>
 
 DBInitializer::DBInitializer() {}
@@ -216,9 +217,15 @@ void DBInitializer::createSpellbook()
 
 void DBInitializer::createCodex()
 {
-    QString sql = "CREATE TABLE IF NOT EXISTS codex (id INTEGER PRIMARY KEY, name TEXT, description TEXT)";
+	QVector<QString> statements {};
+    statements.push_back("CREATE TABLE IF NOT EXISTS codex (id INTEGER PRIMARY KEY, name TEXT, description TEXT)");
+	statements.push_back("CREATE TABLE IF NOT EXISTS ingredients (id INTEGER PRIMARY KEY, name TEXT, description TEXT)");
+	statements.push_back("CREATE TABLE IF NOT EXISTS codex_ingredient (codex_id INTEGER, ingredient_id INTEGER, "
+							"PRIMARY KEY(codex_id, ingredient_id))");
     QSqlQuery query;
 
-    query.prepare(sql);
-    query.exec();
+	for (QString sql: statements) {
+	    query.prepare(sql);
+	    query.exec();
+	}
 }
