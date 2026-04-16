@@ -1,4 +1,4 @@
-#include "Ingredient.h"
+#include "ingredientmodel.h"
 
 QSqlQuery IngredientModel::list(QString search_for)
 {
