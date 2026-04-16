@@ -20,12 +20,6 @@ set(PROJECT_SOURCES
     codex/codexframe.h
     codex/codexframe.cpp
     codex/codexframe.ui
-)
-
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(BookOfShadows
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
         polarity/polarityframe.h polarity/polarityframe.cpp polarity/polarityframe.ui
         polarity/polaritymodel.h polarity/polaritymodel.cpp
         settings/settingsframe.h settings/settingsframe.cpp settings/settingsframe.ui
@@ -85,7 +79,14 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         codex/codexframe.cpp codex/codexframe.h codex/codexframe.ui
         codex/codexmodel.h codex/codexmodel.cpp
         codex/codexform.h codex/codexform.cpp codex/codexform.ui
+        ingredients/ingredientmodel.h ingredients/ingredientmodel.cpp
+)
 
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(BookOfShadows
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+        ingredients/ingredientsform.h ingredients/ingredientsform.cpp ingredients/ingredientsform.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET BookOfShadows APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

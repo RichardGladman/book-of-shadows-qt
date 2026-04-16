@@ -1,5 +1,4 @@
-#ifndef INGREDIENT_H_
-#define INGREDIENT_H_
+#pragma once
 
 #include <QString>
 #include <QSqlQuery>
@@ -32,5 +31,3 @@ private:
     QString m_name;
     QString m_description;
 };
-
-#endif /* INGREDIENT_H_ */
