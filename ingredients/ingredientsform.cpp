@@ -73,7 +73,8 @@ void IngredientsForm::on_closeButton_clicked()
         if (button == QMessageBox::No) {
             return;
         }
-	    reject();
     }
+
+	reject();
 }
 

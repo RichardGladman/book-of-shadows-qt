@@ -52,6 +52,8 @@ private slots:
 
     void on_actionCodex_triggered();
 
+	void on_actionIngredients_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

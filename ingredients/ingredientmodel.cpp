@@ -4,7 +4,7 @@ QSqlQuery IngredientModel::list(QString search_for)
 {
     QSqlQuery query;
 
-    QString select_clause = "SELECT id, name FROM ingredient ";
+    QString select_clause = "SELECT id, name FROM ingredients ";
     QString order_clause = "ORDER BY name";
     QString where_clause;
 	
@@ -29,7 +29,7 @@ IngredientModel IngredientModel::load(int id)
     IngredientModel model {0, "", ""};
 
     QSqlQuery query;
-    query.prepare("SELECT * FROM ingredient WHERE id=?");
+    query.prepare("SELECT * FROM ingredients WHERE id=?");
     query.addBindValue(id);
 
     if (query.exec() && query.next()) {
@@ -46,7 +46,7 @@ IngredientModel IngredientModel::load(QString name)
     IngredientModel model {0, "", ""};
 
     QSqlQuery query;
-    query.prepare("SELECT * FROM ingredient WHERE name=?");
+    query.prepare("SELECT * FROM ingredients WHERE name=?");
     query.addBindValue(name);
 
     if (query.exec() && query.next()) {
@@ -67,9 +67,9 @@ bool IngredientModel::save()
     QString sql;
 
     if (m_id == 0) {
-        sql = "INSERT INTO ingredient(name, description) VALUES(?, ?)";
+        sql = "INSERT INTO ingredients(name, description) VALUES(?, ?)";
     } else {
-        sql = "UPDATE ingredient SET name=?, description=? WHERE id=?";
+        sql = "UPDATE ingredients SET name=?, description=? WHERE id=?";
     }
 
     QSqlQuery query;
@@ -88,7 +88,7 @@ bool IngredientModel::save()
 void IngredientModel::remove()
 {
     QSqlQuery query;
-    query.prepare("DELETE FROM ingredient WHERE id=?");
+    query.prepare("DELETE FROM ingredients WHERE id=?");
     query.addBindValue(m_id);
     query.exec();
 }

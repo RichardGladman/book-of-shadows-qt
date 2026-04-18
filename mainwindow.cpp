@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include "ingredients/ingredientsframe.h"
 #include "polarity/polarityframe.h"
 #include "settings/settingsframe.h"
 #include "animals/animalframe.h"
@@ -192,5 +193,13 @@ void MainWindow::on_actionCodex_triggered()
     CodexFrame *frame = new CodexFrame(this);
     setWindowTitle(tr("Book of Shadows:- Codex"));
     setCentralWidget(frame);
+}
+
+
+void MainWindow::on_actionIngredients_triggered()
+{
+	IngredientsFrame *frame = new IngredientsFrame(this);
+	setWindowTitle(tr("Book of Shadows:- Ingredients"));
+	setCentralWidget(frame);
 }
 
